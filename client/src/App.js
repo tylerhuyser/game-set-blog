@@ -14,7 +14,7 @@ import { getCategories } from './services/categories'
 
 function App() {
 
-  const [loaded, setLoaded] = useState(false)
+  const [loaded, setLoaded] = useState(true)
 
   const [posts, setPosts] = useState([])
   const [tags, setTags] = useState([])
@@ -39,7 +39,7 @@ function App() {
   useEffect(() => {
     const getCategoriesData = async () => {
       const categoriesData = await getCategories()
-      setPosts(categoriesData)
+      setCategories(categoriesData)
     }
     getCategoriesData()
   }, [])

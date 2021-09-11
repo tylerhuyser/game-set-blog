@@ -6,17 +6,11 @@ import MainContainer from './containers/MainContainer'
 
 import './App.css';
 
-import {
-  getPosts
-} from './services/posts'
+import { getPosts } from './services/posts'
 
-import {
-  getTags
-} from './services/tags'
+import { getTags } from './services/tags'
 
-import {
-  getCategories
-} from './services/categories'
+import { getCategories } from './services/categories'
 
 function App() {
 

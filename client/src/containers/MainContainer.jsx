@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Route, Switch } from "react-router-dom";
 import Home from "../screens/Home";
 import About from '../screens/About'
-import PostDetail from '../screen/PostDetail'
+import PostDetail from '../screens/PostDetail'
 
 export default function MainContainer(props) {
   

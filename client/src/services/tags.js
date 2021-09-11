@@ -6,7 +6,7 @@ export const getTags = async () => {
   return resp.data
 }
 
-export const getTags = async (ID) => {
+export const getTag = async (ID) => {
   const resp = await api.get(`/tags/${ID}`)
   console.log(resp.data)
   return resp.data

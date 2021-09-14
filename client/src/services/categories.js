@@ -1,6 +1,7 @@
 import api from './api-config'
 
 export const getCategories = async () => {
+  console.log(api.url)
   const resp = await api.get(`/categories`)
   console.log(resp.data)
   return resp.data

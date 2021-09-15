@@ -23,6 +23,7 @@ function App() {
   useEffect(() => {
     const getPostsData = async () => {
       const postsData = await getPosts()
+      console.log(postsData)
       setPosts(postsData)
     }
     getPostsData()

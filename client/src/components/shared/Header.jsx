@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-
 import { Link } from 'react-router-dom';
+
+import IconLogo from './IconLogo'
 
 import './Header.css'
 
@@ -23,21 +24,17 @@ export default function Header() {
 
           <Link to="/" className="desktop-logo-container">
 
-            {/* <IconLogo /> */}
+            <IconLogo />
             
           </Link>
 
           <div className="desktop-nav-links-container">
 
-            <Link to="/" className="desktop-nav-link">Home</Link>
+            <Link to="/" className="desktop-nav-link">HOME</Link>
 
-            <Link to="/calendar" className="desktop-nav-link">Calendar</Link>
+            <Link to="/about" className="desktop-nav-link">ABOUT</Link>
 
-            <Link to="/rankings" className="desktop-nav-link">Rankings</Link>
-
-            <p className="desktop-nav-link">About</p>
-
-            <a className="desktop-nav-link" target="_blank" href="https://www.gameset.blog">Blog</a>
+            <a className="desktop-nav-link" target="_blank" href="https://www.ace-tennis-scores.com" id="live-scores-link">LIVE SCORES</a>
           </div>
 
         </div>
@@ -56,12 +53,12 @@ export default function Header() {
 
           <div className="mobile-logo-container">
 
-            {/* <IconLogo style={{
+            <IconLogo style={{
               zIndex: "5",
               textAlign: "center",
               verticalAlign: "center",
               
-          }} /> */}
+          }} />
 
           </div>
 

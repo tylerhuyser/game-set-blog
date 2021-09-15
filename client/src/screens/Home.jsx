@@ -7,9 +7,15 @@ export default function Home (props) {
   
   const { posts, tags, categories } = props
 
-  const POSTCARDSJSX = posts && posts?.slice(0, 5).map((post) => (
-    <PostCard postData={post} />
-  ))
+  console.log(posts)
+
+  const POSTCARDSJSX = posts && posts?.slice(0, 5).map((post) => {
+    
+    console.log(post)
+    
+    return(
+      < PostCard postData = { post } />
+  )})
 
   return (
 

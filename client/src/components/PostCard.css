@@ -1,0 +1,32 @@
+.postCard-container {
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 100px;
+
+  font-family: 'Courier New', Courier, monospace;
+  color: dark gray;
+}
+
+.post-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.postCard-subtitle-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  font-weight: thin;
+}
+
+.post-author {
+  width: 50%;
+  text-align: left;
+}
+
+.post-date {
+  width: 33%;
+  text-align: right;
+}

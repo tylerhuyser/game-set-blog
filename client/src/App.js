@@ -12,6 +12,8 @@ import { getTags } from './services/tags'
 
 import { getCategories } from './services/categories'
 
+import { getUsers } from './services/users'
+
 function App() {
 
   const [loaded, setLoaded] = useState(true)
@@ -19,6 +21,7 @@ function App() {
   const [posts, setPosts] = useState([])
   const [tags, setTags] = useState([])
   const [categories, setCategories] = useState([])
+  const [users, setUsers] = useState([])
   
   useEffect(() => {
     const getPostsData = async () => {
@@ -46,7 +49,15 @@ function App() {
   }, [])
 
   useEffect(() => {
-    if (posts.length > 0 && tags.length > 0 && categories.length > 0) {
+    const getUsersData = async () => {
+      const usersData = await getUsers()
+      setUsers(usersData)
+    }
+    getUsersData()
+  }, [])
+
+  useEffect(() => {
+    if (posts.length > 0 && tags.length > 0 && categories.length > 0 && users.length > 0) {
       setLoaded(true)
     }
   }, [])
@@ -57,7 +68,7 @@ function App() {
       {loaded ?
       
         <Layout>
-          <MainContainer posts={posts} tags={tags} categories={categories} />
+          <MainContainer posts={posts} tags={tags} categories={categories} users={users} />
         </Layout>
     
       :

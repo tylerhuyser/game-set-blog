@@ -6,8 +6,10 @@ import About from '../screens/About'
 import PostDetail from '../screens/PostDetail'
 
 export default function MainContainer(props) {
+
+  const [postsIndex, setPostsIndex] = useState(0)
   
-  const { posts, tags, categories } = props
+  const { posts, tags, categories, users } = props
   
   return (
 
@@ -15,7 +17,7 @@ export default function MainContainer(props) {
       <Switch>
 
         <Route exact path="/">
-          <Home posts={posts} tags={tags} categories={categories} />
+          <Home posts={posts} tags={tags} categories={categories} users={users} postsIndex={postsIndex} setPostsIndex={setPostsIndex} />
         </Route>
 
         <Route path="about">
@@ -23,7 +25,7 @@ export default function MainContainer(props) {
         </Route>
 
         <Route path="post/:slug">
-          <PostDetail posts={posts} tags={tags} categories={categories} />
+          <PostDetail posts={posts} tags={tags} categories={categories} users={users} />
         </Route>
 
       </Switch>

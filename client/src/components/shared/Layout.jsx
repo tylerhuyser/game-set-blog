@@ -19,10 +19,9 @@ export default function Layout(props) {
 
         <div className="body-container">
 
-            
-          {/* <Sidebar /> */}
-
           {props.children}
+
+          <Sidebar />
 
         </div>
 

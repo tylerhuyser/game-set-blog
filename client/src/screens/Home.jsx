@@ -49,13 +49,13 @@ export default function Home (props) {
           
             }
 
-            {postsIndex - totalPosts >= 5 ?
+            {(totalPosts - postsIndex > 5) ?
             
-              <div className="home-button" id="inactive-button"></div>
+              <div className="home-button" id="previous-button" onClick={(e) => handlePostIndex("previous")} >PREVIOUS POSTS</div>
 
             :
 
-              <div className="home-button" id="previous-button" onClick={(e) => handlePostIndex("previous")} >PREVIOUS POSTS</div>
+              <div className="home-button" id="inactive-button"></div>
           
             }
           

@@ -51,6 +51,7 @@ function App() {
   useEffect(() => {
     const getUsersData = async () => {
       const usersData = await getUsers()
+      console.log(users)
       setUsers(usersData)
     }
     getUsersData()

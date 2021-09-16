@@ -16,21 +16,34 @@ export default function MainContainer(props) {
   return (
 
     <>
-      <Switch>
+      
+      {posts ?
+      
+        <>
+          <Switch>
 
-        <Route exact path="/">
-          <Home posts={posts} tags={tags} categories={categories} users={users} postsIndex={postsIndex} setPostsIndex={setPostsIndex} />
-        </Route>
+            <Route exact path="/">
+              <Home posts={posts} tags={tags} categories={categories} users={users} postsIndex={postsIndex} setPostsIndex={setPostsIndex} />
+            </Route>
 
-        <Route path="about">
-          <About />
-        </Route>
+            <Route path="about">
+              <About />
+            </Route>
 
-        <Route path="posts/:slug">
-          <PostDetail posts={posts} tags={tags} categories={categories} users={users} />
-        </Route>
+            <Route path="posts/:slug">
+              <PostDetail posts={posts} tags={tags} categories={categories} users={users} />
+            </Route>
 
-      </Switch>
+          </Switch>
+        </>
+      
+        :
+
+        <>
+        </>
+      
+      }
+      
     </>
 
   )

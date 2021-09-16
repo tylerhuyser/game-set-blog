@@ -23,25 +23,39 @@ export default function PostCard(props) {
     history.push(`/posts/${postData.slug}`)
   }
   
-  return(
+  return (
+  
     <>
-      <div className="postCard-container" key={key} onClick={handlePost} >
+    
+      {postData && users ?
 
-        <p className="post-title">{postData.title.rendered}</p>
+        <>
+          <div className="postCard-container" key={postData.id} onClick={handlePost} >
 
-        <div className="postCard-subtitle-container">
+            <p className="post-title">{postData.title.rendered}</p>
 
-          <p className="post-author">{`Written by ${postAuthor.name.split(".")[0].split("")[0].toUpperCase()}${postAuthor.name.split(".")[0].split("").slice(1).join("").toLowerCase()} ${postAuthor.name.split(".")[1].split("")[0].toUpperCase()}${postAuthor.name.split(".")[1].split("").slice(1).join("").toLowerCase()}`}</p>
+            <div className="postCard-subtitle-container">
 
-          <p className="post-date">{`${postMonth}.${postDate}.${postYear}`}</p>
+              <p className="post-author">{`Written by ${postAuthor.name.split(".")[0].split("")[0].toUpperCase()}${postAuthor.name.split(".")[0].split("").slice(1).join("").toLowerCase()} ${postAuthor.name.split(".")[1].split("")[0].toUpperCase()}${postAuthor.name.split(".")[1].split("").slice(1).join("").toLowerCase()}`}</p>
 
-        </div>
+              <p className="post-date">{`${postMonth}.${postDate}.${postYear}`}</p>
 
-        <p className="post-exerpt">{parse(postData.excerpt.rendered.toString())}</p>
+            </div>
 
-        <p onClick={handlePost}>Read Full Article...</p>
+            <p className="post-exerpt">{parse(postData.excerpt.rendered.toString().trim("Continue reading"))}</p>
+
+            <p onClick={handlePost}>Read Full Article...</p>
+            
+          </div>
+        </>
+      
+      :
         
-      </div>
+        <>
+        </>
+
+      }
+
     </>
   )
 }

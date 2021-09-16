@@ -65,7 +65,7 @@ export default function Home (props) {
         
         :
         
-        <></>
+        <div className="home-container"></div>
       
       }
 

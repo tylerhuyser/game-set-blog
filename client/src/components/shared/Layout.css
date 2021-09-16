@@ -21,6 +21,10 @@
     flex-direction: row;
     justify-content: center;
     flex-grow: 1;
+
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box; /* Firefox, other Gecko */
+    box-sizing: border-box;
 }
 
   @media only screen and (max-width: 680px) {

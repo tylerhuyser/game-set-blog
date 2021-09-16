@@ -1,11 +1,13 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 
 import './PostCard.css'
 
 export default function PostCard(props) {
 
-  const { postData, users } = props
+  const { postData, users, key } = props
 
+  const history = useHistory()
   const parse = require('html-react-parser').default
 
   const postDate = new Date(postData.date).getDate()
@@ -14,13 +16,16 @@ export default function PostCard(props) {
 
   const postAuthor = users.find((user) => (user.id === postData.author))
 
-  console.log(postData.excerpt.rendered.toString())
-
   console.log(postData)
+
+  const handlePost = () => {
+    localStorage.setItem('currentPost', JSON.stringify(postData))
+    history.push(`/posts/${postData.slug}`)
+  }
   
   return(
     <>
-      <div className="postCard-container">
+      <div className="postCard-container" key={key} onClick={handlePost} >
 
         <p className="post-title">{postData.title.rendered}</p>
 
@@ -33,6 +38,8 @@ export default function PostCard(props) {
         </div>
 
         <p className="post-exerpt">{parse(postData.excerpt.rendered.toString())}</p>
+
+        <p onClick={handlePost}>Read Full Article...</p>
         
       </div>
     </>

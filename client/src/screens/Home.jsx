@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 
 import Posts from '../components/Posts'
 import PostCard from '../components/PostCard'
@@ -24,14 +24,14 @@ export default function Home (props) {
   const POSTCARDSJSX = posts && posts?.slice(postsIndex, postsIndex + 5).map((post) => {
     
     return(
-      < PostCard postData = { post } users={users} />
+      < PostCard postData = { post } users={users} key={post.id} />
   )})
 
   return (
 
     <>
       
-      {posts ?
+      {posts && posts.length > 0 ?
       
         <div className="home-container">
 
@@ -45,17 +45,17 @@ export default function Home (props) {
 
               :
 
-              <div className="home-button" id="previous-button" onClick={(e) => handlePostIndex("previous")} >PREVIOUS POSTS</div>
-            
+              <div className="next-button" id="next-button" onClick={(e) => handlePostIndex("next")} >RECENT POSTS</div>
+          
             }
 
             {postsIndex - totalPosts >= 5 ?
             
               <div className="home-button" id="inactive-button"></div>
 
-              :
+            :
 
-              <div className="next-button" id="next-button" onClick={(e) => handlePostIndex("next")} >RECENT POSTS</div>
+              <div className="home-button" id="previous-button" onClick={(e) => handlePostIndex("previous")} >PREVIOUS POSTS</div>
           
             }
           

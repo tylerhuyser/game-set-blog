@@ -8,6 +8,8 @@ import PostDetail from '../screens/PostDetail'
 export default function MainContainer(props) {
 
   const [postsIndex, setPostsIndex] = useState(0)
+
+  console.log(postsIndex)
   
   const { posts, tags, categories, users } = props
   
@@ -24,7 +26,7 @@ export default function MainContainer(props) {
           <About />
         </Route>
 
-        <Route path="post/:slug">
+        <Route path="posts/:slug">
           <PostDetail posts={posts} tags={tags} categories={categories} users={users} />
         </Route>
 

@@ -8,6 +8,8 @@ import './Layout.css'
 
 
 export default function Layout(props) {
+
+  const { categories, tags } = props
   
   return(
     <>
@@ -21,7 +23,7 @@ export default function Layout(props) {
 
           {props.children}
 
-          <Sidebar />
+          <Sidebar categories={categories} tags={tags} />
 
         </div>
 

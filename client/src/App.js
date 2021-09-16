@@ -68,7 +68,7 @@ function App() {
 
       {loaded ?
       
-        <Layout>
+        <Layout tags={tags} categories={categories}>
           <MainContainer posts={posts} tags={tags} categories={categories} users={users} />
         </Layout>
     

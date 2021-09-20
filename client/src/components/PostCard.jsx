@@ -16,8 +16,6 @@ export default function PostCard(props) {
 
   const postAuthor = users.find((user) => (user.id === postData.author))
 
-  console.log(postData)
-
   const handlePost = () => {
     localStorage.setItem('currentPost', JSON.stringify(postData))
     history.push(`/posts/${postData.slug}`)
@@ -32,7 +30,7 @@ export default function PostCard(props) {
         <>
           <div className="postCard-container" key={postData.id} onClick={handlePost} >
 
-            <p className="post-title">{postData.title.rendered}</p>
+            <p className="post-title">{parse(postData.title.rendered)}</p>
 
             <div className="postCard-subtitle-container">
 

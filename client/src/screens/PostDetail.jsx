@@ -25,7 +25,7 @@ export default function PostDetail(props) {
   }, [])
 
   useEffect(() => {
-    if (postData.date && postData.author) {
+    if (postData && postData.date && postData.author) {
       setPostInfo(prevState => ({
         ...prevState,
         postDate: new Date(postData.date).getDate(),
@@ -58,7 +58,7 @@ export default function PostDetail(props) {
           
           <div className="post-container" key={postData.id} onClick={handleReturn} >
 
-            <p className="post-title">{postData.title.rendered}</p>
+            <p className="post-title">{parse(postData.title.rendered)}</p>
 
             <div className="post-subtitle-container">
 

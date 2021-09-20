@@ -1,7 +1,7 @@
 import api from './api-config'
 
 export const getPosts = async () => {
-  const resp = await api.get(`/posts?per_page=100?_embed`)
+  const resp = await api.get(`/posts?per_page=100`)
   console.log(resp.data)
   return resp.data
 }

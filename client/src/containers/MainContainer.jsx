@@ -26,11 +26,11 @@ export default function MainContainer(props) {
               <Home posts={posts} tags={tags} categories={categories} users={users} postsIndex={postsIndex} setPostsIndex={setPostsIndex} />
             </Route>
 
-            <Route path="about">
+            <Route path="/about">
               <About />
             </Route>
 
-            <Route path="posts/:slug">
+            <Route path="/posts/:slug">
               <PostDetail posts={posts} tags={tags} categories={categories} users={users} />
             </Route>
 

@@ -20,6 +20,8 @@ export default function PostCard(props) {
     localStorage.setItem('currentPost', JSON.stringify(postData))
     history.push(`/posts/${postData.slug}`)
   }
+
+  console.log(postAuthor)
   
   return (
   
@@ -31,6 +33,8 @@ export default function PostCard(props) {
           <div className="postCard-container" key={postData.id} onClick={handlePost} >
 
             <p className="post-title">{parse(postData.title.rendered)}</p>
+
+            <img src={postData["_embedded"]["wp:featuredmedia"][0].source_url} />
 
             <div className="postCard-subtitle-container">
 

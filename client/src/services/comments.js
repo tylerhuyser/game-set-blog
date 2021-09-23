@@ -12,8 +12,8 @@ export const getComment = async (ID) => {
   return resp.data
 }
 
-export const postComment = async () => {
-  const resp = await api.post(`/comments`)
+export const postComment = async (commentData) => {
+  const resp = await api.post(`/comments`, {commment: commentData})
   console.log(resp.data)
   return resp.data
 }

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 
+import { getCommentsPerPost } from '../services/comments'
+
 
 export default function PostDetail(props) {
 
@@ -14,6 +16,7 @@ export default function PostDetail(props) {
     postYear: "",
     postAuthor: ""
   })
+  const [comments, setComments ] = useState([])
 
   const history = useHistory()
   const parse = require('html-react-parser').default
@@ -37,7 +40,24 @@ export default function PostDetail(props) {
   }, [postData])
 
   useEffect(() => {
-    if (postData && (postInfo.postDate !== "" && postInfo.postMonth !== "" && postInfo.postYear !== "" && postInfo.postAuthor !== "")) {
+    if (postData && postData.id) {
+
+      const gatherComments = async (postID) => {
+        const commentsData = await getCommentsPerPost(postID)
+        console.log(commentsData)
+        if (commentsData.length > 0) {
+          setComments(commentsData)
+        } else if (commentsData.length === 0) {
+          setComments("No Comments.")
+        }
+      }
+
+      gatherComments(postData.id)
+    }
+  }, [postData])
+
+  useEffect(() => {
+    if (postData && (postInfo.postDate !== "" && postInfo.postMonth !== "" && postInfo.postYear !== "" && postInfo.postAuthor !== "" && (comments.length > 0 || comments === "No Comments."))) {
       setLoaded(true)
     }
   }, [postInfo])

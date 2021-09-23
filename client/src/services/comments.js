@@ -6,6 +6,12 @@ export const getComments = async () => {
   return resp.data
 }
 
+export const getCommentsPerPost = async (postID) => {
+  const resp = await api.get(`/comments?&post=${postID}`)
+  console.log(resp.data)
+  return resp.data
+}
+
 export const getComment = async (ID) => {
   const resp = await api.get(`/comments/${ID}`)
   console.log(resp.data)

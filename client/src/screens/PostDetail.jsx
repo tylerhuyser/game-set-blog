@@ -40,7 +40,7 @@ export default function PostDetail(props) {
     if (postData && (postInfo.postDate !== "" && postInfo.postMonth !== "" && postInfo.postYear !== "" && postInfo.postAuthor !== "")) {
       setLoaded(true)
     }
-  }, [postData])
+  }, [postInfo])
   
   const handleReturn = () => {
     localStorage.removeItem('currentPost')
@@ -52,7 +52,7 @@ export default function PostDetail(props) {
   return(
     <>
       
-      {postData && postInfo.postAuthor && loaded ?
+      {postData && postInfo.postAuthor !== "" && loaded ?
 
         <>
           

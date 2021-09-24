@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 
 import { getCommentsPerPost } from '../services/comments'
+import Comments from '../components/Comments'
 
 
 export default function PostDetail(props) {
@@ -28,7 +29,7 @@ export default function PostDetail(props) {
   }, [])
 
   useEffect(() => {
-    if (postData && postData.date && postData.author) {
+    if (postData && postData.date && postData.author && users.length > 0) {
       setPostInfo(prevState => ({
         ...prevState,
         postDate: new Date(postData.date).getDate(),
@@ -60,7 +61,7 @@ export default function PostDetail(props) {
     if (postData && (postInfo.postDate !== "" && postInfo.postMonth !== "" && postInfo.postYear !== "" && postInfo.postAuthor !== "" && (comments.length > 0 || comments === "No Comments."))) {
       setLoaded(true)
     }
-  }, [postInfo])
+  }, [postInfo, comments])
   
   const handleReturn = () => {
     localStorage.removeItem('currentPost')
@@ -88,7 +89,9 @@ export default function PostDetail(props) {
 
             </div>
 
-            <p className="post-content">{parse(postData.content.rendered.toString().trim("Continue reading"))}</p>
+            <div className="post-content">{parse(postData.content.rendered.toString().trim("Continue reading"))}</div>
+
+            <Comments commentsData={comments} />
             
           </div>
 

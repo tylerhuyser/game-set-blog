@@ -61,7 +61,7 @@ function App() {
     if (posts.length > 0 && tags.length > 0 && categories.length > 0 && users.length > 0) {
       setLoaded(true)
     }
-  }, [])
+  }, [posts, tags, categories, users])
 
   return (
     <div className="app-container">

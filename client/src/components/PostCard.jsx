@@ -20,8 +20,6 @@ export default function PostCard(props) {
     localStorage.setItem('currentPost', JSON.stringify(postData))
     history.push(`/posts/${postData.slug}`)
   }
-
-  console.log(postAuthor)
   
   return (
   

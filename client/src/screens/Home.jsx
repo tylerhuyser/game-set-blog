@@ -11,8 +11,6 @@ export default function Home (props) {
 
   const totalPosts = posts.length
 
-  console.log(posts)
-
   const handlePostIndex = (shuffleDirection) => {
     if (shuffleDirection === "previous") {
       setPostsIndex(postsIndex + 5)
@@ -24,7 +22,7 @@ export default function Home (props) {
   const POSTCARDSJSX = posts && posts?.slice(postsIndex, postsIndex + 5).map((post) => {
     
     return(
-      < PostCard postData = { post } users={users} key={post.id} />
+      <PostCard postData = { post } users={users} key={post.id} />
   )})
 
   return (

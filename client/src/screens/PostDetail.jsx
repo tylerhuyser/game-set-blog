@@ -25,6 +25,7 @@ export default function PostDetail(props) {
   useEffect(() => {
     if (!loaded) {
       setPostData(JSON.parse(localStorage.getItem('currentPost')))
+      console.log('PostDetail.jsx - UseeEffect #1 - postDATA set from LocalStorage')
     }
   }, [])
 
@@ -37,14 +38,16 @@ export default function PostDetail(props) {
         postYear: new Date(postData.date).getFullYear(),
         postAuthor: users.find((user) => (user.id === postData.author))
       }))
+      console.log('PostDetail.jsx - UseeEffect #2 - postINFO set')
     }
-  }, [postData])
+  }, [postData, users])
 
   useEffect(() => {
     if (postData && postData.id) {
 
       const gatherComments = async (postID) => {
         const commentsData = await getCommentsPerPost(postID)
+        console.log('PostDetail.js - UseEffect #3 - COMMENTS below')
         console.log(commentsData)
         if (commentsData.length > 0) {
           setComments(commentsData)
@@ -60,6 +63,7 @@ export default function PostDetail(props) {
   useEffect(() => {
     if (postData && (postInfo.postDate !== "" && postInfo.postMonth !== "" && postInfo.postYear !== "" && postInfo.postAuthor !== "" && (comments.length > 0 || comments === "No Comments."))) {
       setLoaded(true)
+      console.log('PostDetail.jsx - UseEffect #4 - PostDetail Loaded')
     }
   }, [postInfo, comments])
   
@@ -73,7 +77,7 @@ export default function PostDetail(props) {
   return(
     <>
       
-      {postData && postInfo.postAuthor !== "" && loaded ?
+      {postData && users && postInfo.postAuthor !== "" && loaded ?
 
         <>
           

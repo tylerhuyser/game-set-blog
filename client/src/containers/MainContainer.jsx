@@ -9,6 +9,7 @@ export default function MainContainer(props) {
 
   const [postsIndex, setPostsIndex] = useState(0)
 
+  console.log('MainContainer.jsx - POSTSINDEX below')
   console.log(postsIndex)
   
   const { posts, tags, categories, users } = props
@@ -17,7 +18,7 @@ export default function MainContainer(props) {
 
     <>
       
-      {posts ?
+      {posts && tags && categories && users ?
       
         <>
           <Switch>

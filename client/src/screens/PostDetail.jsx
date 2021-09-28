@@ -69,7 +69,7 @@ export default function PostDetail(props) {
   
   const handleReturn = () => {
     localStorage.removeItem('currentPost')
-    history.push(`/posts`)
+    history.push(`/`)
   }
 
   console.log(postData)
@@ -81,7 +81,7 @@ export default function PostDetail(props) {
 
         <>
           
-          <div className="post-container" key={postData.id} onClick={handleReturn} >
+          <div className="post-container" key={postData.id} >
 
             <p className="post-title">{parse(postData.title.rendered)}</p>
 
@@ -95,7 +95,7 @@ export default function PostDetail(props) {
 
             <div className="post-content">{parse(postData.content.rendered.toString().trim("Continue reading"))}</div>
 
-            <Comments commentsData={comments} />
+            <Comments postData={postData} commentsData={comments} />
             
           </div>
 

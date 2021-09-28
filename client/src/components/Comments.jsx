@@ -1,11 +1,12 @@
 import React from 'react'
 
+import CommentForm from './CommentForm'
 import CommentCard from './CommentCard'
 
 
 export default function Comments(props) {
 
-  const { commentsData } = props
+  const { postData, commentsData } = props
 
   console.log(commentsData)
 
@@ -15,11 +16,23 @@ export default function Comments(props) {
   
   return (
     <>
-      <div className="comments-container">
-
-        {COMMENTSJSX}
+      
+      {postData && commentsData ?
         
-      </div>
+        <div className="comments-container">
+
+          <CommentForm postData={postData} />
+
+          {COMMENTSJSX}
+        
+        </div>
+        
+        :
+        
+        <>
+        </>
+      }
+
     </>
   )
 }

@@ -7,7 +7,7 @@ export default function CommentForm(props) {
   const { postData } = props
 
   const [commentFormData, setCommentFormData] = useState({
-    post: postData.id,
+    post: parseInt(postData.id),
     author_name: "",
     author_email: "",
     content: ""
@@ -19,11 +19,11 @@ export default function CommentForm(props) {
   const [validateEmail, setValidateEmail] = useState(false)
   const [validateContent, setValidateContent] = useState(false)
 
-  const handlePostComment = async (postID, commentData) => {
+  const handlePostComment = async (commentData) => {
     console.log(commentData)
-    const comment = await postComment(postID, commentData)
-    if (comment.error.message) {
-      setError(comment.error)
+    const comment = await postComment(commentData)
+    if (comment.error) {
+      setError(comment.error.message)
     } else {
       setError("Your comment is subbmited and awaiting approval!")
     }
@@ -66,7 +66,7 @@ const validateForm = (e) => {
 
   if (commentFormData.author_name && commentFormData.author_email && commentFormData.content && commentFormData.author_email.includes("@") && commentFormData.author_email.includes(".") && !commentFormData.author_email.includes("@.")) {
     setValidateContent(false);
-    handlePostComment(postData.id, commentFormData)
+    handlePostComment(commentFormData)
   }
 }
 

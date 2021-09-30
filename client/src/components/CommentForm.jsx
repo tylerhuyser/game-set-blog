@@ -7,11 +7,10 @@ export default function CommentForm(props) {
   const { postData } = props
 
   const [commentFormData, setCommentFormData] = useState({
+    post: postData.id,
     author_name: "",
     author_email: "",
-    content: "",
-    post: postData.id,
-
+    content: ""
   })
 
   const [error, setError] = useState(null)
@@ -21,6 +20,7 @@ export default function CommentForm(props) {
   const [validateContent, setValidateContent] = useState(false)
 
   const handlePostComment = async (postID, commentData) => {
+    console.log(commentData)
     const comment = await postComment(postID, commentData)
     if (comment.error.message) {
       setError(comment.error)

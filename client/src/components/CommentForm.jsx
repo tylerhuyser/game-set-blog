@@ -27,7 +27,7 @@ export default function CommentForm(props) {
     } else {
       setError("Your comment is subbmited and awaiting approval!")
     }
-  }
+  } 
 
   const handleChange = (e) => {
     let { name, value } = e.target;

@@ -7,7 +7,7 @@ export default function CommentForm(props) {
   const { postData } = props
 
   const [commentFormData, setCommentFormData] = useState({
-    post: parseInt(postData.id),
+    post: postData.id,
     author_name: "",
     author_email: "",
     content: ""

@@ -115,7 +115,7 @@ const validateForm = (e) => {
         />
       </label>
       
-      <button className="register-button">Register</button>
+      <button className="register-button">Submit</button>
 
 
     </form>

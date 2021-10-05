@@ -22,6 +22,8 @@ function App() {
   const [tags, setTags] = useState([])
   const [categories, setCategories] = useState([])
   const [users, setUsers] = useState([])
+
+  const location = window.location
   
   useEffect(() => {
     const getPostsData = async () => {
@@ -75,7 +77,7 @@ function App() {
 
       {loaded ?
       
-        <Layout tags={tags} categories={categories}>
+        <Layout tags={tags} categories={categories} location={location} >
           <MainContainer posts={posts} tags={tags} categories={categories} users={users} />
         </Layout>
     

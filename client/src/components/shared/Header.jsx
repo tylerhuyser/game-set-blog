@@ -93,11 +93,23 @@ export default function Header(props) {
 
         <div className="desktop-nav">
 
-          <Link to="/" className="desktop-logo-container">
-
-            <IconLogo />
+          <TransitionGroup component={null}>
             
-          </Link>
+            {isMounted && (
+              
+                <CSSTransition classNames={fadeClass} timeout={timeout}>
+
+                  <Link to="/" className="desktop-logo-container">
+
+                    <IconLogo />
+                        
+                  </Link>
+
+                </CSSTransition>
+                
+              )}
+
+          </TransitionGroup>
 
           <div className="desktop-nav-links-container">
 

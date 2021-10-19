@@ -17,6 +17,7 @@ import { getUsers } from './services/users'
 function App() {
 
   const [loaded, setLoaded] = useState(true)
+  const [isMounted, setIsMounted] = useState(false)
 
   const [posts, setPosts] = useState([])
   const [tags, setTags] = useState([])
@@ -24,6 +25,8 @@ function App() {
   const [users, setUsers] = useState([])
 
   const location = window.location
+
+  const isHome = location.pathname === '/';
   
   useEffect(() => {
     const getPostsData = async () => {
@@ -77,13 +80,15 @@ function App() {
 
       {loaded ?
       
-        <Layout tags={tags} categories={categories} location={location} >
+        <Layout tags={tags} categories={categories} location={location} loaded={loaded} isMounted={isMounted} isHome={isHome} >
+
           <MainContainer posts={posts} tags={tags} categories={categories} users={users} />
+
         </Layout>
     
       :
   
-        <Loader />
+        <Loader finishLoading={() => setIsMounted(false)} />
         
       }
 

@@ -41,12 +41,6 @@ const StyledHeader = styled.header`
       transform: translateY(calc(var(--nav-scroll-height) * -1));
       box-shadow: 0 10px 30px -10px var(--navy-shadow);
     `};
-  @media (max-width: 1080px) {
-    padding: 0 40px;
-  }
-  @media (max-width: 768px) {
-    padding: 0 25px;
-  }
 `;
 
 
@@ -91,7 +85,9 @@ export default function Header(props) {
       
       <div className="header-container slide-in-top-header"> 
 
-        <div className="desktop-nav">
+        <div className="desktop-nav" style={{
+          
+        }}>
 
           <TransitionGroup component={null}>
             
@@ -113,11 +109,48 @@ export default function Header(props) {
 
           <div className="desktop-nav-links-container">
 
-            <Link to="/" className="desktop-nav-link">HOME</Link>
+            <TransitionGroup component={null}>
+                
+                {isMounted && (
+                    
+                  <CSSTransition key={i} classNames={fadeDownClass} timeout={timeout}>
 
-            <Link to="/about" className="desktop-nav-link">ABOUT</Link>
+                    <Link to="/" className="desktop-nav-link" style={{ transitionDelay: `${isHome ? i * 100 : 0}ms` }}>HOME</Link>
 
-            <a className="desktop-nav-link" target="_blank" href="https://www.ace-tennis-scores.com" id="live-scores-link">LIVE SCORES</a>
+                  </CSSTransition>
+
+                )}
+
+            </TransitionGroup>
+
+            <TransitionGroup component={null}>
+                            
+              {isMounted && (
+
+                <CSSTransition key={i} classNames={fadeDownClass} timeout={timeout}>
+
+                  <Link to="/about" className="desktop-nav-link" style={{ transitionDelay: `${isHome ? i * 100 : 0}ms` }}>ABOUT</Link>
+
+                </CSSTransition>
+
+              )}
+
+            </TransitionGroup>
+            
+            <TransitionGroup component={null}>
+                            
+              {isMounted && (
+                  
+                <CSSTransition key={i} classNames={fadeDownClass} timeout={timeout}>
+
+                  <a className="desktop-nav-link" target="_blank" href="https://www.ace-tennis-scores.com" id="live-scores-link" style={{ transitionDelay: `${isHome ? i * 100 : 0}ms` }}>LIVE SCORES</a>
+
+                </CSSTransition>
+
+              )}
+
+            </TransitionGroup>
+
           </div>
 
         </div>

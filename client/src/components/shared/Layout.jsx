@@ -5,34 +5,38 @@ import Sidebar from '../shared/Sidebar'
 import Footer from '../shared/Footer'
 
 import Loader from '../shared/Loader'
+import IconLogo from '../shared/IconLogo'
 
 import './Layout.css'
+import IconLogo from '../shared/IconLogo'
 
 
 export default function Layout(props) {
 
   const { categories, tags } = props
-  const { location } = props
+  const { isMounted, isHome } = props
 
-  const isHome = location.pathname === '/';
+  // const { location, loaded } = props
 
-  const [isLoading, setIsLoading] = useState(isHome)
+  // const isHome = location.pathname === '/';
 
-  useEffect(() => {
-    if (isLoading) {
-      return;
-    }
-    if (location.hash) {
-      const id = location.hash.substring(1); // location.hash without the '#'
-      setTimeout(() => {
-        const el = document.getElementById(id);
-        if (el) {
-          el.scrollIntoView();
-          el.focus();
-        }
-      }, 0);
-    }
-  }, [isLoading]);
+  // const [isLoading, setIsLoading] = useState(isHome)
+
+  // useEffect(() => {
+  //   if (isLoading) {
+  //     return;
+  //   }
+  //   if (location.hash) {
+  //     const id = location.hash.substring(1); // location.hash without the '#'
+  //     setTimeout(() => {
+  //       const el = document.getElementById(id);
+  //       if (el) {
+  //         el.scrollIntoView();
+  //         el.focus();
+  //       }
+  //     }, 0);
+  //   }
+  // }, [isLoading]);
 
     // Sets target="_blank" rel="noopener noreferrer" on external links
     const handleExternalLinks = () => {
@@ -54,11 +58,7 @@ export default function Layout(props) {
   return(
     <>
       
-      {isLoading && isHome ?
-        
-        <Loader finishLoading={() => setIsLoading(false)} />
-
-        :
+      {isMounted ?
       
         <div className="layout-container">
 
@@ -73,8 +73,16 @@ export default function Layout(props) {
           </div>
 
         </div>
+
+        :
+
+        <div className="logo-wrapper">
+
+          <IconLogo />
+
+        </div>
       
-        }
+      }
           
     </>
     

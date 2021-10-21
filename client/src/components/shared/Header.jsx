@@ -86,7 +86,7 @@ export default function Header(props) {
       <div className="header-container slide-in-top-header"> 
 
         <div className="desktop-nav" style={{
-          
+
         }}>
 
           <TransitionGroup component={null}>
@@ -113,9 +113,9 @@ export default function Header(props) {
                 
                 {isMounted && (
                     
-                  <CSSTransition key={i} classNames={fadeDownClass} timeout={timeout}>
+                  <CSSTransition classNames={fadeDownClass} timeout={timeout}>
 
-                    <Link to="/" className="desktop-nav-link" style={{ transitionDelay: `${isHome ? i * 100 : 0}ms` }}>HOME</Link>
+                    <Link to="/" className="desktop-nav-link" style={{ transitionDelay: `${isHome ? 1 * 100 : 0}ms` }}>HOME</Link>
 
                   </CSSTransition>
 
@@ -127,9 +127,9 @@ export default function Header(props) {
                             
               {isMounted && (
 
-                <CSSTransition key={i} classNames={fadeDownClass} timeout={timeout}>
+                <CSSTransition classNames={fadeDownClass} timeout={timeout}>
 
-                  <Link to="/about" className="desktop-nav-link" style={{ transitionDelay: `${isHome ? i * 100 : 0}ms` }}>ABOUT</Link>
+                  <Link to="/about" className="desktop-nav-link" style={{ transitionDelay: `${isHome ? 2 * 100 : 0}ms` }}>ABOUT</Link>
 
                 </CSSTransition>
 
@@ -141,9 +141,9 @@ export default function Header(props) {
                             
               {isMounted && (
                   
-                <CSSTransition key={i} classNames={fadeDownClass} timeout={timeout}>
+                <CSSTransition classNames={fadeDownClass} timeout={timeout}>
 
-                  <a className="desktop-nav-link" target="_blank" href="https://www.ace-tennis-scores.com" id="live-scores-link" style={{ transitionDelay: `${isHome ? i * 100 : 0}ms` }}>LIVE SCORES</a>
+                  <a className="desktop-nav-link" target="_blank" href="https://www.ace-tennis-scores.com" id="live-scores-link" style={{ transitionDelay: `${isHome ? 3 * 100 : 0}ms` }}>LIVE SCORES</a>
 
                 </CSSTransition>
 

@@ -8,7 +8,6 @@ import Loader from '../shared/Loader'
 import IconLogo from '../shared/IconLogo'
 
 import './Layout.css'
-import IconLogo from '../shared/IconLogo'
 
 
 export default function Layout(props) {
@@ -76,7 +75,7 @@ export default function Layout(props) {
 
         :
 
-        <div className="logo-wrapper">
+        <div className="logo-wrapper" id="layout-loader">
 
           <IconLogo />
 

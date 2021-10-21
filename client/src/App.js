@@ -78,7 +78,7 @@ function App() {
   return (
     <div className="app-container">
 
-      {loaded ?
+      {loaded && isMounted ?
       
         <Layout tags={tags} categories={categories} location={location} loaded={loaded} isMounted={isMounted} isHome={isHome} >
 
@@ -88,8 +88,8 @@ function App() {
     
       :
   
-        <Loader finishLoading={() => setIsMounted(false)} />
-        
+        <Loader finishLoading={() => setIsMounted(true)} id="app-loader" />
+          
       }
 
     </div>

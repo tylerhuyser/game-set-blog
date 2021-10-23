@@ -10,38 +10,38 @@ import IconLogo from './IconLogo'
 
 import './Header.css'
 
-const StyledHeader = styled.header`
-  ${({ theme }) => theme.mixins.flexBetween};
-  position: fixed;
-  top: 0;
-  z-index: 11;
-  padding: 0px 50px;
-  width: 100%;
-  height: var(--nav-height);
-  background-color: var(--navy);
-  filter: none !important;
-  pointer-events: auto !important;
-  user-select: auto !important;
-  backdrop-filter: blur(10px);
-  transition: var(--transition);
-  ${props =>
-    props.scrollDirection === 'up' &&
-    !props.scrolledToTop &&
-    css`
-      height: var(--nav-scroll-height);
-      transform: translateY(0px);
-      background-color: rgba(10, 25, 47, 0.85);
-      box-shadow: 0 10px 30px -10px var(--navy-shadow);
-    `};
-  ${props =>
-    props.scrollDirection === 'down' &&
-    !props.scrolledToTop &&
-    css`
-      height: var(--nav-scroll-height);
-      transform: translateY(calc(var(--nav-scroll-height) * -1));
-      box-shadow: 0 10px 30px -10px var(--navy-shadow);
-    `};
-`;
+// const StyledHeader = styled.header`
+//   ${({ theme }) => theme.mixins.flexBetween};
+//   position: fixed;
+//   top: 0;
+//   z-index: 11;
+//   padding: 0px 50px;
+//   width: 100%;
+//   height: var(--nav-height);
+//   background-color: var(--navy);
+//   filter: none !important;
+//   pointer-events: auto !important;
+//   user-select: auto !important;
+//   backdrop-filter: blur(10px);
+//   transition: var(--transition);
+//   ${props =>
+//     props.scrollDirection === 'up' &&
+//     !props.scrolledToTop &&
+//     css`
+//       height: var(--nav-scroll-height);
+//       transform: translateY(0px);
+//       background-color: rgba(10, 25, 47, 0.85);
+//       box-shadow: 0 10px 30px -10px var(--navy-shadow);
+//     `};
+//   ${props =>
+//     props.scrollDirection === 'down' &&
+//     !props.scrolledToTop &&
+//     css`
+//       height: var(--nav-scroll-height);
+//       transform: translateY(calc(var(--nav-scroll-height) * -1));
+//       box-shadow: 0 10px 30px -10px var(--navy-shadow);
+//     `};
+// `;
 
 
 export default function Header(props) {
@@ -85,9 +85,16 @@ export default function Header(props) {
       
       <div className="header-container slide-in-top-header"> 
 
-        <div className="desktop-nav" style={{
+        <div className="desktop-nav" style={
 
-        }}>
+          (scrollDirection === 'up' && !scrolledToTop) ?
+            { transform: 'translateY(0px)' }
+            :
+            (scrollDirection === 'down' && !scrolledToTop) ?
+              { transform: 'translateY(-125px' }
+              :
+              { transform: 'none' }
+        }>
 
           <TransitionGroup component={null}>
             

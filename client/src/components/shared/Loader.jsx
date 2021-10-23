@@ -1,39 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import anime from 'animejs';
-import styled from 'styled-components';
-import IconLogo from './IconLogo';
+import LoaderLogo from './LoaderLogo';
 
-// const StyledLoader = styled.div`
-//   ${({ theme }) => theme.mixins.flexCenter};
-//   position: fixed;
-//   top: 0;
-//   bottom: 0;
-//   left: 0;
-//   right: 0;
-//   width: 100%;
-//   height: 100%;
-//   background-color: var(--dark-navy);
-//   z-index: 99;
+import './Loader.css'
 
-//   .logo-wrapper {
-//     width: max-content;
-//     max-width: 100px;
-//     transition: var(--transition);
-//     opacity: ${props => (props.isLoaderMounted ? 1 : 0)};
-//     svg {
-//       display: block;
-//       width: 100%;
-//       height: 100%;
-//       margin: 0 auto;
-//       fill: none;
-//       user-select: none;
-//       #B {
-//         opacity: 0;
-//       }
-//     }
-//   }
-// `;
 
 export default function Loader(props) {
 
@@ -53,7 +23,7 @@ export default function Loader(props) {
         strokeDashoffset: [anime.setDashoffset, 0],
       })
       .add({
-        targets: '#logo text',
+        targets: '#logo svg g',
         duration: 700,
         easing: 'easeInOutQuart',
         opacity: 1,
@@ -85,13 +55,18 @@ export default function Loader(props) {
 
   return (
 
-    // <StyledLoader className="loader" isLoaderMounted={isLoaderMounted}>
+    <div className="loader-container">
 
-      <div className="logo-wrapper">
-        <IconLogo />
+      <div className="logo-wrapper" syle={
+        isLoaderMounted ? {opacity: 1} : {opacity: 0}
+      }>
+
+        <LoaderLogo />
+
       </div>
 
-    // </StyledLoader>
+    </div>
+      
 
   );
 };

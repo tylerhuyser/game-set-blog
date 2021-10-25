@@ -88,10 +88,13 @@ export default function Header(props) {
         <div className="desktop-nav" style={
 
           (scrollDirection === 'up' && !scrolledToTop) ?
-            { transform: 'translateY(0px)' }
+            { transform: 'translateY(0px)',
+            boxShadow: 'none' }
             :
             (scrollDirection === 'down' && !scrolledToTop) ?
-              { transform: 'translateY(-125px' }
+              {
+                transform: 'translateY(-125px',
+                boxShadow: 'none'  }
               :
               { transform: 'none' }
         }>

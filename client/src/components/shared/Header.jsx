@@ -89,12 +89,16 @@ export default function Header(props) {
 
           (scrollDirection === 'up' && !scrolledToTop) ?
             { transform: 'translateY(0px)',
-            boxShadow: 'none' }
+              boxShadow: 'none',
+              height: "100px"
+            }
             :
             (scrollDirection === 'down' && !scrolledToTop) ?
               {
-                transform: 'translateY(-125px',
-                boxShadow: 'none'  }
+                transform: 'translateY(-100px)',
+                boxShadow: 'none',
+                height: "100px"
+              }
               :
               { transform: 'none' }
         }>

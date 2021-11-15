@@ -45,7 +45,7 @@ export default function Layout(props) {
 
             {props.children}
 
-            <Sidebar categories={categories} tags={tags} />
+            {/* <Sidebar categories={categories} tags={tags} /> */}
 
           </div>
 

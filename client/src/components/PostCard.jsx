@@ -30,23 +30,26 @@ export default function PostCard(props) {
         <>
           <div className="postCard-container" key={postData.id} onClick={handlePost} >
 
-            <p className="post-title">{parse(postData.title.rendered)}</p>
-
-            <img src={postData["_embedded"]["wp:featuredmedia"][0].source_url} />
-
-            <div className="postCard-subtitle-container">
-
-              <p className="post-author">{`Written by ${postAuthor.name.split(".")[0].split("")[0].toUpperCase()}${postAuthor.name.split(".")[0].split("").slice(1).join("").toLowerCase()} ${postAuthor.name.split(".")[1].split("")[0].toUpperCase()}${postAuthor.name.split(".")[1].split("").slice(1).join("").toLowerCase()}`}</p>
+            <div className="post-content">
 
               <p className="post-date">{`${postMonth}.${postDate}.${postYear}`}</p>
 
+              <p className="post-title">{parse(postData.title.rendered)}</p>
+
+              <p className="post-exerpt">{parse(postData.excerpt.rendered.toString().trim("Continue reading"))}</p>
+
+              <p onClick={handlePost} className="post-link">Read Full Article...</p>
+
             </div>
-
-            <p className="post-exerpt">{parse(postData.excerpt.rendered.toString().trim("Continue reading"))}</p>
-
-            <p onClick={handlePost}>Read Full Article...</p>
             
           </div>
+
+          <div className="post-image">
+            <a>
+              <img className="img" src={postData["_embedded"]["wp:featuredmedia"][0].source_url} />
+            </a>
+          </div>
+
         </>
       
       :

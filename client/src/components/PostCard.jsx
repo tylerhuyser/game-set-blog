@@ -41,13 +41,13 @@ export default function PostCard(props) {
               <p onClick={handlePost} className="post-link">Read Full Article...</p>
 
             </div>
-            
-          </div>
 
-          <div className="post-image">
+            <div className="post-image">
             <a>
               <img className="img" src={postData["_embedded"]["wp:featuredmedia"][0].source_url} />
             </a>
+          </div>
+            
           </div>
 
         </>

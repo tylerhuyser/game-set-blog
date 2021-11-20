@@ -37,6 +37,11 @@
   grid-gap: 10px;
   grid-template-columns: repeat(12, 1fr);
   align-items: center;
+
+  max-width: 100%;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;
 }
 
 .postCard-container:not(:last-of-type) {
@@ -267,15 +272,26 @@
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   grid-column: 6 / -1;
   grid-row: 1 / -1;
+  grid-area: 1 / 6 / -1 / -1;
   position: relative;
   z-index: 1;
+
+  /* width: 100px; */
 }
   .post-image a {
     width: 100%;
     background-color: #F39C12;
     height: 100%;
     border-radius: 4px;
-    vertical-align: middle
+    vertical-align: middle;
+
+    display: inline-block;
+    text-decoration: none;
+    text-decoration-skip-ink: auto;
+    color: inherit;
+    position: relative;
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+    cursor: pointer;
   }
 
   .post-image a:hover,
@@ -320,6 +336,9 @@
     border-radius: 4px;
     mix-blend-mode: multiply;
     filter: grayscale(100%) contrast(1) brightness(90%);
+    overflow: hidden;  
+    width: 100%;
+    height: 100%;
   }
 
     @media (max-width: 768px) {

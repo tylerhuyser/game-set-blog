@@ -1,5 +1,6 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
+import Img from 'gatsby-image';
 
 import './PostCard.css'
 
@@ -36,7 +37,7 @@ export default function PostCard(props) {
 
               <p className="post-title">{parse(postData.title.rendered)}</p>
 
-              <p className="post-exerpt">{parse(postData.excerpt.rendered.toString().trim("Continue reading"))}</p>
+              <p className="post-excerpt">{parse(postData.excerpt.rendered.toString().trim("Continue reading"))}</p>
 
               <p onClick={handlePost} className="post-link">Read Full Article...</p>
 
@@ -44,7 +45,8 @@ export default function PostCard(props) {
 
             <div className="post-image">
             <a>
-              <img className="img" src={postData["_embedded"]["wp:featuredmedia"][0].source_url} />
+                <img className="img" src={postData["_embedded"]["wp:featuredmedia"][0].source_url} />
+                {/* <Img fluid={postData["_embedded"]["wp:featuredmedia"][0].source_url} alt={parse(postData.title.rendered)} className="img"/> */}
             </a>
           </div>
             

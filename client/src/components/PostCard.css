@@ -157,6 +157,7 @@
 .post-title {
   color: #ccd6f6;
   font-size: clamp(24px, 5vw, 28px);
+  width: 75%;
 }
 
   @media (min-width: 768px) {

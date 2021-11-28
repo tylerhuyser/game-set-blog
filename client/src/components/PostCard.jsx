@@ -35,7 +35,7 @@ export default function PostCard(props) {
 
               <p className="post-date">{`${postMonth}.${postDate}.${postYear}`}</p>
 
-              <p className="post-title">{parse(postData.title.rendered)}</p>
+              <p className="post-title">{parse(postData.title.rendered).toUpperCase()}</p>
 
               <p className="post-excerpt">{parse(postData.excerpt.rendered.toString().trim("Continue reading"))}</p>
 

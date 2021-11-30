@@ -15,7 +15,14 @@
 
     position: relative;
     top: 125px;
-    background: #E8EDDF;
+    /* background: #4a6e42; */
+    /* background: #2da18b; */
+    /* background: #e7cea7; */
+    /* background: #E8EDDF; */
+    /* background-color: #172a45; */
+    /* background: rgba(74,110,66, 0.8); */
+    background: rgba(54,123,215, 0.7);
+    /* background-image: linear-gradient(rgba(2, 12, 27, 0.9),rgba(2, 12, 27, 0.9)), url('https://s7d5.scene7.com/is/image/Anthropologie/39763966_049_b3?$a15-pdp-detail-shot$&fit=constrain&qlt=80&wid=683'); */
 
     display: flex;
     flex-direction: row;

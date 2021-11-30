@@ -1,36 +1,3 @@
-/* .postCard-container {
-  display: flex;
-  flex-direction: column;
-
-  margin-bottom: 100px;
-
-  font-family: 'Courier New', Courier, monospace;
-  color: dark gray;
-  border: 2px solid #CFDBD5;
-}
-
-.post-title {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.postCard-subtitle-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-
-  font-weight: thin;
-}
-
-.post-author {
-  width: 50%;
-  text-align: left;
-}
-
-.post-date {
-  width: 33%;
-  text-align: right;
-} */
 
 .postCard-container {
   display: grid;
@@ -40,16 +7,18 @@
 
   height: 500px;
   max-height: 500px;
-
   max-width: 100%;
+
+  margin-bottom: 100px;
+
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
   box-sizing: border-box;
 }
 
-.postCard-container:not(:last-of-type) {
-  margin-bottom: 100px;
-}
+/* .postCard-container:not(:last-of-type) {
+  
+} */
 
 @media (max-width: 768px) {
   .postCard-container:not(:last-of-type){
@@ -161,7 +130,7 @@
 .post-title {
   color: #ccd6f6;
   font-size: clamp(24px, 5vw, 28px);
-  width: 75%;
+  /* width: 75%; */
 }
 
   @media (min-width: 768px) {
@@ -184,6 +153,7 @@
   padding: 25px;
   border-radius: 4px;
   background-color: #172a45;
+  /* background-color: #b1101b; */
   color: #a8b2d1;
   font-size: 18px;
 
@@ -202,13 +172,13 @@
     position: relative;
     transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
     cursor: pointer;
-    color: orange;
+    color: #F39C12;
   }
 
     .post-excerpt a:hover,
     .post-excerpt a:focus,
     .post-excerpt a:active {
-      color: orange;
+      color: #F39C12;
       outline: 0;
     }
 
@@ -221,7 +191,7 @@
     .post-excerpt a:hover > *,
     .post-excerpt a:focus > *,
     .post-excerpt a:active > * {
-      color: orange !important;
+      color: #F39C12 !important;
       transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
     }
     
@@ -232,7 +202,7 @@
       height: 1px;
       position: relative;
       bottom: 0.37em;
-      background-color: orange;
+      background-color: #F39C12;
       transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
       opacity: 0.5;
     }
@@ -257,6 +227,10 @@
   margin: 25px 0 10px;
   padding: 0;
   list-style: none;
+
+  color: #a8b2d1;
+  font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+  font-size: 18px;
 }
 
 .post-link li {
@@ -287,8 +261,9 @@
   grid-area: 1 / 6 / -1 / -1;
   position: relative;
   z-index: 1;
-  height: 90%;
+  height: 500px;
 
+  /* margin-bottom: 100px; */
   /* width: 100px; */
 }
   .post-image a {

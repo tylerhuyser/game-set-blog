@@ -129,8 +129,17 @@
 
 .post-title {
   color: #ccd6f6;
+  color: white;
   font-size: clamp(24px, 5vw, 28px);
   /* width: 75%; */
+
+  position: relative;
+  z-index: 2;
+  /* background: #F39C12; */
+  display: inline;
+  background: linear-gradient(180deg,rgba(255,255,255,0) 15%, #F39C12 15%);
+  padding: 0px 10px;
+
 }
 
   @media (min-width: 768px) {
@@ -144,6 +153,7 @@
       color: #e6f1ff;
     }
   }
+
 
 .post-excerpt {
   box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);

@@ -33,13 +33,9 @@ export default function PostCard(props) {
 
             <div className="post-content">
 
-              <div style={{"backgroundColor": "#F39C12", "zIndex": "2",}} >
-
                 <p className="post-date">{`${postMonth}.${postDate}.${postYear}`}</p>
 
                 <p className="post-title">{parse(postData.title.rendered).toUpperCase()}</p>
-
-              </div>
 
               <p className="post-excerpt">{parse(postData.excerpt.rendered.slice(0, 250).slice(0, postData.excerpt.rendered.slice(0, 250).lastIndexOf(".")).trim("Continue reading").concat("", "."))}</p>
 

@@ -1,12 +1,12 @@
 .layout-container {
   width: 100%;
   max-width: 100vw;
-  height: 100%;
+  overflow: auto;
   
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex-grow: inherit;
+  /* flex-grow: inherit; */
 
   background-color: #2da18b;
 
@@ -20,10 +20,11 @@
     width: 80%;
     max-width: 100vw;
     min-height: 90vh;
+    /* height: 100%; */
 
     position: relative;
     top: 125px;
-    margin-bottom: 250px;
+    /* padding-bottom: 250px; */
     /* background: #4a6e42; */
     /* background: #2da18b; */
     /* background: #e7cea7; */

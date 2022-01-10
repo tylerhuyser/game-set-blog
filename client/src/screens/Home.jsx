@@ -35,7 +35,7 @@ export default function Home (props) {
 
           {POSTCARDSJSX}
 
-          <div className="buttons-container">
+          {/* <div className="buttons-container">
 
             {postsIndex === 0 ?
             
@@ -57,7 +57,7 @@ export default function Home (props) {
           
             }
           
-          </div>
+          </div> */}
 
         </div>
         

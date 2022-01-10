@@ -44,11 +44,11 @@ export default function PostCard(props) {
             </div>
 
             <div className="post-image">
-            <a>
-                <img className="img" src={postData["_embedded"]["wp:featuredmedia"][0].source_url} />
-                {/* <Img fluid={postData["_embedded"]["wp:featuredmedia"][0].source_url} alt={parse(postData.title.rendered)} className="img"/> */}
-            </a>
-          </div>
+              <a>
+                  <img className="img" src={postData["_embedded"]["wp:featuredmedia"][0].source_url} />
+                  {/* <Img fluid={postData["_embedded"]["wp:featuredmedia"][0].source_url} alt={parse(postData.title.rendered)} className="img"/> */}
+              </a>
+            </div>
             
           </div>
 

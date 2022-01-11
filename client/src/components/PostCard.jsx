@@ -1,12 +1,12 @@
-import React from 'react'
+import React, {useCallback, useRef} from 'react'
 import { useHistory } from 'react-router-dom'
 import Img from 'gatsby-image';
 
 import './FeaturedPostCard.css'
 
-export default function FeaturedPostCard(props) {
+export default function PostCard (props) {
 
-  const { postData, users, key } = props
+  const { index, totalPosts, postData, users, categories, tags, pageToLoad, setPageToLoad, loading, hasMore } = props
 
   const history = useHistory()
   const parse = require('html-react-parser').default
@@ -16,6 +16,20 @@ export default function FeaturedPostCard(props) {
   const postYear = new Date(postData.date).getFullYear()
 
   const postAuthor = users.find((user) => (user.id === postData.author))
+
+  const observer = useRef()
+  const lastPostElementRef = useCallback(node => {
+    if (loading) return
+    if (observer.current) observer.current.disconnect()
+    observer.current = new IntersectionObserver(entries => {
+      console.log("hurr")
+      if (entries[0].isIntersecting && hasMore) {
+        console.log('HERE!')
+        setPageToLoad(prevPageNumber => prevPageNumber + 1)
+      }
+    })
+    if (node) observer.current.observe(node)
+  }, [loading, hasMore])
 
   const handlePost = () => {
     localStorage.setItem('currentPost', JSON.stringify(postData))
@@ -29,13 +43,13 @@ export default function FeaturedPostCard(props) {
       {postData && users ?
 
         <>
-          <div className="featuredPostCard-container" key={postData.id} onClick={handlePost} >
+          <div className="featuredPostCard-container" ref={index + 1 === totalPosts ? lastPostElementRef : null} key={postData.id} onClick={handlePost} >
 
             <div className="post-content">
 
-                <p className="post-date">{`${postMonth}.${postDate}.${postYear}`}</p>
+              <p className="post-date">{`${postMonth}.${postDate}.${postYear}`}</p>
 
-                <p className="post-title">{parse(postData.title.rendered).toUpperCase()}</p>
+              <p className="post-title">{parse(postData.title.rendered).toUpperCase()}</p>
 
               <p className="post-excerpt">{parse(postData.excerpt.rendered.slice(0, 250).slice(0, postData.excerpt.rendered.slice(0, 250).lastIndexOf(".")).trim("Continue reading").concat("", "."))}</p>
 
@@ -43,10 +57,10 @@ export default function FeaturedPostCard(props) {
 
             </div>
 
-            <div className="post-image">
+            <div className="post-image" key={postData.id}>
               <a>
-                  <img className="img" src={postData["_embedded"]["wp:featuredmedia"][0].source_url} />
-                  {/* <Img fluid={postData["_embedded"]["wp:featuredmedia"][0].source_url} alt={parse(postData.title.rendered)} className="img"/> */}
+                <img className="img" src={postData["_embedded"]["wp:featuredmedia"][0].source_url} />
+                {/* <Img fluid={postData["_embedded"]["wp:featuredmedia"][0].source_url} alt={parse(postData.title.rendered)} className="img"/> */}
               </a>
             </div>
             
@@ -54,7 +68,7 @@ export default function FeaturedPostCard(props) {
 
         </>
       
-      :
+        :
         
         <>
         </>

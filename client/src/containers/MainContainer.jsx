@@ -6,11 +6,6 @@ import About from '../screens/About'
 import PostDetail from '../screens/PostDetail'
 
 export default function MainContainer(props) {
-
-  const [postsIndex, setPostsIndex] = useState(0)
-
-  console.log('MainContainer.jsx - POSTSINDEX below')
-  console.log(postsIndex)
   
   const { posts, tags, categories, users } = props
   
@@ -24,7 +19,7 @@ export default function MainContainer(props) {
           <Switch>
 
             <Route exact path="/">
-              <Home posts={posts} tags={tags} categories={categories} users={users} postsIndex={postsIndex} setPostsIndex={setPostsIndex} />
+              <Home posts={posts} tags={tags} categories={categories} users={users} />
             </Route>
 
             <Route path="/about">

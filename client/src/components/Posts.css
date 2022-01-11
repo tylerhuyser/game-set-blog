@@ -1,0 +1,9 @@
+#infinte-scroll-loader {
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5vh;
+  margin-bottom: 10vh;
+}

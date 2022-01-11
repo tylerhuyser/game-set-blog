@@ -30,10 +30,10 @@ function App() {
   
   useEffect(() => {
     const getPostsData = async () => {
-      const postsData = await getPosts()
+      const postsData = await getPosts(1)
       console.log('App.jsx - UseEffect # 1 - POSTS below')
       console.log(postsData)
-      setPosts(postsData)
+      setPosts(postsData.data)
     }
     getPostsData()
   }, [])

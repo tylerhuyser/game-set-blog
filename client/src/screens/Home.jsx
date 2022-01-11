@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 import Posts from '../components/Posts'
+import FeaturedPostCard from '../components/FeaturedPostCard'
 import PostCard from '../components/PostCard'
 
 import './Home.css'
@@ -19,11 +20,17 @@ export default function Home (props) {
     }
   }
 
-  const POSTCARDSJSX = posts && posts?.slice(postsIndex, postsIndex + 5).map((post) => {
+  const FEATUREDPOSTCARDSJSX = posts && posts?.slice(postsIndex, postsIndex + 5).map((post) => {
     
     return(
-      <PostCard postData = { post } users={users} key={post.id} />
+      <FeaturedPostCard postData = { post } users={users} key={post.id} />
   )})
+
+  // const POSTCARDSJSX = posts & posts?.slice(5).map((post, index) => {
+  //   return (
+  //     <PostCard postData={post} users={users} key={post.id} index={index} />
+  //   )
+  // })
 
   return (
 
@@ -33,7 +40,7 @@ export default function Home (props) {
       
         <div className="home-container">
 
-          {POSTCARDSJSX}
+          {FEATUREDPOSTCARDSJSX}
 
           {/* <div className="buttons-container">
 
@@ -58,6 +65,10 @@ export default function Home (props) {
             }
           
           </div> */}
+
+          {/* {POSTCARDSJSX} */}
+
+          <Posts tags={tags} users={users} categories={categories} />
 
         </div>
         

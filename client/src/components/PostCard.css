@@ -89,7 +89,7 @@
 
   .postCard-title {
     margin: 0 0 20px;
-    font-size: clamp(16px, 5vw, 18px)
+    font-size: clamp(17px, 5vw, 18px)
   }
 
 }

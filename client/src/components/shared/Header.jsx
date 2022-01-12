@@ -200,8 +200,8 @@ export default function Header(props) {
 
         <div id="mobile-menu" className={menuVisibility ? "mobile-menu-visible" : "mobile-menu-hidden"}>
 
-          <p className="mobile-nav-link">About</p>
-          <p className="mobile-nav-link" target="_blank" href="https://www.gameset.blog">Blog</p>
+          <p className="mobile-nav-link">ABOUT</p>
+          <p className="mobile-nav-link" target="_blank" href="https://www.ace-tennis-scores.com">LIVE SCORES</p>
 
         </div>
 

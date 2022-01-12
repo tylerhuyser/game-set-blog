@@ -27,7 +27,7 @@ export default function Posts(props) {
         
         :
       
-        <>
+        <div className="postCards-container">
       
           {posts.map((post, index) => {
               return (
@@ -59,7 +59,7 @@ export default function Posts(props) {
             <></>
           }
 
-        </>
+        </div>
       
       }
     </>

@@ -1,8 +1,7 @@
 import React, {useCallback, useRef} from 'react'
 import { useHistory } from 'react-router-dom'
-import Img from 'gatsby-image';
 
-import './FeaturedPostCard.css'
+import './PostCard.css'
 
 export default function PostCard (props) {
 
@@ -43,25 +42,20 @@ export default function PostCard (props) {
       {postData && users ?
 
         <>
-          <div className="featuredPostCard-container" ref={index + 1 === totalPosts ? lastPostElementRef : null} key={postData.id} onClick={handlePost} >
+          <div className="postCard-container" ref={index + 1 === totalPosts ? lastPostElementRef : null} key={postData.id} onClick={handlePost} >
 
-            <div className="post-content">
-
-              <p className="post-date">{`${postMonth}.${postDate}.${postYear}`}</p>
-
-              <p className="post-title">{parse(postData.title.rendered).toUpperCase()}</p>
-
-              <p className="post-excerpt">{parse(postData.excerpt.rendered.slice(0, 250).slice(0, postData.excerpt.rendered.slice(0, 250).lastIndexOf(".")).trim("Continue reading").concat("", "."))}</p>
-
-              <p onClick={handlePost} className="post-link">Read Full Article...</p>
-
+            <div className="postCard-image" key={postData.id}>
+              <a>
+                <img className="postCard-img" src={postData["_embedded"]["wp:featuredmedia"][0].source_url} />
+              </a>
             </div>
 
-            <div className="post-image" key={postData.id}>
-              <a>
-                <img className="img" src={postData["_embedded"]["wp:featuredmedia"][0].source_url} />
-                {/* <Img fluid={postData["_embedded"]["wp:featuredmedia"][0].source_url} alt={parse(postData.title.rendered)} className="img"/> */}
-              </a>
+            <div className="postCard-content">
+
+              <p className="postCard-date">{`${postMonth}.${postDate}.${postYear}`}</p>
+
+              <p className="postCard-title">{parse(postData.title.rendered).toUpperCase()}</p>
+
             </div>
             
           </div>

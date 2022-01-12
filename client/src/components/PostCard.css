@@ -1,0 +1,129 @@
+.postCard-container {
+  display: flex;
+  flex-direction:  row;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 30vh;
+  margin-bottom: 50px;
+
+}
+
+.postCard-image {
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 10px 30px -15px #0a192f;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  z-index: 1;
+}
+
+.postCard-image a {
+  width: 100%;
+  background-color: #f39c12;
+  height: 100%;
+  border-radius: 4px;
+  vertical-align: middle;
+
+  display: inline-block;
+  text-decoration: none;
+  text-decoration-skip-ink: auto;
+  color: inherit;
+  position: relative;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  cursor: pointer;
+}
+
+.postCard-img {
+  border-radius: 4px;
+  mix-blend-mode: multiply;
+  filter: grayscale(100%) contrast(1) brightness(90%);
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .postCard-img {
+    object-fit: cover;
+    width: auto;
+    height: 100%;
+    filter: grayscale(100%) contrast(1) brightness(80%);
+  }
+}
+
+.postCard-content {
+  width: 100%;
+  min-height: 70%;
+  max-height: inherit;
+  background-color: #f39c12;
+  padding: 10px 25px;
+}
+
+.postCard-date {
+  margin: 10px 0;
+  color: white;
+  font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+  font-size: 13px;
+  font-weight: 400;
+  text-align: left;
+  z-index: 3;
+}
+
+.postCard-title {
+  color: #ccd6f6;
+  color: white;
+  font-size: clamp(24px, 5vw, 26px);
+
+  position: relative;
+  z-index: 2;
+  margin: 0px;
+  /* background: #F39C12; */
+  /* display: inline; */
+  /* background: linear-gradient(180deg, rgba(255, 255, 255, 0) 15%, #f39c12 15%);
+  padding: 0px 10px; */
+}
+
+@media (min-width: 768px) and (max-width: 900px){
+
+  .postCard-title {
+    margin: 0 0 20px;
+    font-size: clamp(16px, 5vw, 18px)
+  }
+
+}
+
+@media (min-width: 900px) and (max-width: 1000px){
+
+  .postCard-title {
+    margin: 0 0 20px;
+    font-size: clamp(18px, 5vw, 20px)
+  }
+
+}
+
+@media (min-width: 1000px) and (max-width: 1100px){
+
+  .postCard-title {
+    margin: 0 0 20px;
+    font-size: clamp(20px, 5vw, 22px)
+  }
+
+}
+
+@media (min-width: 1100px) and (max-width: 1280px){
+
+  .postCard-title {
+    margin: 0 0 20px;
+    font-size: clamp(22px, 5vw, 24px)
+  }
+
+}
+
+@media only screen and (max-width: 768px) {
+
+  .postCard-title {
+    color: #e6f1ff;
+  }
+} 

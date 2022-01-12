@@ -9,8 +9,6 @@ export default function GetPostsInfinite (props) {
   const [loading, setLoading] = useState(true)
   const [hasMore, setHasMore] = useState(false)
 
-  // const initialPageLoad = useRef(false)
-
   const loadPosts = async function () {
     const postsData = await getPosts(pageToLoad)
     console.log(postsData)
@@ -24,12 +22,8 @@ export default function GetPostsInfinite (props) {
   }
 
   useEffect(() => {
-    // if (initialPageLoad.current) {
-    //   return
-    // }
     setLoading(true)
     loadPosts()
-    // initialPageLoad.current = true
   }, [pageToLoad])
 
   return {

@@ -44,7 +44,7 @@ export default function PostCard (props) {
         <>
           <div className="postCard-container" ref={index + 1 === totalPosts ? lastPostElementRef : null} key={postData.id} onClick={handlePost} >
 
-            <div className="postCard-image" key={postData.id}>
+            <div className="postCard-image-container" key={postData.id}>
               <a>
                 <img className="postCard-img" src={postData["_embedded"]["wp:featuredmedia"][0].source_url} />
               </a>

@@ -2,7 +2,7 @@
   position: fixed;
   top: 0;
   width: 100vw;
-  z-index: 3;
+  z-index: 5;
 }
 
 .desktop-nav {
@@ -146,7 +146,7 @@
   
     position: sticky;
     top: 0;
-    z-Index: 3;
+    z-Index: 5;
   }
 
   .mobile-logo {
@@ -171,7 +171,7 @@
     display: block;
     position: relative;
     top: -1;
-    z-index: 5;
+    z-index: 6;
 
     background-color: #020c1b;
     height: 100vh;
@@ -219,7 +219,7 @@
   
     position: sticky;
     top: 0;
-    z-Index: 3;
+    z-Index: 5;
   }
 
   .mobile-logo {

@@ -129,6 +129,8 @@
     display: block;
     line-height: 2em;
     /* max-height: 4em; */
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
 
     -webkit-box-sizing: border-box; 
     -moz-box-sizing: border-box; 

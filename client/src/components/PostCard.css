@@ -29,7 +29,7 @@
 } 
 
 .postCard-image-container {
-  width: 50%;
+  width: 100%;
   height: 30vh;
   box-shadow: 0 10px 30px -15px #0a192f;
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -39,7 +39,7 @@
 @media only screen and (max-width: 768px) {
 
   .postCard-image-container {
-    width: 50%;
+    width: 100%;
     height: 30vh;
     box-shadow: none;
     /* object-fit: cover; */
@@ -118,7 +118,7 @@
 @media (max-width: 768px) {
   .postCard-content {
 
-    width: 50%;
+    width: 100%;
     min-height: 50%;
     /* max-height: inherit; */
     max-height: 100%;
@@ -128,9 +128,7 @@
     word-wrap: break-word;
     display: block;
     line-height: 2em;
-    /* max-height: 4em; */
-    -webkit-line-clamp: 4;
-    line-clamp: 4;
+
 
     -webkit-box-sizing: border-box; 
     -moz-box-sizing: border-box; 

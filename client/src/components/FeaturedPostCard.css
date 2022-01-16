@@ -23,7 +23,7 @@
 
   .featuredPostCard-container {
     min-height: 250px;
-    max-height: 600px;
+    max-height: inherit;
   }
 
   .featuredPostCard-container:not(:last-of-type) {
@@ -119,8 +119,7 @@
     overflow: hidden;
     text-overflow:  ellipsis;
     word-wrap: break-word;
-    -webkit-line-clamp: 4;
-    line-clamp: 4;
+
   }
 }
 

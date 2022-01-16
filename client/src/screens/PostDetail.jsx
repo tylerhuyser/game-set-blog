@@ -4,6 +4,8 @@ import { useHistory } from 'react-router-dom'
 import { getCommentsPerPost } from '../services/comments'
 import Comments from '../components/Comments'
 
+import './PostDetail.css'
+
 
 export default function PostDetail(props) {
 
@@ -81,19 +83,27 @@ export default function PostDetail(props) {
 
         <>
           
-          <div className="post-container" key={postData.id} >
+          <div className="postDetail-container" key={postData.id}>
 
-            <p className="post-title">{parse(postData.title.rendered)}</p>
+            <div className="postDetail-hero-container">
 
-            <div className="post-subtitle-container">
+              <div className="postDetail-hero-image-container" key={postData.id}>
+                <a>
+                  <img className="postDetail-hero-img" src={postData["_embedded"]["wp:featuredmedia"][0].source_url} />
+                </a>
+              </div>
 
-              <p className="post-author">{`Written by ${postInfo.postAuthor.name.split(".")[0].split("")[0].toUpperCase()}${postInfo.postAuthor.name.split(".")[0].split("").slice(1).join("").toLowerCase()} ${postInfo.postAuthor.name.split(".")[1].split("")[0].toUpperCase()}${postInfo.postAuthor.name.split(".")[1].split("").slice(1).join("").toLowerCase()}`}</p>
+              <div className="postDetail-hero-content-container">
 
-              <p className="post-date">{`${postInfo.postMonth}.${postInfo.postDate}.${postInfo.postYear}`}</p>
+                <p className="postDetail-title">{parse(postData.title.rendered)}</p>
+              
+                <p className="postDetail-date">{`${postInfo.postMonth}.${postInfo.postDate}.${postInfo.postYear}`}</p>
+                
+              </div>
 
             </div>
 
-            <div className="post-content">{parse(postData.content.rendered.toString().trim("Continue reading"))}</div>
+            <div className="postDetail-content-container">{parse(postData.content.rendered.toString().trim("Continue reading"))}</div>
 
             <Comments postData={postData} commentsData={comments} />
             

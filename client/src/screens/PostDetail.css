@@ -99,6 +99,7 @@
   font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
   font-size: 13px;
   font-weight: 400;
+  z-index: 2;
 }
 
 .postDetail-title {
@@ -138,7 +139,7 @@
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   grid-row: 1 / -1;
   grid-area: 1 / 6 / -1 / -1;
-  grid-column: 1 / 8;
+  grid-column: 1 / 10;
   position: relative;
   z-index: 1;
   height: 500px;
@@ -222,7 +223,13 @@
   }
 }
 
-.postDetail-content-container p {
+.postDetail-content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.postDetail-content-container p, .wp-video {
   box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   z-index: 2;
@@ -232,12 +239,19 @@
   color: #a8b2d1;
   font-size: 18px;
   height: inherit;
+  width: 100%;
   padding-bottom: 25px;
 }
 
 .postDetail-content-container p img {
+  background: transparent;
   height: 40vh;
   width: 100%;
-  object-fit: cover;
   padding: 0px;
+  object-fit: cover;
 }
+
+.wp-video-shortcode {
+  width: 100%;
+}
+

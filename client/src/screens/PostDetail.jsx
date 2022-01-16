@@ -95,9 +95,10 @@ export default function PostDetail(props) {
 
               <div className="postDetail-hero-content-container">
 
+                <p className="postDetail-date">{`${postInfo.postMonth}.${postInfo.postDate}.${postInfo.postYear}`}</p>
+
                 <p className="postDetail-title">{parse(postData.title.rendered)}</p>
               
-                <p className="postDetail-date">{`${postInfo.postMonth}.${postInfo.postDate}.${postInfo.postYear}`}</p>
                 
               </div>
 

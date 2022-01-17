@@ -11,10 +11,6 @@ export default function Comments(props) {
   const { postData, commentsData } = props
 
   console.log(commentsData)
-
-  const COMMENTSJSX = commentsData && commentsData.map((comment) => (
-    <CommentCard commentData={comment} key={comment.id} />
-  ))
   
   return (
     <>
@@ -25,7 +21,17 @@ export default function Comments(props) {
 
           <CommentForm postData={postData} />
 
-          {COMMENTSJSX}
+          {commentsData && commentsData !== "No Comments." ?
+
+commentsData && commentsData.map((comment) => (
+  <CommentCard commentData={comment} key={comment.id} />
+))
+            
+            :
+
+            <></>
+          
+          }
         
         </div>
         

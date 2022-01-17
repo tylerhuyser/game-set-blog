@@ -181,7 +181,7 @@ export default function Header(props) {
 
           }
 
-          <div className="mobile-logo-container">
+          <Link to="/" className="mobile-logo-container">
 
             <IconLogo style={{
               zIndex: "5",
@@ -190,7 +190,7 @@ export default function Header(props) {
               
           }} />
 
-          </div>
+          </Link>
 
             
           <div className="mobile-header-placeholder"></div>

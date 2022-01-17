@@ -23,9 +23,9 @@ export default function Comments(props) {
 
           {commentsData && commentsData !== "No Comments." ?
 
-commentsData && commentsData.map((comment) => (
-  <CommentCard commentData={comment} key={comment.id} />
-))
+            commentsData && commentsData.map((comment) => (
+              <CommentCard commentData={comment} key={comment.id} />
+            ))
             
             :
 

@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom'
 
 import { getCommentsPerPost } from '../services/comments'
 import Comments from '../components/Comments'
+import LoaderLogo from '../components/shared/LoaderLogo'
 
 import './PostDetail.css'
 
@@ -83,7 +84,7 @@ export default function PostDetail(props) {
 
         <>
           
-          <div className="postDetail-container" key={postData.id}>
+          <div className="postDetail-container">
 
             <div className="postDetail-hero-container">
 
@@ -106,7 +107,7 @@ export default function PostDetail(props) {
 
             <div className="postDetail-content-container">{parse(postData.content.rendered.toString().trim("Continue reading").split("</p>").slice(1).join("</p>"))}</div>
 
-              <Comments postData={postData} commentsData={comments} />
+            <Comments postData={postData} commentsData={comments} />
             
           </div>
 
@@ -114,8 +115,19 @@ export default function PostDetail(props) {
 
         :
 
-        <>
-        </>
+        <div className="postDetail-container">
+
+          <div className="postDetail-loader-container">
+
+            <div id="postDetail-loader-wrapper">
+
+              <LoaderLogo />
+
+            </div>
+          
+          </div>
+        
+        </div>
 
       }
       

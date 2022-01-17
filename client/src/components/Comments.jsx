@@ -12,7 +12,7 @@ export default function Comments(props) {
 
   console.log(commentsData)
 
-  const COMMENTSJSX = commentsData.map((comment) => (
+  const COMMENTSJSX = commentsData && commentsData.map((comment) => (
     <CommentCard commentData={comment} key={comment.id} />
   ))
   

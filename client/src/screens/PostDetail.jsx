@@ -106,7 +106,14 @@ export default function PostDetail(props) {
 
             <div className="postDetail-content-container">{parse(postData.content.rendered.toString().trim("Continue reading"))}</div>
 
-            <Comments postData={postData} commentsData={comments} />
+            {comments && comments !== "No Comments." ?
+
+              <Comments postData={postData} commentsData={comments} />
+              
+              :
+
+              <></>
+            }
             
           </div>
 

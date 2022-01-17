@@ -4,6 +4,7 @@
   align-items: flex-start;
 
   width: 100%;
+  margin-bottom: 50px;
 
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box; /* Firefox, other Gecko */
@@ -49,7 +50,7 @@
 .comment-form-input {
   font-family: Roboto;
   font-size: 18px;
-  color: #5F2758;
+  color: rgba(2, 12, 27, 0.7);
   font-weight: 300;
   text-align: left;
 
@@ -61,9 +62,13 @@
   border-radius: 4px;
   background-color: rgba(255, 255, 255, 0.7);
 
-  --webkit-box-shadow: "0 5px 5px -6px lightgray";
-  --moz-box-shadow: "0 5px 5px -6px lightgray";
+  -webkit-box-shadow: "0 5px 5px -6px lightgray";
+  -moz-box-shadow: "0 5px 5px -6px lightgray";
   box-shadow: "0 5px 5px -6px lightgray";
+
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box; /* Firefox, other Gecko */
+  box-sizing: border-box;
 }
 
 .comment-button {

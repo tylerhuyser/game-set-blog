@@ -1,5 +1,7 @@
 import React from 'react'
 
+import "./CommentCard.css"
+
 export default function CommentCard(props) {
 
   const { commentData } = props
@@ -19,9 +21,13 @@ export default function CommentCard(props) {
 
         <div className="comment-card-container" key={commentData.id}>
 
-          <p className="comment-author-name">{commentData.author_name}</p>
+          <div className="comment-card-header-container">
 
-          <p className="comment-date">{`${commentDate}.${commentMonth}.${commentYear}`}</p>
+            <p className="comment-author-name">{commentData.author_name}</p>
+
+            <p className="comment-date">{`${commentDate}.${commentMonth}.${commentYear}`}</p>
+            
+          </div>
 
           <div className="comment-content">{parse(commentData.content.rendered.toString())}</div>
 

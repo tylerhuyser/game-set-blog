@@ -259,7 +259,18 @@
   object-fit: cover;
 }
 
+.wp-video {
+  width: 100%;
+}
+
 .wp-video-shortcode {
   width: 100%;
+}
+
+@media (max-width: 768px) {
+  .wp-video {
+    width: 500px;
+
+  }
 }
 

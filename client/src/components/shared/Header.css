@@ -3,6 +3,10 @@
   top: 0;
   width: 100vw;
   z-index: 5;
+
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box; /* Firefox, other Gecko */
+  box-sizing: border-box;
 }
 
 .desktop-nav {
@@ -24,6 +28,9 @@
   backdrop-filter: blur(10px);
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box; /* Firefox, other Gecko */
+  box-sizing: border-box;
 }
 
 #live-scores-link {
@@ -53,6 +60,10 @@
 
   width: 50%;
   flex-grow: 1;
+
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box; /* Firefox, other Gecko */
+  box-sizing: border-box;
 }
 
 .desktop-nav-link {
@@ -147,6 +158,10 @@
     position: sticky;
     top: 0;
     z-Index: 5;
+
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box; /* Firefox, other Gecko */
+    box-sizing: border-box;
   }
 
   .mobile-logo {

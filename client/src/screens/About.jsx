@@ -14,6 +14,16 @@ export default function About() {
         </a>
       </div>
 
+      <div className="social-icons-container">
+
+        <i class="fab fa-twitter"></i>
+        
+        <i class="fab fa-instagram"></i>
+
+        <i class="far fa-envelope"></i>
+
+      </div>
+
         <p className="about-container-subtitle">“I live through the achievements of others.”</p>
 
         <p className="about-container-content-container">

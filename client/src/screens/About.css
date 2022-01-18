@@ -184,3 +184,31 @@
   -moz-box-sizing: border-box; /* Firefox, other Gecko */
   box-sizing: border-box;
 }
+
+.social-icons-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  width: 75%;
+
+  color: white;
+  font-size: 10vh;
+  margin: 0.5em;
+  margin-top: 1.5em;
+  font-size: 40px;
+}
+
+.fab, .far {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+
+  .about-container-hero-image-container {
+    width: 100%;
+  }
+
+} 

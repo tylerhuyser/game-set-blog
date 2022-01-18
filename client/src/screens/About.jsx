@@ -7,7 +7,12 @@ export default function About() {
   return(
     <div className="about-container">
 
-        <img src="https://secure.gravatar.com/avatar/d196a9a42354f12d08a29cbf0baa6323?s=160&d=identicon&r=g" alt="about-me-image" />
+      <div className="about-container-hero-image-container">
+        
+        <a>
+          <img src="https://i.imgur.com/qp6aL3w.jpg" alt="about-me-hero-image" />
+        </a>
+      </div>
 
         <p className="about-container-subtitle">“I live through the achievements of others.”</p>
 

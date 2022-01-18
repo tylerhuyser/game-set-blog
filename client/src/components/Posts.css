@@ -9,6 +9,10 @@
   width: 100%;
 }
 
+.postCards-container:last-child {
+  margin-bottom: 125px;
+}
+
 #infinte-scroll-loader {
   width: 100%;
   height: 20vh;

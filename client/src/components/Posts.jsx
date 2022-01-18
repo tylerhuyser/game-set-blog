@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 import LoaderLogo from './shared/LoaderLogo'
+import IconLogo from './shared/IconLogo'
 import PostCard from './PostCard'
 import GetPostsInfinite from '../services/GetPostsInfinte'
 import './Posts.css'
@@ -19,11 +20,21 @@ export default function Posts(props) {
     <>
       {posts.length < 5 ?
     
-        <div id="infinte-scroll-loader">
-        
-          <LoaderLogo />
+          <>
+                  
+          <div className="infinite-scroll-loader" id="desktop-infinite-scroll-loader">
 
-        </div>
+            <LoaderLogo />
+
+          </div>
+            
+          <div className="infinite-scroll-loader" id="mobile-infinite-scroll-loader">
+
+              <IconLogo />
+
+          </div>
+          
+        </>
         
         :
       
@@ -48,11 +59,21 @@ export default function Posts(props) {
 
           {loading ?
             
-            <div id="infinte-scroll-loader">
-        
-              <LoaderLogo />
-  
-            </div>
+            <>
+            
+              <div className="infinite-scroll-loader" id="desktop-infinite-scroll-loader">
+          
+                <LoaderLogo />
+    
+              </div>
+                
+              <div className="infinite-scroll-loader" id="mobile-infinite-scroll-loader">
+
+                  <IconLogo />
+
+              </div>
+              
+            </>
 
             :
 

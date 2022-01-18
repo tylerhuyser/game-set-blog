@@ -7,3 +7,7 @@
   -moz-box-sizing: border-box; /* Firefox, other Gecko */
   box-sizing: border-box;
 }
+
+.comments-container:last-child {
+  margin-bottom: 125px;
+}

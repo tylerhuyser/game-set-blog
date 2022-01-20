@@ -2,7 +2,7 @@ import React from 'react';
 import '../../index.css';
 
 const LoaderLogo = () => (
-  <svg id="loader-logo" xmlns="http://www.w3.org/2000/svg" role="img" width="288" height="153">
+  <svg id="logo" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 288 153">
 
     <title>Logo</title>
     <g transform="translate(9.000000, 9.000000)">

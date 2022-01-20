@@ -67,11 +67,11 @@ export default function Posts(props) {
     
               </div>
                 
-              <div className="infinite-scroll-loader" id="mobile-infinite-scroll-loader">
+              {/* <div className="infinite-scroll-loader" id="mobile-infinite-scroll-loader">
 
                   <IconLogo />
 
-              </div>
+              </div> */}
               
             </>
 

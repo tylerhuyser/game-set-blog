@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import anime from 'animejs';
 import LoaderLogo from './LoaderLogo';
+import IconLogo from './IconLogo'
 
 import './Loader.css'
 

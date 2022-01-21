@@ -61,7 +61,7 @@ export default function Posts(props) {
             
             <>
             
-              <div className="infinite-scroll-loader" id="desktop-infinite-scroll-loader">
+              <div className="infinite-scroll-loader">
           
                 <LoaderLogo />
     

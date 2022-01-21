@@ -160,8 +160,8 @@
     background: #F39C12;
 
     max-width: 100vw;
-    height: 50px;
-    padding: 15px;
+    height: 100px;
+    padding: 15px 25px;
   
     display: flex;
     justify-content: space-between;
@@ -192,7 +192,7 @@
   .mobile-icon {
     width: 50px;
     color: white;
-    font-size: 40px;
+    font-size: 60px;
   }
 
   .mobile-header-placeholder {

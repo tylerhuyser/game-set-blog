@@ -79,45 +79,48 @@ const validateForm = (e) => {
     }}>
       
       <p className="comment-form-title">LEAVE A COMMENT</p>
-        {
-          error &&
+      {
+        error === "Your comment is subbmited and awaiting approval!" ?
+          
           <p className="comment-error-message">{error}</p>
-        }
-      
-        <div className="comment-form-inputs-container">
-      
-          <input
-            className={validateName ? "comment-form-input invalid" : "comment-form-input"}
-            type="text"
-            placeHolder="Name..."
-            value={commentFormData.author_name}
-            name="author_name"
-            onChange={handleChange}
-          />
-
-          <input
-            className={validateEmail ? "comment-form-input invalid" : "comment-form-input"}
-            type="text"
-            placeHolder="E-mail..."
-            value={commentFormData.author_email}
-            name="author_email"
-            onChange={handleChange}
-          />
-
-          <textarea
-            className={validateContent ? "comment-form-input invalid" : "comment-form-input"}
-            rows={10}
-            placeHolder="Leave a comment..."
-            value={commentFormData.content}
-            name="content"
-            required
-            onChange={handleChange}
-          />
         
-        <button className="comment-button">Submit</button>
+          :
+          
+          <div className="comment-form-inputs-container">
+      
+            <input
+              className={validateName ? "comment-form-input invalid" : "comment-form-input"}
+              type="text"
+              placeHolder="Name..."
+              value={commentFormData.author_name}
+              name="author_name"
+              onChange={handleChange}
+            />
 
-      </div>
+            <input
+              className={validateEmail ? "comment-form-input invalid" : "comment-form-input"}
+              type="text"
+              placeHolder="E-mail..."
+              value={commentFormData.author_email}
+              name="author_email"
+              onChange={handleChange}
+            />
 
+            <textarea
+              className={validateContent ? "comment-form-input invalid" : "comment-form-input"}
+              rows={10}
+              placeHolder="Leave a comment..."
+              value={commentFormData.content}
+              name="content"
+              required
+              onChange={handleChange}
+            />
+        
+            <button className="comment-button">Submit</button>
+
+          </div>
+
+      }
 
     </form>
   )

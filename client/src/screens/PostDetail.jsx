@@ -33,9 +33,10 @@ export default function PostDetail(props) {
 
     const currentPostDataFromStorage = JSON.parse(localStorage.getItem('currentPost'))
 
-    if (!loaded && currentPostDataFromStorage) {
+    if (!loaded && currentPostDataFromStorage && currentPostDataFromStorage.id === parseInt(params.id)) {
       setPostData(currentPostDataFromStorage)
       console.log('PostDetail.jsx - UseeEffect #1a - postDATA set from LocalStorage')
+
     } else if (!loaded && !currentPostDataFromStorage) {
 
       const gatherPostData = async (ID) => {

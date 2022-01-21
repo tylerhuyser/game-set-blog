@@ -200,7 +200,7 @@ export default function Header(props) {
 
         <div id="mobile-menu" className={menuVisibility ? "mobile-menu-visible" : "mobile-menu-hidden"}>
 
-          <Link className="mobile-nav-link" to="/about">ABOUT</Link>
+          <Link className="mobile-nav-link" to="/about" onClick={() => setMenuVisibility(false)}>ABOUT</Link>
           <a className="mobile-nav-link" target="_blank" href="https://www.ace-tennis-scores.com">LIVE SCORES</a>
 
         </div>

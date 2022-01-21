@@ -8,7 +8,7 @@ export const getPosts = async (page) => {
 }
 
 export const getPost = async (ID) => {
-  const resp = await api.get(`/posts/${ID}`)
+  const resp = await api.get(`/posts/${ID}?_embed`)
   console.log(resp.data)
   return resp.data
 }

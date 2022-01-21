@@ -32,7 +32,7 @@ export default function PostCard (props) {
 
   const handlePost = () => {
     localStorage.setItem('currentPost', JSON.stringify(postData))
-    history.push(`/posts/${postData.slug}`)
+    history.push(`/posts/${postData.id}/${postData.slug}`)
   }
   
   return (

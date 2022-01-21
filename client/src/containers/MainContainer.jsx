@@ -26,7 +26,7 @@ export default function MainContainer(props) {
               <About />
             </Route>
 
-            <Route path="/posts/:slug">
+            <Route path="/posts/:id/:slug">
               <PostDetail posts={posts} tags={tags} categories={categories} users={users} />
             </Route>
 

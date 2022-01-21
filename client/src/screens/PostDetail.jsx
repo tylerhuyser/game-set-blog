@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { useHistory } from 'react-router-dom'
+import { useParams, useHistory } from 'react-router-dom'
 
+import { getPost } from '../services/posts'
 import { getCommentsPerPost } from '../services/comments'
 import Comments from '../components/Comments'
 import LoaderLogo from '../components/shared/LoaderLogo'
@@ -24,11 +25,28 @@ export default function PostDetail(props) {
 
   const history = useHistory()
   const parse = require('html-react-parser').default
+  const params = useParams()
+
+  console.log(params)
 
   useEffect(() => {
-    if (!loaded) {
-      setPostData(JSON.parse(localStorage.getItem('currentPost')))
-      console.log('PostDetail.jsx - UseeEffect #1 - postDATA set from LocalStorage')
+
+    const currentPostDataFromStorage = JSON.parse(localStorage.getItem('currentPost'))
+
+    if (!loaded && currentPostDataFromStorage) {
+      setPostData(currentPostDataFromStorage)
+      console.log('PostDetail.jsx - UseeEffect #1a - postDATA set from LocalStorage')
+    } else if (!loaded && !currentPostDataFromStorage) {
+
+      const gatherPostData = async (ID) => {
+        const postDataFromWP = await getPost(ID)
+        console.log(postDataFromWP)
+        setPostData(postDataFromWP)
+        console.log('PostDetail.jsx - UseeEffect #1b - postDATA set from WP API')
+      }
+
+      gatherPostData(parseInt(params.id))
+      
     }
   }, [])
 

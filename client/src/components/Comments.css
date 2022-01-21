@@ -11,3 +11,12 @@
 .comments-container:last-child {
   margin-bottom: 125px;
 }
+
+@media (max-width: 768px) {
+
+
+  .comments-container:last-child {
+    margin-bottom: 100px;
+  }
+
+}

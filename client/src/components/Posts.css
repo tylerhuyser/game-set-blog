@@ -13,6 +13,15 @@
   margin-bottom: 125px;
 }
 
+@media (max-width: 768px) {
+
+
+  .postCards-container:last-child {
+    margin-bottom: 100px;
+  }
+
+}
+
 .infinite-scroll-loader {
   /* width: 50%;
   display: flex;

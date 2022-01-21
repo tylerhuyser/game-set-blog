@@ -32,6 +32,10 @@
     padding: 130px 50px;
   }
 
+  .postDetail-container:last-child {
+    margin-bottom: 100px;
+  }
+
 }
 
 .postDetail-hero-container {

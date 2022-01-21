@@ -11,6 +11,11 @@
   box-sizing: border-box;
 }
 
+.comment-error-message {
+  text-align: center;
+  color: white;
+}
+
 .comment-form-title {
 
     color: #ccd6f6;

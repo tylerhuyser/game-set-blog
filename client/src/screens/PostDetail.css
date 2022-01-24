@@ -231,6 +231,77 @@
   }
 }
 
+.postDetail-categories-tags-container {
+  width: 100%;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  margin-bottom: 100px;
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.postDetail-categories-tags-container .postDetail-category, .postDetail-categories-tags-container .postDetail-tag {
+  margin: 10px;
+  color: #f39c12;
+  font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+  font-size: 13px;
+  font-weight: 400;
+  z-index: 2;
+}
+
+.postDetail-categories-tags-container-title {
+  color: #ccd6f6;
+  color: white;
+  font-size: clamp(10px);
+  /* width: 75%; */
+
+  position: relative;
+  z-index: 2;
+  /* background: #F39C12; */
+  display: inline;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 15%, #f39c12 15%);
+  padding: 0px 10px;
+  text-align: left;
+  margin-left: 10px;
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.categories-container {
+  width: 100%;
+
+  display:flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.tags-container {
+  width: 100%;
+
+  display:flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 .postDetail-content-container {
   display: flex;
   flex-direction: column;

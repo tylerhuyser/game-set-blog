@@ -5,6 +5,7 @@ import { getPost, getPostBySlug } from '../services/posts'
 import { getCommentsPerPost } from '../services/comments'
 
 import LoaderLogo from '../components/shared/LoaderLogo'
+import Categories from '../components/Categories'
 import Tags from '../components/Tags'
 import Comments from '../components/Comments'
 
@@ -120,10 +121,20 @@ export default function PostDetail(props) {
                 <p className="postDetail-date">{`${postInfo.postMonth}.${postInfo.postDate}.${postInfo.postYear}`}</p>
 
                 <p className="postDetail-title">{parse(postData.title.rendered)}</p>
-              
-                <Tags postTags={postData["_embedded"]["wp:term"][1]} />
                 
               </div>
+
+            </div>
+
+            <div className="postDetail-categories-tags-container">
+
+              <p className="postDetail-categories-tags-container-title">CATEGORIES</p>
+
+              <Categories postCategories={postData["_embedded"]["wp:term"][0]} />
+
+              <p className="postDetail-categories-tags-container-title">TAGS</p>
+
+              <Tags postTags={postData["_embedded"]["wp:term"][1]} />
 
             </div>
 

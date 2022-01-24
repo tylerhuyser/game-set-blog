@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import Home from "../screens/Home";
 import About from '../screens/About'
 import PostDetail from '../screens/PostDetail'
@@ -26,9 +26,15 @@ export default function MainContainer(props) {
               <About />
             </Route>
 
-            <Route path="/posts/:id/:slug">
+            <Redirect from="/posts/:id/:slug" to="/posts/:slug" />
+
+            <Redirect from="/:year/:month/:date/:slug" to="/posts/:slug" />
+
+            <Route path="/posts/:slug">
               <PostDetail posts={posts} tags={tags} categories={categories} users={users} />
             </Route>
+
+            <Redirect to="/" />
 
           </Switch>
         </>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import { getPosts } from './posts'
 
 export default function GetPostsInfinite (props) {

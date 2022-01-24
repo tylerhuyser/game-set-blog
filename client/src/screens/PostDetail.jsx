@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, useHistory } from 'react-router-dom'
 
-import { getPost } from '../services/posts'
+import { getPost, getPostBySlug } from '../services/posts'
 import { getCommentsPerPost } from '../services/comments'
-import Comments from '../components/Comments'
+
 import LoaderLogo from '../components/shared/LoaderLogo'
+import Tags from '../components/Tags'
+import Comments from '../components/Comments'
 
 import './PostDetail.css'
 
@@ -33,20 +35,20 @@ export default function PostDetail(props) {
 
     const currentPostDataFromStorage = JSON.parse(localStorage.getItem('currentPost'))
 
-    if (!loaded && currentPostDataFromStorage && (parseInt(currentPostDataFromStorage.id) === parseInt(params.id))) {
+    if (!loaded && currentPostDataFromStorage && (currentPostDataFromStorage.slug === params.slug)) {
       setPostData(currentPostDataFromStorage)
       console.log('PostDetail.jsx - UseeEffect #1a - postDATA set from LocalStorage')
 
-    } else if (!loaded && (!currentPostDataFromStorage || (parseInt(currentPostDataFromStorage.id) !== parseInt(params.id)))) {
+    } else if (!loaded && (!currentPostDataFromStorage || (currentPostDataFromStorage.slug) !== params.slug)) {
 
-      const gatherPostData = async (ID) => {
-        const postDataFromWP = await getPost(ID)
+      const gatherPostData = async (slug) => {
+        const postDataFromWP = await getPostBySlug(slug)
         localStorage.setItem("currentPost", JSON.stringify(postDataFromWP))
         setPostData(postDataFromWP)
         console.log('PostDetail.jsx - UseeEffect #1b - postDATA set from WP API')
       }
 
-      gatherPostData(parseInt(params.id))
+      gatherPostData(params.slug)
       
     }
   }, [])
@@ -119,6 +121,7 @@ export default function PostDetail(props) {
 
                 <p className="postDetail-title">{parse(postData.title.rendered)}</p>
               
+                <Tags postTags={postData["_embedded"]["wp:term"][1]} />
                 
               </div>
 

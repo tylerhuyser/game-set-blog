@@ -9,9 +9,9 @@ export default function About() {
 
       <div className="about-container-hero-image-container">
         
-        <a>
-          <img src="https://i.imgur.com/qp6aL3w.jpg" alt="about-me-hero-image" />
-        </a>
+        <div>
+          <img src="https://i.imgur.com/qp6aL3w.jpg" alt="about-me-hero" />
+        </div>
       </div>
 
       <div className="social-icons-container">

@@ -68,7 +68,7 @@
 
 } 
 
-.about-container-hero-image-container a {
+.about-container-hero-image-container div {
   width: 100%;
   background-color: #f39c12;
   height: 100%;
@@ -89,20 +89,20 @@
   box-sizing: border-box;
 }
 
-.about-container-hero-image-container a:hover,
-.about-container-hero-image-container a:focus {
+.about-container-hero-image-container div:hover,
+.about-container-hero-image-container div:focus {
   background: transparent;
 }
 
-.about-container-hero-image-container a:hover:before,
-.about-container-hero-image-container a:focus:before,
-.about-container-hero-image-container a:hover:before .img,
-.about-container-hero-image-container a:focus:before .img {
+.about-container-hero-image-container div:hover:before,
+.about-container-hero-image-container div:focus:before,
+.about-container-hero-image-container div:hover:before .img,
+.about-container-hero-image-container div:focus:before .img {
   background: transparent;
   filter: none;
 }
 
-.about-container-hero-image-container a:before {
+.about-container-hero-image-container div:before {
   content: "";
   position: absolute;
   width: 100%;
@@ -124,7 +124,7 @@
   box-sizing: border-box;
 }
 
-.about-container a img {
+.about-container div img {
   /* height: 40vh;
   width: auto;
 
@@ -147,7 +147,7 @@
 }
 
 @media (max-width: 768px) {
-  .about-container a img {
+  .about-container div img {
     width: 100%;
     height: 100%;
     filter: grayscale(100%) contrast(1) brightness(80%);

@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 
 import Header from '../shared/Header'
-import Sidebar from '../shared/Sidebar'
 import Footer from '../shared/Footer'
 
-import Loader from '../shared/Loader'
 import IconLogo from '../shared/IconLogo'
 
 import './Layout.css'
@@ -12,7 +10,6 @@ import './Layout.css'
 
 export default function Layout(props) {
 
-  const { categories, tags } = props
   const { isMounted, isHome } = props
 
     // Sets target="_blank" rel="noopener noreferrer" on external links

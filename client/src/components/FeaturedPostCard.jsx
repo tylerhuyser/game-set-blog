@@ -1,12 +1,11 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
-import Img from 'gatsby-image';
 
 import './FeaturedPostCard.css'
 
 export default function FeaturedPostCard(props) {
 
-  const { postData, users, key } = props
+  const { postData, users } = props
 
   const history = useHistory()
   const parse = require('html-react-parser').default
@@ -14,8 +13,6 @@ export default function FeaturedPostCard(props) {
   const postDate = new Date(postData.date).getDate()
   const postMonth = new Date(postData.date).getMonth()
   const postYear = new Date(postData.date).getFullYear()
-
-  const postAuthor = users.find((user) => (user.id === postData.author))
 
   const handlePost = () => {
     localStorage.setItem('currentPost', JSON.stringify(postData))

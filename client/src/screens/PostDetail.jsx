@@ -32,8 +32,6 @@ export default function PostDetail(props) {
   useEffect(() => {
 
     const currentPostDataFromStorage = JSON.parse(localStorage.getItem('currentPost'))
-    console.log(currentPostDataFromStorage)
-    console.log(params.id)
 
     if (!loaded && currentPostDataFromStorage && (parseInt(currentPostDataFromStorage.id) === parseInt(params.id))) {
       setPostData(currentPostDataFromStorage)
@@ -43,13 +41,11 @@ export default function PostDetail(props) {
 
       const gatherPostData = async (ID) => {
         const postDataFromWP = await getPost(ID)
-        console.log(postDataFromWP)
         localStorage.setItem("currentPost", JSON.stringify(postDataFromWP))
         setPostData(postDataFromWP)
         console.log('PostDetail.jsx - UseeEffect #1b - postDATA set from WP API')
       }
 
-      console.log('inside here')
       gatherPostData(parseInt(params.id))
       
     }

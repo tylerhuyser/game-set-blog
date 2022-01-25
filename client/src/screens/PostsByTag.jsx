@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import { getPostsByTag } from '../services/posts'
 import Posts from '../components/Posts'
 
+import "./PostsByTag.css"
 
 export default function PostsByTag(props) {
 
@@ -52,7 +53,7 @@ export default function PostsByTag(props) {
             
             <>
               
-              <p className="postsByTag-title">{`There are 0 posts categorized as ${params.slug.split("-").join(" ")}.`}</p>
+              <p className="postsByTag-title">{`There are 0 posts tagged with ${params.slug.split("-").join(" ")}.`}</p>
 
             </>
             
@@ -61,7 +62,7 @@ export default function PostsByTag(props) {
           
             <>
               
-              <p className="postsByTag-title">{`Posts categorized as: ${params.slug.split("-").join(" ")}.`}</p>
+              <p className="postsByTag-title">{`Posts tagged with: ${params.slug.split("-").join(" ")}.`}</p>
 
               <Posts tags={tags} users={users} categories={categories} getPostsMethod={getPostsByTag} sourceID={params.id} />
 

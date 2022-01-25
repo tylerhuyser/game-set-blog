@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import { getPostsByCategory } from '../services/posts'
 import Posts from '../components/Posts'
 
+import "./PostsByCategory.css"
 
 export default function PostsByCategory(props) {
 

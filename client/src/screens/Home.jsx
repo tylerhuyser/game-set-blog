@@ -3,6 +3,10 @@ import React from 'react'
 import FeaturedPostCard from '../components/FeaturedPostCard'
 import Posts from '../components/Posts'
 
+import {
+  getPosts
+} from '../services/posts'
+
 import './Home.css'
 
 export default function Home (props) {
@@ -25,7 +29,7 @@ export default function Home (props) {
 
           {FEATUREDPOSTCARDSJSX}
 
-          <Posts tags={tags} users={users} categories={categories} />
+          <Posts tags={tags} users={users} categories={categories} getPostsMethod={getPosts} sourceID={null} />
 
         </div>
         

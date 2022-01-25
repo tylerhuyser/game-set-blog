@@ -29,13 +29,13 @@ function App() {
   const isHome = location.pathname === '/';
   
   useEffect(() => {
-    const getPostsData = async () => {
-      const postsData = await getPosts(1)
+    const getPostsData = async (sourceID, page) => {
+      const postsData = await getPosts(sourceID, page)
       console.log('App.jsx - UseEffect # 1 - POSTS below')
       console.log(postsData)
       setPosts(postsData.data)
     }
-    getPostsData()
+    getPostsData(null, 1)
   }, [])
 
   useEffect(() => {

@@ -3,14 +3,14 @@ import { getPosts } from './posts'
 
 export default function GetPostsInfinite (props) {
 
-  const { pageToLoad } = props
+  const { pageToLoad, getPostsMethod, sourceID } = props
 
   const [posts, setPosts] = useState([])
   const [loading, setLoading] = useState(true)
   const [hasMore, setHasMore] = useState(false)
 
-  const loadPosts = async function () {
-    const postsData = await getPosts(pageToLoad)
+  const loadPosts = async function (sourceID, pageToLoad) {
+    const postsData = await getPostsMethod(sourceID, pageToLoad)
     console.log(postsData)
     console.log(postsData.data)
     setPosts(prevPosts => {
@@ -23,7 +23,7 @@ export default function GetPostsInfinite (props) {
 
   useEffect(() => {
     setLoading(true)
-    loadPosts()
+    loadPosts(sourceID, pageToLoad)
   }, [pageToLoad])
 
   return {

@@ -91,7 +91,7 @@ const validateForm = (e) => {
             <input
               className={validateName ? "comment-form-input invalid" : "comment-form-input"}
               type="text"
-              placeHolder="Name..."
+              placeholder="Name..."
               value={commentFormData.author_name}
               name="author_name"
               onChange={handleChange}
@@ -100,7 +100,7 @@ const validateForm = (e) => {
             <input
               className={validateEmail ? "comment-form-input invalid" : "comment-form-input"}
               type="text"
-              placeHolder="E-mail..."
+              placeholder="E-mail..."
               value={commentFormData.author_email}
               name="author_email"
               onChange={handleChange}
@@ -109,7 +109,7 @@ const validateForm = (e) => {
             <textarea
               className={validateContent ? "comment-form-input invalid" : "comment-form-input"}
               rows={10}
-              placeHolder="Leave a comment..."
+              placeholder="Leave a comment..."
               value={commentFormData.content}
               name="content"
               required

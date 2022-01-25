@@ -14,7 +14,7 @@ export default function PostCard (props) {
   const postMonth = new Date(postData.date).getMonth()
   const postYear = new Date(postData.date).getFullYear()
 
-  const postAuthor = users.find((user) => (user.id === postData.author))
+  // const postAuthor = users.find((user) => (user.id === postData.author))
 
   const observer = useRef()
   const lastPostElementRef = useCallback(node => {

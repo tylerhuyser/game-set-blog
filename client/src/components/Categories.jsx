@@ -11,7 +11,7 @@ export default function Categories(props) {
 
   const handleCategory = (category) => {
     localStorage.setItem('currentCategory', JSON.stringify(category))
-    history.push(`/posts/${category.name}`)
+    history.push(`/categories/${category.id}/${category.slug}`)
   }
   
   const CATEGORIESJSX = postCategories && postCategories?.map((category, index) => (
@@ -19,8 +19,8 @@ export default function Categories(props) {
   ))
 
   return (
-    <>
+    <div className="categories-container">
       {CATEGORIESJSX}
-    </>
+    </div>
   )
 }

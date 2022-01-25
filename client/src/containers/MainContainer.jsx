@@ -7,6 +7,12 @@ import PostDetail from '../screens/PostDetail'
 import PostsByCategory from '../screens/PostsByCategory'
 import PostsByTag from '../screens/PostsByTag'
 
+import {
+  getPosts,
+  getPostsByCategory,
+  getPostsByTag
+} from '../services/posts'
+
 export default function MainContainer(props) {
   
   const { posts, tags, categories, users } = props
@@ -36,12 +42,12 @@ export default function MainContainer(props) {
               <PostDetail posts={posts} tags={tags} categories={categories} users={users} />
             </Route>
 
-            <Route path="posts/category/:name">
-              <PostsByCategory posts={posts} tags={tags} categories={categories} users={users} />
+            <Route path="/categories/:id/:slug">
+              <PostsByCategory posts={posts} tags={tags} categories={categories} users={users} getPostsMethod={getPostsByCategory} />
             </Route>
 
-            <Route path="posts/tag/:name">
-              <PostsByTag posts={posts} tags={tags} categories={categories} users={users} />
+            <Route path="/tags/:id/:slug">
+              <PostsByTag posts={posts} tags={tags} categories={categories} users={users} getPostsMethod={getPostsByTag} />
             </Route>
 
             <Redirect to="/" />

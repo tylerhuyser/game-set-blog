@@ -11,7 +11,7 @@ export default function Tags(props) {
 
   const handleTag = (tag) => {
     localStorage.setItem('currentTag', JSON.stringify(tag))
-    history.push(`/posts/${tag.name}`)
+    history.push(`/tags/${tag.id}/${tag.slug}`)
   }
   
   const TAGSJSX = postTags && postTags?.map((tag, index) => (

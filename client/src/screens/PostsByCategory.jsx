@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom'
 
 import { getPostsByCategory } from '../services/posts'
 import Posts from '../components/Posts'
-import PostCard from '../components/PostCard'
 
 
 export default function PostsByCategory(props) {
@@ -63,37 +62,6 @@ export default function PostsByCategory(props) {
             <>
               
               <p className="postsByCategory-title">{`Posts categorized as: ${params.slug.split("-").join(" ")}.`}</p>
-
-                {/* <div className="postCards-container">
-        
-                  {posts.map((post, index) => {
-                      return (
-                        <PostCard index={index}
-                          totalPosts={posts.length}
-                          postData={post}
-                          users={users}
-                          categories={categories}
-                          tags={tags}
-                          key={post.id}
-                          // pageToLoad={pageToLoad}
-                          // setPageToLoad={setPageToLoad}
-                          // loading={loading}
-                          // hasMore={hasMore}
-                        />
-                      )
-                    }
-                )}
-              
-                </div> */}
-
-              {/* {posts && totalPostsPages > 1 ?
-                
-                <Posts tags={tags} users={users} categories={categories} getPostsMethod={getPostsByCategory} sourceID={params.id} />
-                
-                :
-                
-                <></>
-              } */}
 
               <Posts tags={tags} users={users} categories={categories} getPostsMethod={getPostsByCategory} sourceID={params.id} />
 

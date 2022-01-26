@@ -62,7 +62,7 @@ export default function PostsByTag(props) {
           
             <>
               
-              <p className="postsByTag-title">{`Posts tagged with: ${params.slug.split("-").join(" ")}.`}</p>
+              <p className="postsByTag-title">{`Posts tagged with: ${params.slug.split("-").map((word) => {return word[0].toUpperCase() + word.substring(1)}).join(" ")}.`}</p>
 
               <Posts tags={tags} users={users} categories={categories} getPostsMethod={getPostsByTag} sourceID={params.id} />
 

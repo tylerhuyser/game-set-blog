@@ -40,7 +40,6 @@ export default function PostsByCategory(props) {
     }
   }, [posts])
 
-
   return (
   
     <>
@@ -62,7 +61,7 @@ export default function PostsByCategory(props) {
           
             <>
               
-              <p className="postsByCategory-title">{`Posts categorized as: ${params.slug.split("-").join(" ")}.`}</p>
+              <p className="postsByCategory-title">{`Posts categorized as: ${params.slug.split("-").map((word) => {return word[0].toUpperCase() + word.substring(1)}).join(" ")}.`}</p>
 
               <Posts tags={tags} users={users} categories={categories} getPostsMethod={getPostsByCategory} sourceID={params.id} />
 

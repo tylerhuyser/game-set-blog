@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 
 import { getPostsByCategory } from '../services/posts'
 import Posts from '../components/Posts'
+import LoaderLogo from '../components/shared/LoaderLogo'
 
 import "./PostsByCategory.css"
 
@@ -73,8 +74,19 @@ export default function PostsByCategory(props) {
 
         :
       
-        <>
-        </>
+        <div className="postsByCategory-container">
+
+        <div className="postsByCategory-loader-container">
+
+          <div id="postsByCategory-loader-wrapper">
+
+            <LoaderLogo />
+
+          </div>
+        
+        </div>
+      
+      </div>
 
       }
       

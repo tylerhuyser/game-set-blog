@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 
 import { getPostsByTag } from '../services/posts'
 import Posts from '../components/Posts'
+import LoaderLogo from '../components/shared/LoaderLogo'
 
 import "./PostsByTag.css"
 
@@ -74,8 +75,19 @@ export default function PostsByTag(props) {
 
         :
       
-        <>
-        </>
+        <div className="postsByTag-container">
+
+          <div className="postsByTag-loader-container">
+
+            <div id="postsByTag-loader-wrapper">
+
+              <LoaderLogo />
+
+            </div>
+          
+          </div>
+      
+      </div>
 
       }
       

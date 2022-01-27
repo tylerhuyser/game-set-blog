@@ -23,18 +23,88 @@
   box-sizing: border-box;
 }
 
-.comment-card-header-container {
+.comment-card-hero-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  /* vertical-align: sub; */
 
   width: 100%;
+  padding: 25px;
 
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box; /* Firefox, other Gecko */
   box-sizing: border-box;
 }
+
+@media only screen and (max-width: 480px) {
+
+  .comment-card-hero-container {
+  flex-direction: column;;
+  }
+
+} 
+
+.comment-card-header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  vertical-align: sub;
+
+  width: 100%;
+  padding: 0px 0px 0px 10px;
+
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box; /* Firefox, other Gecko */
+  box-sizing: border-box;
+}
+
+@media only screen and (max-width: 768px) {
+
+  .comment-card-header-container {
+  flex-direction: column;
+  }
+
+} 
+
+.fa-user {
+  font-size: 30px;
+  /* width: 5%; */
+  color: white;
+  /* height: calc(100% - 2em); */
+  margin-left: 0px;
+  margin-right: 25px;
+
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+
+  border: solid white 2px;
+  border-radius: 50%;
+  padding: 20px;
+  /* border: #f39c12 solid 2px;
+  border-radius: 50%; */
+
+  /* position: relative; */
+  /* z-index: 2; */
+  /* background: #F39C12; */
+  /* display: inline; */
+  /* background: linear-gradient(180deg, rgba(255, 255, 255, 0) 15%, #f39c12 15%);
+  padding: 0px 10px;
+  text-align: left; */
+
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box; /* Firefox, other Gecko */
+  box-sizing: border-box;
+}
+
+.fa-user:before {
+  /* transform: translateX(35%); */
+  /* transform: translateY(-100%) */
+}
+
 
 .comment-author-name {
 
@@ -51,7 +121,17 @@
   padding: 0px 10px;
   text-align: left;
 
+  margin: 0px;
+
 }
+
+@media only screen and (max-width: 480px) {
+
+  .comment-author-name {
+  margin: 25px 0px;
+  }
+
+} 
 
 .comment-date {
   margin: 10px 0;
@@ -60,6 +140,16 @@
   font-size: 13px;
   font-weight: 400;
   z-index: 2;
+  width: 50%;
+  text-align: right;
+  flex-grow: 1;
+}
+
+@media only screen and (max-width: 480px) {
+
+  .comment-date {
+    text-align: left;
+  }
 }
 
 .comment-content {

@@ -21,11 +21,21 @@ export default function CommentCard(props) {
 
         <div className="comment-card-container" key={commentData.id}>
 
-          <div className="comment-card-header-container">
+          <div className="comment-card-hero-container">
 
-            <p className="comment-author-name">{commentData.author_name}</p>
+            <i className="far fa-user"></i>
 
-            <p className="comment-date">{`${commentDate}.${commentMonth}.${commentYear}`}</p>
+            <div className="comment-card-header-container">
+
+              {/* <div className="comment-profile-image-container"> */}
+                {/* <i className="far fa-user"></i> */}
+              {/* </div> */}
+
+              <p className="comment-author-name">{commentData.author_name}</p>
+
+              <p className="comment-date">{`${commentDate}.${commentMonth}.${commentYear}`}</p>
+              
+              </div>
             
           </div>
 

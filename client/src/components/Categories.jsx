@@ -15,7 +15,7 @@ export default function Categories(props) {
   }
   
   const CATEGORIESJSX = postCategories && postCategories?.map((category, index) => (
-    <p className="postDetail-category" onClick={(e) => handleCategory(category)} key={category.id}>{category.name}</p>
+    <p className="postDetail-category" onClick={(e) => handleCategory(category)} key={category.id}>{category.name.replace('&amp;', "&")}</p>
   ))
 
   return (

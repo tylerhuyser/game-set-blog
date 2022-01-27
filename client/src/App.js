@@ -32,7 +32,6 @@ function App() {
     const getPostsData = async (sourceID, page) => {
       const postsData = await getPosts(sourceID, page)
       console.log('App.jsx - UseEffect # 1 - POSTS below')
-      console.log(postsData)
       setPosts(postsData.data)
     }
     getPostsData(null, 1)
@@ -42,7 +41,6 @@ function App() {
     const getTagsData = async () => {
       const tagsData = await getTags()
       console.log('App.jsx - UseEffect #2 - TAGS below')
-      console.log(tagsData)
       setTags(tagsData)
     }
     getTagsData()
@@ -52,7 +50,6 @@ function App() {
     const getCategoriesData = async () => {
       const categoriesData = await getCategories()
       console.log('App.jsx - UseEffect #3 - CATEGORIES below')
-      console.log(categoriesData)
       setCategories(categoriesData)
     }
     getCategoriesData()
@@ -61,7 +58,6 @@ function App() {
   useEffect(() => {
     const getUsersData = async () => {
       const usersData = await getUsers()
-      console.log(usersData)
       console.log('App.js - UseEffect #4 - USERS below')
       setUsers(usersData)
     }

@@ -5,8 +5,6 @@ export default function Tags(props) {
   
   const { postTags } = props
 
-  console.log(postTags)
-
   const history = useHistory()
 
   const handleTag = (tag) => {

@@ -21,7 +21,7 @@ export default function PostsByTag(props) {
 
     const gatherPostByTag = async (tagID, page) => {
       const postsData = await getPostsByTag(tagID, page)
-      console.log(postsData)
+      console.log("PostsByTag.js - UseEffect #1 - Gathering Posts-By-Tag")
       if (postsData.data.length > 0) {
         setTotalPostsPages(parseInt(postsData.headers['x-wp-totalpages'].trim('"')))
         setPosts(postsData.data)

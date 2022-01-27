@@ -16,8 +16,6 @@ export default function Posts(props) {
   useEffect(() => {
     if (sourceID) setPageToLoad(1)
   })
-
-  console.log(posts)
   
   return(
     <>

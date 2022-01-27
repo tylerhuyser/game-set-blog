@@ -5,8 +5,6 @@ export default function Categories(props) {
   
   const { postCategories } = props
 
-  console.log(postCategories)
-
   const history = useHistory()
 
   const handleCategory = (category) => {

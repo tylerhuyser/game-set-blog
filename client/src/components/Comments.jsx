@@ -9,8 +9,6 @@ import './Comments.css'
 export default function Comments(props) {
 
   const { postData, commentsData } = props
-
-  console.log(commentsData)
   
   return (
     <>

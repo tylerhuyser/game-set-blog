@@ -21,7 +21,7 @@ export default function PostsByCategory(props) {
 
     const gatherPostByCategory = async (categoryID, page) => {
       const postsData = await getPostsByCategory(categoryID, page)
-      console.log(postsData)
+      console.log("PostsByCategory.js - UseEffect #1 - Gathering Posts-By-Category")
       if (postsData.data.length > 0) {
         setTotalPostsPages(parseInt(postsData.headers['x-wp-totalpages'].trim('"')))
         setPosts(postsData.data)

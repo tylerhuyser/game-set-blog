@@ -21,9 +21,7 @@ export default function PostCard (props) {
     if (loading) return
     if (observer.current) observer.current.disconnect()
     observer.current = new IntersectionObserver(entries => {
-      console.log("hurr")
       if (entries[0].isIntersecting && hasMore) {
-        console.log('HERE!')
         setPageToLoad(prevPageNumber => prevPageNumber + 1)
       }
     })

@@ -7,10 +7,8 @@ export default function CommentCard(props) {
   const { commentData } = props
   const parse = require('html-react-parser').default
 
-  console.log(commentData)
-
   const commentDate = new Date(commentData.date).getDate()
-  const commentMonth = new Date(commentData.date).getMonth()
+  const commentMonth = new Date(commentData.date).getMonth() + 1
   const commentYear = new Date(commentData.date).getFullYear()
   
   return (

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, useHistory } from 'react-router-dom'
 
-import { getPost, getPostBySlug } from '../services/posts'
+import { getPostBySlug } from '../services/posts'
 import { getCommentsPerPost } from '../services/comments'
 
 import LoaderLogo from '../components/shared/LoaderLogo'
@@ -14,7 +14,7 @@ import './PostDetail.css'
 
 export default function PostDetail(props) {
 
-  const {posts, users, tags, categories } = props
+  const {users} = props
 
   const [loaded, setLoaded] = useState(false)
   const [postData, setPostData] = useState(null)
@@ -29,8 +29,6 @@ export default function PostDetail(props) {
   const history = useHistory()
   const parse = require('html-react-parser').default
   const params = useParams()
-
-  console.log(params)
 
   useEffect(() => {
 
@@ -59,7 +57,7 @@ export default function PostDetail(props) {
       setPostInfo(prevState => ({
         ...prevState,
         postDate: new Date(postData.date).getDate(),
-        postMonth: new Date(postData.date).getMonth(),
+        postMonth: new Date(postData.date).getMonth() + 1,
         postYear: new Date(postData.date).getFullYear(),
         postAuthor: users.find((user) => (user.id === postData.author))
       }))
@@ -73,7 +71,6 @@ export default function PostDetail(props) {
       const gatherComments = async (postID) => {
         const commentsData = await getCommentsPerPost(postID)
         console.log('PostDetail.js - UseEffect #3 - COMMENTS below')
-        console.log(commentsData)
         if (commentsData.length > 0) {
           setComments(commentsData)
         } else if (commentsData.length === 0) {
@@ -96,8 +93,6 @@ export default function PostDetail(props) {
     localStorage.removeItem('currentPost')
     history.push(`/`)
   }
-
-  console.log(postData)
   
   return(
     <>

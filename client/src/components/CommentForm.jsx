@@ -22,7 +22,6 @@ export default function CommentForm(props) {
   const [validateContent, setValidateContent] = useState(false)
 
   const handlePostComment = async (commentData) => {
-    console.log(commentData)
     const comment = await postComment(commentData)
     if (comment.error) {
       setError(comment.error.message)

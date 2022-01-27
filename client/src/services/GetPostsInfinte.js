@@ -11,10 +11,8 @@ export default function GetPostsInfinite (props) {
 
   const loadPosts = async function (sourceID, pageToLoad) {
     const postsData = await getPostsMethod(sourceID, pageToLoad)
-    console.log(postsData)
-    console.log(postsData.data)
+    console.log(`GetPostsInfinite.js - UseEffect #1 - Gathering Posts via Infinte Scroll - Page ${pageToLoad}`)
     setPosts(prevPosts => {
-      console.log(prevPosts)
       return [...prevPosts, ...postsData.data]
     })
     setHasMore(parseInt(postsData.headers['x-wp-totalpages'].trim('"')) > pageToLoad)

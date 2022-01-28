@@ -12,7 +12,6 @@ export default function PostsByCategory(props) {
   const { tags, categories, users } = props
   
   const [posts, setPosts] = useState([])
-  const [totalPostsPages, setTotalPostsPages] = useState(1)
   const [loaded, setLoaded] = useState(false)
 
   const params = useParams()
@@ -23,10 +22,8 @@ export default function PostsByCategory(props) {
       const postsData = await getPostsByCategory(categoryID, page)
       console.log("PostsByCategory.js - UseEffect #1 - Gathering Posts-By-Category")
       if (postsData.data.length > 0) {
-        setTotalPostsPages(parseInt(postsData.headers['x-wp-totalpages'].trim('"')))
         setPosts(postsData.data)
       } else if (postsData.data.length === 0) {
-        setTotalPostsPages(parseInt(postsData.headers['x-wp-totalpages'].trim('"')))
         setPosts("No Posts.")
       }
     }

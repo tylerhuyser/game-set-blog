@@ -10,28 +10,20 @@ export default function Posts(props) {
 
   const { users, categories, tags, getPostsMethod, sourceID } = props
   const [pageToLoad, setPageToLoad] = useState(2)
+  const [pageQueued, setPageQueued] = useState(false)
 
-  const { posts, hasMore, loading } = GetPostsInfinite({ pageToLoad, getPostsMethod, sourceID })
+  const { posts, hasMore, loading } = GetPostsInfinite({ pageToLoad, getPostsMethod, sourceID, pageQueued })
 
   useEffect(() => {
-    if (sourceID) setPageToLoad(1)
-  })
+    if (sourceID) {
+      setPageToLoad(1)
+      setPageQueued(true)
+    }
+    else if (!sourceID) setPageQueued(true)
+  }, [sourceID])
   
   return(
     <>
-      {/* {posts.length < 5 ?
-    
-          <>
-                  
-            <div className="infinite-scroll-loader">
-          
-              <LoaderLogo />
-
-            </div>
-          
-        </>
-        
-        : */}
       
         <div className="postCards-container">
       
@@ -47,6 +39,7 @@ export default function Posts(props) {
                   setPageToLoad={setPageToLoad}
                   loading={loading}
                   hasMore={hasMore}
+                  key={post.id}
                 />
               )
             }

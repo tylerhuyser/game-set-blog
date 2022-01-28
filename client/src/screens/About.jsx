@@ -16,17 +16,17 @@ export default function About() {
 
       <div className="social-icons-container">
 
-        <i class="fab fa-twitter"></i>
+        <i className="fab fa-twitter"></i>
         
-        <i class="fab fa-instagram"></i>
+        <i className="fab fa-instagram"></i>
 
-        <i class="far fa-envelope"></i>
+        <i className="far fa-envelope"></i>
 
       </div>
 
         <p className="about-container-subtitle">“I live through the achievements of others.”</p>
 
-        <p className="about-container-content-container">
+        <div className="about-container-content-container">
         
           After Google Search informed me that I visited Simona Halep’s Wikipedia page 57 times in the past month, I finally decided to admit I have a problem.
 
@@ -50,7 +50,7 @@ export default function About() {
 
           <span className="about-me-cta">Follow me on Instagram: @tylerhuijser. Or shoot me an email at tyler@gameset.blog.</span>
       
-      </p>
+      </div>
       
     </div>
   )

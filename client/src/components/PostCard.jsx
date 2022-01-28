@@ -5,16 +5,14 @@ import './PostCard.css'
 
 export default function PostCard (props) {
 
-  const { index, totalPosts, postData, users, categories, tags, pageToLoad, setPageToLoad, loading, hasMore } = props
+  const { index, totalPosts, postData, users, setPageToLoad, loading, hasMore } = props
 
   const history = useHistory()
   const parse = require('html-react-parser').default
 
   const postDate = new Date(postData.date).getDate()
-  const postMonth = new Date(postData.date).getMonth()
+  const postMonth = new Date(postData.date).getMonth() + 1
   const postYear = new Date(postData.date).getFullYear()
-
-  // const postAuthor = users.find((user) => (user.id === postData.author))
 
   const observer = useRef()
   const lastPostElementRef = useCallback(node => {

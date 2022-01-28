@@ -11,7 +11,7 @@ export default function FeaturedPostCard(props) {
   const parse = require('html-react-parser').default
 
   const postDate = new Date(postData.date).getDate()
-  const postMonth = new Date(postData.date).getMonth()
+  const postMonth = new Date(postData.date).getMonth() + 1
   const postYear = new Date(postData.date).getFullYear()
 
   const handlePost = () => {
@@ -34,15 +34,15 @@ export default function FeaturedPostCard(props) {
 
                 <p className="post-title">{parse(postData.title.rendered).toUpperCase()}</p>
 
-              <p className="post-excerpt">{parse(postData.excerpt.rendered.slice(0, 250).slice(0, postData.excerpt.rendered.slice(0, 250).lastIndexOf(".")).trim("Continue reading").concat("", "."))}</p>
+              <div className="post-excerpt">{parse(postData.excerpt.rendered.slice(0, 250).slice(0, postData.excerpt.rendered.slice(0, 250).lastIndexOf(".")).trim("Continue reading").concat("", "."))}</div>
 
               <p onClick={handlePost} className="post-link">Read Full Article...</p>
 
             </div>
 
             <div className="post-image">
-              <a>
-                  <img className="img" src={postData["_embedded"]["wp:featuredmedia"][0].source_url} />
+              <a href="">
+                  <img className="img" src={postData["_embedded"]["wp:featuredmedia"][0].source_url} alt="featured-postCard-image" />
                   {/* <Img fluid={postData["_embedded"]["wp:featuredmedia"][0].source_url} alt={parse(postData.title.rendered)} className="img"/> */}
               </a>
             </div>

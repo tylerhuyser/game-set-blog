@@ -2,46 +2,12 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import styled, { css } from 'styled-components';
 import { loaderDelay } from '../../utils';
 import { useScrollDirection } from '../../hooks';
 
 import IconLogo from './IconLogo'
 
 import './Header.css'
-
-// const StyledHeader = styled.header`
-//   ${({ theme }) => theme.mixins.flexBetween};
-//   position: fixed;
-//   top: 0;
-//   z-index: 11;
-//   padding: 0px 50px;
-//   width: 100%;
-//   height: var(--nav-height);
-//   background-color: var(--navy);
-//   filter: none !important;
-//   pointer-events: auto !important;
-//   user-select: auto !important;
-//   backdrop-filter: blur(10px);
-//   transition: var(--transition);
-//   ${props =>
-//     props.scrollDirection === 'up' &&
-//     !props.scrolledToTop &&
-//     css`
-//       height: var(--nav-scroll-height);
-//       transform: translateY(0px);
-//       background-color: rgba(10, 25, 47, 0.85);
-//       box-shadow: 0 10px 30px -10px var(--navy-shadow);
-//     `};
-//   ${props =>
-//     props.scrollDirection === 'down' &&
-//     !props.scrolledToTop &&
-//     css`
-//       height: var(--nav-scroll-height);
-//       transform: translateY(calc(var(--nav-scroll-height) * -1));
-//       box-shadow: 0 10px 30px -10px var(--navy-shadow);
-//     `};
-// `;
 
 
 export default function Header(props) {
@@ -157,7 +123,7 @@ export default function Header(props) {
                   
                 <CSSTransition classNames={fadeDownClass} timeout={timeout}>
 
-                  <a className="desktop-nav-link" target="_blank" href="https://www.ace-tennis-scores.com" id="live-scores-link" style={{ transitionDelay: `${isHome ? 3 * 100 : 0}ms` }}>LIVE SCORES</a>
+                  <a className="desktop-nav-link" target="_blank" rel="noopener noreferrer" href="https://www.ace-tennis-scores.com" id="live-scores-link" style={{ transitionDelay: `${isHome ? 3 * 100 : 0}ms` }}>LIVE SCORES</a>
 
                 </CSSTransition>
 
@@ -201,7 +167,7 @@ export default function Header(props) {
         <div id="mobile-menu" className={menuVisibility ? "mobile-menu-visible" : "mobile-menu-hidden"}>
 
           <Link className="mobile-nav-link" to="/about" onClick={() => setMenuVisibility(false)}>ABOUT</Link>
-          <a className="mobile-nav-link" target="_blank" href="https://www.ace-tennis-scores.com">LIVE SCORES</a>
+          <a className="mobile-nav-link" target="_blank" rel="noopener noreferrer" href="https://www.ace-tennis-scores.com">LIVE SCORES</a>
 
         </div>
 

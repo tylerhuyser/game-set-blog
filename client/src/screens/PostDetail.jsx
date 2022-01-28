@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useParams, useHistory } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
 import { getPostBySlug } from '../services/posts'
 import { getCommentsPerPost } from '../services/comments'
@@ -14,19 +14,15 @@ import './PostDetail.css'
 
 export default function PostDetail(props) {
 
-  const {users} = props
-
   const [loaded, setLoaded] = useState(false)
   const [postData, setPostData] = useState(null)
   const [postInfo, setPostInfo] = useState({
     postDate: "",
     postMonth: "",
     postYear: "",
-    postAuthor: ""
   })
   const [comments, setComments ] = useState([])
 
-  const history = useHistory()
   const parse = require('html-react-parser').default
   const params = useParams()
 
@@ -53,17 +49,16 @@ export default function PostDetail(props) {
   }, [])
 
   useEffect(() => {
-    if (postData && postData.date && postData.author && users.length > 0) {
+    if (postData && postData.date) {
       setPostInfo(prevState => ({
         ...prevState,
         postDate: new Date(postData.date).getDate(),
         postMonth: new Date(postData.date).getMonth() + 1,
         postYear: new Date(postData.date).getFullYear(),
-        postAuthor: users.find((user) => (user.id === postData.author))
       }))
       console.log('PostDetail.jsx - UseeEffect #2 - postINFO set')
     }
-  }, [postData, users])
+  }, [postData])
 
   useEffect(() => {
     if (postData && postData.id) {
@@ -83,21 +78,16 @@ export default function PostDetail(props) {
   }, [postData])
 
   useEffect(() => {
-    if (postData && (postInfo.postDate !== "" && postInfo.postMonth !== "" && postInfo.postYear !== "" && postInfo.postAuthor !== "" && (comments.length > 0 || comments === "No Comments."))) {
+    if (postData && (postInfo.postDate !== "" && postInfo.postMonth !== "" && postInfo.postYear !== "" && (comments.length > 0 || comments === "No Comments."))) {
       setLoaded(true)
       console.log('PostDetail.jsx - UseEffect #4 - PostDetail Loaded')
     }
   }, [postInfo, comments])
   
-  const handleReturn = () => {
-    localStorage.removeItem('currentPost')
-    history.push(`/`)
-  }
-  
   return(
     <>
       
-      {postData && users && postInfo.postAuthor !== "" && loaded ?
+      {postData && postInfo.postDate !== "" && loaded ?
 
         <>
           
@@ -107,7 +97,7 @@ export default function PostDetail(props) {
 
               <div className="postDetail-hero-image-container" key={postData.id}>
                 <a>
-                  <img className="postDetail-hero-img" src={postData["_embedded"]["wp:featuredmedia"][0].source_url} />
+                  <img className="postDetail-hero-img" src={postData["_embedded"]["wp:featuredmedia"][0].source_url} atl="postDetail-hero-image" />
                 </a>
               </div>
 

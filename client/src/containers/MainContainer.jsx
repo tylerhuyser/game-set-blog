@@ -8,7 +8,6 @@ import PostsByCategory from '../screens/PostsByCategory'
 import PostsByTag from '../screens/PostsByTag'
 
 import {
-  getPosts,
   getPostsByCategory,
   getPostsByTag
 } from '../services/posts'

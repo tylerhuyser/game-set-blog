@@ -66,6 +66,7 @@ export default function PostDetail(props) {
       const gatherComments = async (postID) => {
         const commentsData = await getCommentsPerPost(postID)
         console.log('PostDetail.js - UseEffect #3 - COMMENTS below')
+        console.log(commentsData)
         if (commentsData.length > 0) {
           setComments(commentsData)
         } else if (commentsData.length === 0) {

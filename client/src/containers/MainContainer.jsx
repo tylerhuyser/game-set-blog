@@ -33,9 +33,13 @@ export default function MainContainer(props) {
               <About />
             </Route>
 
+            {/* <Redirect from="/:id/:slug" to="/posts/:slug" /> */}
+
             <Redirect from="/posts/:id/:slug" to="/posts/:slug" />
+            <Redirect from="/posts/:id/:slug/" to="/posts/:slug" />
 
             <Redirect from="/:year/:month/:date/:slug" to="/posts/:slug" />
+            <Redirect from="/:year/:month/:date/:slug/" to="/posts/:slug" />
 
             <Route path="/posts/:slug">
               <PostDetail posts={posts} tags={tags} categories={categories} users={users} />

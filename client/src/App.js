@@ -4,15 +4,12 @@ import Layout from './components/shared/Layout'
 import Loader from './components/shared/Loader'
 import MainContainer from './containers/MainContainer'
 
-import './App.css';
-
 import { getPosts } from './services/posts'
-
 import { getTags } from './services/tags'
-
 import { getCategories } from './services/categories'
-
 import { getUsers } from './services/users'
+
+import './App.css';
 
 function App() {
 

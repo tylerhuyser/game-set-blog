@@ -56,6 +56,10 @@
 
 }
 
+.infinite-scroll-loader {
+  scale: 0.5;
+}
+
 /* @media (max-width: 768px) {
   .infinte-scroll-loader {
     height: 10vh;

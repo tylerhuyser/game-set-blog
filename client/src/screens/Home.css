@@ -1,10 +1,12 @@
 .home-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   width: calc(100vw - 300px);
   min-height: 100%;
-  padding: 100px 150px;
+  padding: 50px;
 
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box; /* Firefox, other Gecko */

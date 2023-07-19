@@ -1,3 +1,89 @@
+.featured-post-card-container {
+  display: flex;
+  flex-direction: row;
+  /* align-items: center;
+  justify-content: center; */
+
+  width: 100%;
+  max-width: 1000px;
+
+  margin-bottom: 10vh;
+}
+
+.featured-post-card-content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  overflow: hidden;
+  text-overflow:  ellipsis;
+  word-wrap: break-word;
+
+  width: 50%;
+} 
+
+.featured-post-card-date {
+  margin: 10px 0;
+  color: #f39c12;
+  font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.featured-post-card-title {
+  color: #ccd6f6;
+  color: white;
+  font-size: clamp(24px, 5vw, 28px);
+  /* width: 75%; */
+
+  position: relative;
+  z-index: 2;
+  /* background: #F39C12; */
+  display: inline;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 15%, #f39c12 15%);
+  padding: 0px 10px;
+}
+
+.featured-post-card-excerpt {
+  box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  position: relative;
+  z-index: 2;
+  padding: 25px;
+  border-radius: 4px;
+  background-color: #172a45;
+  color: #a8b2d1;
+  font-size: 18px;
+
+  /* max-height: 200px; */
+  height: inherit;
+  /* text-overflow: ellipsis;
+  overflow: hidden; */
+  padding-bottom: 25px;
+  margin-top: 20px;
+}
+
+.featured-post-card-image {
+  width: 50%;
+  object-fit: cover;
+}
+
+.featured-post-card-link {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+  margin: 25px 0 10px;
+  padding: 0;
+  list-style: none;
+
+  color: #f39c12;
+  font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+  font-size: 18px;
+}
+
+
 .featuredPostCard-container {
   display: grid;
   grid-gap: 10px;

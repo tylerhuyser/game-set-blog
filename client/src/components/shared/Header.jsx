@@ -49,129 +49,112 @@ export default function Header(props) {
   return(
     <>
       
-      <div className="header-container slide-in-top-header"> 
+      <div className="header-container slide-in-top-header" style={
 
-        <div className="desktop-nav" style={
-
-          (scrollDirection === 'up' && !scrolledToTop) ?
-            { transform: 'translateY(0px)',
+        (scrollDirection === 'up' && !scrolledToTop) ?
+          { transform: 'translateY(0px)',
+            boxShadow: 'none',
+            height: "125px"
+          }
+          :
+          (scrollDirection === 'down' && !scrolledToTop) ?
+            {
+              transform: 'translateY(-125px)',
               boxShadow: 'none',
-              height: "100px"
+              height: "125px"
             }
             :
-            (scrollDirection === 'down' && !scrolledToTop) ?
-              {
-                transform: 'translateY(-100px)',
-                boxShadow: 'none',
-                height: "100px"
-              }
-              :
-              { transform: 'none' }
-        }>
-
-          <TransitionGroup component={null}>
-            
-            {isMounted && (
-              
-                <CSSTransition classNames={fadeClass} timeout={timeout}>
-
-                  <Link to="/" className="desktop-logo-container">
-
-                    <IconLogo />
-                        
-                  </Link>
-
-                </CSSTransition>
-                
-              )}
-
-          </TransitionGroup>
-
-          <div className="desktop-nav-links-container">
-
-            <TransitionGroup component={null}>
-                
-                {isMounted && (
-                    
-                  <CSSTransition classNames={fadeDownClass} timeout={timeout}>
-
-                    <Link to="/" className="desktop-nav-link" style={{ transitionDelay: `${isHome ? 1 * 100 : 0}ms` }}>HOME</Link>
-
-                  </CSSTransition>
-
-                )}
-
-            </TransitionGroup>
-
-            <TransitionGroup component={null}>
-                            
-              {isMounted && (
-
-                <CSSTransition classNames={fadeDownClass} timeout={timeout}>
-
-                  <Link to="/about" className="desktop-nav-link" style={{ transitionDelay: `${isHome ? 2 * 100 : 0}ms` }}>ABOUT</Link>
-
-                </CSSTransition>
-
-              )}
-
-            </TransitionGroup>
-            
-            <TransitionGroup component={null}>
-                            
-              {isMounted && (
-                  
-                <CSSTransition classNames={fadeDownClass} timeout={timeout}>
-
-                  <a className="desktop-nav-link" target="_blank" rel="noopener noreferrer" href="https://www.ace-tennis-scores.com" id="live-scores-link" style={{ transitionDelay: `${isHome ? 3 * 100 : 0}ms` }}>LIVE SCORES</a>
-
-                </CSSTransition>
-
-              )}
-
-            </TransitionGroup>
-
-          </div>
-
-        </div>
-
-        <div className="mobile-nav">
-
+            { transform: 'none' }
+      }> 
+        
+        <div className='mobile-navigation-icons-container'>
+        
           {menuVisibility ?
-          
-          <i className="fas fa-times mobile-icon" onClick={(e) => changeMenuVisibility(e)}></i>
             
-          :
+            <i className="fas fa-times mobile-icon" onClick={(e) => changeMenuVisibility(e)}></i>
+              
+            :
 
-          <i className="fas fa-bars mobile-icon" onClick={(e) => changeMenuVisibility(e)}></i>
+            <i className="fas fa-bars mobile-icon" onClick={(e) => changeMenuVisibility(e)}></i>
 
           }
 
-          <Link to="/" className="mobile-logo-container">
+        </div>
 
-            <IconLogo style={{
-              zIndex: "5",
-              textAlign: "center",
-              verticalAlign: "center",
-              
-          }} />
-
-          </Link>
-
+        <TransitionGroup component={null}>
             
-          <div className="mobile-header-placeholder"></div>
-          
+          {isMounted && (
+              
+            <CSSTransition classNames={fadeClass} timeout={timeout}>
 
-        </div>
+              <Link to="/" className="logo-container">
 
-        <div id="mobile-menu" className={menuVisibility ? "mobile-menu-visible" : "mobile-menu-hidden"}>
+                <IconLogo />
+                        
+              </Link>
 
-          <Link className="mobile-nav-link" to="/about" onClick={() => setMenuVisibility(false)}>ABOUT</Link>
-          <a className="mobile-nav-link" target="_blank" rel="noopener noreferrer" href="https://www.ace-tennis-scores.com">LIVE SCORES</a>
 
-        </div>
+            </CSSTransition>
+                
+          )}
 
-        </div>
+        </TransitionGroup>
+
+        <div className="desktop-nav-links-container">
+
+          <TransitionGroup component={null}>
+                
+            {isMounted && (
+                    
+              <CSSTransition classNames={fadeDownClass} timeout={timeout}>
+
+                <Link to="/" className="desktop-nav-link" style={{ transitionDelay: `${isHome ? 1 * 100 : 0}ms` }}>HOME</Link>
+
+            </CSSTransition>
+
+          )}
+
+        </TransitionGroup>
+
+        <TransitionGroup component={null}>
+                            
+          {isMounted && (
+
+            <CSSTransition classNames={fadeDownClass} timeout={timeout}>
+
+              <Link to="/about" className="desktop-nav-link" style={{ transitionDelay: `${isHome ? 2 * 100 : 0}ms` }}>ABOUT</Link>
+
+            </CSSTransition>
+
+          )}
+
+        </TransitionGroup>
+            
+        <TransitionGroup component={null}>
+                            
+          {isMounted && (
+                  
+            <CSSTransition classNames={fadeDownClass} timeout={timeout}>
+
+              <a className="desktop-nav-link" target="_blank" rel="noopener noreferrer" href="https://www.ace-tennis-scores.com" id="live-scores-link" style={{ transitionDelay: `${isHome ? 3 * 100 : 0}ms` }}>LIVE SCORES</a>
+
+            </CSSTransition>
+
+          )}
+
+        </TransitionGroup>
+
+      </div>
+
+    </div>
+
+    <div className={menuVisibility ? "mobile-menu mobile-menu-visible" : "mobile-menu mobile-menu-hidden"}>
+
+      <Link className="mobile-nav-link" to="/about" onClick={() => setMenuVisibility(false)}>ABOUT</Link>
+      <a className="mobile-nav-link" target="_blank" rel="noopener noreferrer" href="https://www.ace-tennis-scores.com">LIVE SCORES</a>
+
+    </div>
+
     </>
   )
 }

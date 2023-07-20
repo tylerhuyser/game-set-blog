@@ -27,7 +27,13 @@ export default function Home (props) {
       
         <div className="home-container">
 
-          {FEATUREDPOSTCARDSJSX}
+          {FEATUREDPOSTCARDSJSX[0]}
+
+          <p className='home-page-copy posts-title' id="featured-posts-title">FEATURED POSTS</p>
+
+          {FEATUREDPOSTCARDSJSX.slice(1)}
+          
+          <p className='home-page-copy posts-title' id="latest-posts-title">LATEST POSTS</p>
 
           <Posts tags={tags} users={users} categories={categories} getPostsMethod={getPosts} sourceID={null} />
 

@@ -5,9 +5,37 @@
   flex-direction: row-reverse;
 
   width: 100%;
-  max-width: 1200px;
-
   margin-bottom: 5vh;
+}
+
+@media only screen and (min-width: 375px) {
+
+}
+
+@media only screen and (min-width: 481px) {
+
+}
+
+@media only screen and (min-width: 768px) {
+
+}
+
+@media only screen and (min-width: 1024px) {
+  .featured-post-card-container {
+    margin-bottom: 5vh;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+
+}
+
+@media only screen and (min-width: 1600px) {
+  .featured-post-card-container {
+    max-width: 1200px;
+  
+    margin-bottom: 5vh;
+  }
 }
 
 .featured-post-card-container:nth-child(odd) {

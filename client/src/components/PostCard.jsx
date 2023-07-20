@@ -38,19 +38,19 @@ export default function PostCard (props) {
       {postData && users ?
 
         <>
-          <div className="postCard-container" ref={index + 1 === totalPosts ? lastPostElementRef : null} key={postData.id} onClick={handlePost} >
+          <div className="post-card-container" ref={index + 1 === totalPosts ? lastPostElementRef : null} key={postData.id} onClick={handlePost} >
 
-            <div className="postCard-image-container" key={postData.id}>
-              <a>
-                <img className="postCard-img" src={postData["_embedded"]["wp:featuredmedia"][0].source_url} />
-              </a>
+            <div className='post-card-image-container'>
+
+              <img className="post-card-image" src={postData["_embedded"]["wp:featuredmedia"][0].source_url} />
+              
             </div>
 
-            <div className="postCard-content">
+            <div className="post-card-content-container">
 
-              <p className="postCard-date">{`${postMonth}.${postDate}.${postYear}`}</p>
+              <p className="post-card-date">{`${postMonth}.${postDate}.${postYear}`}</p>
 
-              <p className="postCard-title">{parse(postData.title.rendered).toUpperCase()}</p>
+              <p className="post-card-title">{parse(postData.title.rendered).toUpperCase()}</p>
 
             </div>
             

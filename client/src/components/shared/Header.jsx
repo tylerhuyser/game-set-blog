@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { loaderDelay } from '../../utils';
 import { useScrollDirection } from '../../hooks';
+import useWindowSize from '../../utils/useWindowSize';
 
 import IconLogo from './IconLogo'
 
@@ -12,9 +13,8 @@ import './Header.css'
 
 export default function Header(props) {
 
+  const { menuVisibility, setMenuVisibility } = props
   const { isHome } = props
-
-  const [menuVisibility, setMenuVisibility] = useState(false);
 
   const [isMounted, setIsMounted] = useState(!isHome);
   const scrollDirection = useScrollDirection('down');
@@ -45,104 +45,90 @@ export default function Header(props) {
     e.preventDefault();
     setMenuVisibility(!menuVisibility);
   };
+
+  let windowSize = useWindowSize()
+
+  console.log(windowSize)
   
   return(
     <>
       
-      <div className="header-container slide-in-top-header" style={
+    <div className="header-container slide-in-top-header" style={
 
-        (scrollDirection === 'up' && !scrolledToTop) ?
+        (windowSize.width <= 758 && scrollDirection === 'up' && !scrolledToTop) ?
           { transform: 'translateY(0px)',
             boxShadow: 'none',
-            height: "125px"
+            height: "calc(75px - 20px)"
           }
           :
-          (scrollDirection === 'down' && !scrolledToTop) ?
+          (windowSize.width <= 758 && scrollDirection === 'down' && !scrolledToTop) ?
             {
-              transform: 'translateY(-125px)',
+              transform: 'translateY(-75px)',
               boxShadow: 'none',
-              height: "125px"
+              height: "calc(75px - 20px)"
             }
             :
-            { transform: 'none' }
+            (windowSize.width > 758 && scrollDirection === 'up' && !scrolledToTop) ?
+            { transform: 'translateY(0px)',
+              boxShadow: 'none',
+              height: "calc(100px - 20px)"
+            }
+            :   
+            (windowSize.width > 758 && scrollDirection === 'down' && !scrolledToTop) ?
+            {
+              transform: 'translateY(-100px)',
+              boxShadow: 'none',
+              height: "calc(100px - 20px)"
+              }
+              :
+              { transform: 'none' }
       }> 
-        
-        <div className='mobile-navigation-icons-container'>
-        
-          {menuVisibility ?
-            
-            <i className="fas fa-times mobile-icon" onClick={(e) => changeMenuVisibility(e)}></i>
-              
-            :
-
-            <i className="fas fa-bars mobile-icon" onClick={(e) => changeMenuVisibility(e)}></i>
-
-          }
-
-        </div>
-
-        <TransitionGroup component={null}>
             
           {isMounted && (
-              
-            <CSSTransition classNames={fadeClass} timeout={timeout}>
 
               <Link to="/" className="logo-container">
 
                 <IconLogo />
+
+                <p className="logo-copy-header">GAME, SET, BLOG</p>
                         
               </Link>
-
-
-            </CSSTransition>
                 
           )}
 
-        </TransitionGroup>
-
         <div className="desktop-nav-links-container">
-
-          <TransitionGroup component={null}>
                 
             {isMounted && (
-                    
-              <CSSTransition classNames={fadeDownClass} timeout={timeout}>
 
                 <Link to="/" className="desktop-nav-link" style={{ transitionDelay: `${isHome ? 1 * 100 : 0}ms` }}>HOME</Link>
 
-            </CSSTransition>
-
           )}
-
-        </TransitionGroup>
-
-        <TransitionGroup component={null}>
                             
           {isMounted && (
-
-            <CSSTransition classNames={fadeDownClass} timeout={timeout}>
 
               <Link to="/about" className="desktop-nav-link" style={{ transitionDelay: `${isHome ? 2 * 100 : 0}ms` }}>ABOUT</Link>
 
-            </CSSTransition>
-
           )}
-
-        </TransitionGroup>
-            
-        <TransitionGroup component={null}>
                             
           {isMounted && (
-                  
-            <CSSTransition classNames={fadeDownClass} timeout={timeout}>
-
+                
               <a className="desktop-nav-link" target="_blank" rel="noopener noreferrer" href="https://www.ace-tennis-scores.com" id="live-scores-link" style={{ transitionDelay: `${isHome ? 3 * 100 : 0}ms` }}>LIVE SCORES</a>
-
-            </CSSTransition>
 
           )}
 
-        </TransitionGroup>
+      </div>
+        
+      <div className='mobile-navigation-icons-container'>
+        
+        {menuVisibility ?
+          
+          <i className="fas fa-times mobile-icon" onClick={(e) => changeMenuVisibility(e)}></i>
+            
+          :
+
+          <i className="fas fa-bars mobile-icon" onClick={(e) => changeMenuVisibility(e)}></i>
+
+        }
 
       </div>
 
@@ -150,6 +136,7 @@ export default function Header(props) {
 
     <div className={menuVisibility ? "mobile-menu mobile-menu-visible" : "mobile-menu mobile-menu-hidden"}>
 
+      <Link className="mobile-nav-link" to="/" onClick={() => setMenuVisibility(false)}>HOME</Link>
       <Link className="mobile-nav-link" to="/about" onClick={() => setMenuVisibility(false)}>ABOUT</Link>
       <a className="mobile-nav-link" target="_blank" rel="noopener noreferrer" href="https://www.ace-tennis-scores.com">LIVE SCORES</a>
 

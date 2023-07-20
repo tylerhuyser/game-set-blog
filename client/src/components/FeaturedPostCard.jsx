@@ -50,7 +50,7 @@ export default function FeaturedPostCard(props) {
 
             <div className='featured-post-card-image-container'>
 
-                  <img className="featured-post-card-image" src={postData["_embedded"]["wp:featuredmedia"][0].source_url} alt="featured-postCard-image" />
+              <img className="featured-post-card-image" src={postData["_embedded"]["wp:featuredmedia"][0].source_url} alt="featured-postCard-image" />
   
             </div>
             

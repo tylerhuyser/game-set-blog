@@ -78,7 +78,7 @@ export default function PostsByTag(props) {
 
             <div id="postsByTag-loader-wrapper">
 
-              <LoaderLogo />
+              <LoaderLogo fill="white" stroke="white" />
 
             </div>
           

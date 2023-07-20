@@ -140,7 +140,7 @@ export default function PostDetail(props) {
 
             <div id="postDetail-loader-wrapper">
 
-              <LoaderLogo />
+              <LoaderLogo fill="white" stroke="white" />
 
             </div>
           

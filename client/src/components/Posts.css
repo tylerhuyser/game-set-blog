@@ -1,12 +1,11 @@
-.postCards-container {
+.post-cards-container {
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
-  align-items: center;
-  /* flex-wrap: wrap; */
+  align-items: flex-start;
+  justify-content: center;
 
   margin-top: 5vh;
-  width: 100%;
+  width: calc(100% - 100px);
   max-width: 1200px;
   padding: 50px;
 
@@ -17,67 +16,51 @@
   outline-offset: -25px;
 }
 
-.postCards-container:last-child {
-  margin-bottom: 125px;
-}
-
-@media (max-width: 768px) {
-
-
-  .postCards-container:last-child {
-    margin-bottom: 100px;
-  }
-
+.post-cards-container:last-child {
+  margin-bottom: 100px;
 }
 
 .infinite-scroll-loader {
-  /* width: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center; */
+
+  width: 100%;
   margin-top: 5vh;
-  margin-bottom: 10vh;
+  margin-bottom: 5vh;
+  scale: 0.5;
+
   display: flex;
   align-items: center;
   justify-content: center;
 
-  width: 100%;
-  /* width: max-content;
-  max-width: 300px; */
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 .infinite-scroll-loader svg {
   display: block;
   width: 50%;
-  /* height: 100%; */
-  margin: 0 auto;
-  user-select: none;
 }
 
-@media (max-width: 480px) {
 
-
-  .infinite-scroll-loader svg {
-    width: 50%;
-  }
+@media only screen and (min-width: 375px) {
 
 }
 
-.infinite-scroll-loader {
-  scale: 0.5;
+@media only screen and (min-width: 481px) {
+
 }
 
-/* @media (max-width: 768px) {
-  .infinte-scroll-loader {
-    height: 10vh;
+@media only screen and (min-width: 768px) {
+
+}
+
+@media only screen and (min-width: 1024px) {
+  .post-cards-container {
   }
 }
 
-@media (min-width: 768px) and (max-width: 1280px){
+@media only screen and (min-width: 1200px) {
 
-  .infinte-scroll-loader {
-    height: 10vh;
-  }
+}
 
-} */
+@media only screen and (min-width: 1600px) {
+
+}

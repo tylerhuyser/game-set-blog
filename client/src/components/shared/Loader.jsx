@@ -57,11 +57,11 @@ export default function Loader(props) {
 
     <div className="loader-container">
 
-      <div className="logo-wrapper" syle={
+      <div className="logo-wrapper" style={
         isLoaderMounted ? {opacity: 1} : {opacity: 0}
       }>
 
-        <LoaderLogo />
+        <LoaderLogo fill="white" stroke="white" />
 
       </div>
 

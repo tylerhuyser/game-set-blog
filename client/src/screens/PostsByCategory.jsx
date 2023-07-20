@@ -77,7 +77,7 @@ export default function PostsByCategory(props) {
 
           <div id="postsByCategory-loader-wrapper">
 
-            <LoaderLogo />
+            <LoaderLogo fill="white" stroke="white" />
 
           </div>
         

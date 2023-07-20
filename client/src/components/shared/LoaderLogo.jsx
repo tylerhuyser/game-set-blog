@@ -1,16 +1,16 @@
 import React from 'react';
 import '../../index.css';
 
-const LoaderLogo = () => (
+const LoaderLogo = (props) => (
   <svg id="logo" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 288 153">
 
     <title>Logo</title>
     <g transform="translate(9.000000, 9.000000)">
       <g>
-        <text x="63" y="93" fontFamily="bogart-semibold" fontSize="72px" fontStretch="semi-expanded" fill="white">GSB</text>
+        <text x="63" y="93" fontFamily="bogart-semibold" fontSize="72px" fontStretch="semi-expanded" fill={props.fill}>GSB</text>
         <polygon
           id="Shape"
-          stroke="white"
+          stroke={props.stroke}
           fill="transparent"
           strokeWidth="9"
           strokeLinecap="round"

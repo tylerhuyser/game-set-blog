@@ -25,7 +25,7 @@ export default function Posts(props) {
   return(
     <>
       
-        <div className="postCards-container">
+        <div className="post-cards-container">
       
           {posts.map((post, index) => {
               return (
@@ -51,7 +51,7 @@ export default function Posts(props) {
             
               <div className="infinite-scroll-loader">
           
-                <LoaderLogo />
+                <LoaderLogo fill="#f39c12" stroke="#f39c12" />
     
               </div>
               

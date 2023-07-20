@@ -49,8 +49,8 @@ export default function Layout(props) {
         <div className="layout-container" style={
           (menuVisibility && windowSize.width <= 758) ? 
             {
-              // position: 'fixed',
-              overflow: 'hidden'
+              position: 'fixed',
+              // overflow: 'hidden'
             }
             :
             {}

@@ -9,7 +9,7 @@ export default function Footer(props) {
     <>
         <div className="footer-container">
 
-            <p className="footer-copy">ALL RIGHTS RESERVED. © 2022</p>
+            <p className="footer-copy">ALL RIGHTS RESERVED. © 2023</p>
 
         </div>
     </>

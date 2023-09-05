@@ -4,25 +4,29 @@
   align-items: flex-start;
   justify-content: center;
 
-  margin-top: 5vh;
   width: calc(100% - 100px);
-  max-width: 1200px;
+  height: 100%;
   padding: 50px;
+  margin-top: -75px;
 
   background-color: rgba(256, 256, 256, 0.9);
-  box-shadow: 0 10px 30px -15px #0a192f;
+  box-shadow: none;
 
   outline: 2px solid #f39c12;
+  outline-offset: -40px -25px -25px -25px;
   outline-offset: -25px;
+
+  overflow: visible;
 }
 
 .post-cards-container:last-child {
-  margin-bottom: 100px;
+  margin-bottom: 75px;
 }
 
 .infinite-scroll-loader {
 
   width: 100%;
+  /* min-height: 250px; */
   margin-top: 5vh;
   margin-bottom: 5vh;
   scale: 0.5;
@@ -54,7 +58,18 @@
 
 @media only screen and (min-width: 1024px) {
   .post-cards-container {
+    margin-top: 5vh;
+    max-width: 1200px;
+  
+    background-color: rgba(256, 256, 256, 0.9);
+    box-shadow: 0 10px 30px -15px #0a192f;
+
   }
+
+  .post-cards-container:last-child {
+    margin-bottom: 100px;
+  }
+  
 }
 
 @media only screen and (min-width: 1200px) {

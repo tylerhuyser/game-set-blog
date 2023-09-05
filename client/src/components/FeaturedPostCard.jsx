@@ -42,7 +42,7 @@ export default function FeaturedPostCard(props) {
 
                 <div className="featured-post-card-excerpt">{parse(postData.excerpt.rendered.slice(0, 250).slice(0, postData.excerpt.rendered.slice(0, 250).lastIndexOf(".")).trim("Continue reading").concat("", "."))}</div>
 
-                <p onClick={handlePost} className="featured-post-card-link">Read Full Article...</p>
+                <p onClick={handlePost} className="featured-post-card-link">Read More</p>
 
               </div>
 

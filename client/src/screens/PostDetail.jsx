@@ -33,6 +33,7 @@ export default function PostDetail(props) {
     if (!loaded && currentPostDataFromStorage && (currentPostDataFromStorage.slug === params.slug)) {
       setPostData(currentPostDataFromStorage)
       console.log('PostDetail.jsx - UseeEffect #1a - postDATA set from LocalStorage')
+      console.log(currentPostDataFromStorage.content.rendered)
 
     } else if (!loaded && (!currentPostDataFromStorage || (currentPostDataFromStorage.slug) !== params.slug)) {
 
@@ -40,7 +41,7 @@ export default function PostDetail(props) {
         const postDataFromWP = await getPostBySlug(slug)
         localStorage.setItem("currentPost", JSON.stringify(postDataFromWP))
         setPostData(postDataFromWP)
-        console.log('PostDetail.jsx - UseeEffect #1b - postDATA set from WP API')
+        console.log('PostDetail.jsx - UseEffect #1b - postDATA set from WP API')
       }
 
       gatherPostData(params.slug)
@@ -92,15 +93,13 @@ export default function PostDetail(props) {
 
         <>
           
-          <div className="postDetail-container">
+          <div className="post-container">
 
-            <div className="postDetail-hero-container">
+            <div className="post-hero-image-container">
 
-              <div className="postDetail-hero-image-container" key={postData.id}>
-                <a>
-                  <img className="postDetail-hero-img" src={postData["_embedded"]["wp:featuredmedia"][0].source_url} atl="postDetail-hero-image" />
-                </a>
-              </div>
+              <img className="post-hero-image" src={postData["_embedded"]["wp:featuredmedia"][0].source_url} atl="post-hero-image" />
+
+            </div>
 
               <div className="postDetail-hero-content-container">
 
@@ -108,23 +107,29 @@ export default function PostDetail(props) {
 
                 <p className="postDetail-title">{parse(postData.title.rendered)}</p>
                 
-              </div>
-
             </div>
 
-            <div className="postDetail-categories-tags-container">
 
-              <p className="postDetail-categories-tags-container-title">CATEGORIES</p>
+            <div className="post-content-container">{parse(postData.content.rendered.toString().trim("Continue reading"))}</div>
+
+
+
+            
+            <div className='post-categories-container'>
+
+              <p className="post-categories-tags-container-title">CATEGORIES</p>
 
               <Categories postCategories={postData["_embedded"]["wp:term"][0]} />
-
-              <p className="postDetail-categories-tags-container-title">TAGS</p>
-
-              <Tags postTags={postData["_embedded"]["wp:term"][1]} />
-
+              
             </div>
 
-            <div className="postDetail-content-container">{parse(postData.content.rendered.toString().trim("Continue reading"))}</div>
+            <div className='post-tags-container'>
+
+              <p className="post-categories-tags-container-title">TAGS</p>
+ 
+              <Tags postTags={postData["_embedded"]["wp:term"][1]} />
+              
+            </div>
 
             <Comments postData={postData} commentsData={comments} />
             
@@ -134,11 +139,11 @@ export default function PostDetail(props) {
 
         :
 
-        <div className="postDetail-container">
+        <div className="post-container">
 
-          <div className="postDetail-loader-container">
+          <div className="post-loader-container">
 
-            <div id="postDetail-loader-wrapper">
+            <div id="post-loader-wrapper">
 
               <LoaderLogo fill="white" stroke="white" />
 

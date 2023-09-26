@@ -13,7 +13,7 @@ export default function Tags(props) {
   }
   
   const TAGSJSX = postTags && postTags?.map((tag, index) => (
-    <p className="postDetail-tag" onClick={(e) => handleTag(tag)} key={tag.id}>{tag.name.replace('&amp ;', "&")}</p>
+    <p className="post-tag-copy" onClick={(e) => handleTag(tag)} key={tag.id}>{tag.name.replace('&amp ;', "&")}</p>
   ))
 
   return (

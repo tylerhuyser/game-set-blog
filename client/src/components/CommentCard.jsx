@@ -1,6 +1,6 @@
 import React from 'react'
 
-import "./CommentCard.css"
+// import "./CommentCard.css"
 
 export default function CommentCard(props) {
 
@@ -23,17 +23,11 @@ export default function CommentCard(props) {
 
             <i className="far fa-user"></i>
 
-            <div className="comment-card-header-container">
-
-              {/* <div className="comment-profile-image-container"> */}
-                {/* <i className="far fa-user"></i> */}
-              {/* </div> */}
 
               <p className="comment-author-name">{commentData.author_name}</p>
 
               <p className="comment-date">{`${commentDate}.${commentMonth}.${commentYear}`}</p>
-              
-              </div>
+            
             
           </div>
 

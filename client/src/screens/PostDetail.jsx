@@ -9,7 +9,7 @@ import Categories from '../components/Categories'
 import Tags from '../components/Tags'
 import Comments from '../components/Comments'
 
-import './PostDetail.css'
+import './PostDetail2.css'
 
 
 export default function PostDetail(props) {
@@ -95,18 +95,24 @@ export default function PostDetail(props) {
           
           <div className="post-container">
 
-            <div className="post-hero-image-container">
+            <div className='post-hero-container'>
+              
+              <div className="post-image-container" id='post-hero-image-container'>
 
-              <img className="post-hero-image" src={postData["_embedded"]["wp:featuredmedia"][0].source_url} atl="post-hero-image" />
+                <img className="post-image" id="post-hero-image" src={postData["_embedded"]["wp:featuredmedia"][0].source_url} atl="post-hero-image" />
 
-            </div>
+              </div>
 
-              <div className="postDetail-hero-content-container">
+              <div className="post-hero-content-container">
 
-                <p className="postDetail-date">{`${postInfo.postMonth}.${postInfo.postDate}.${postInfo.postYear}`}</p>
+                <p className="post-title">{parse(postData.title.rendered)}</p>
 
-                <p className="postDetail-title">{parse(postData.title.rendered)}</p>
-                
+                <p className="post-date">{`${postInfo.postMonth}.${postInfo.postDate}.${postInfo.postYear}`}</p>
+
+                <p className='post-hero-excerpt'>{parse(postData.excerpt.rendered.trim("Continue reading"))}</p>
+  
+              </div>
+
             </div>
 
 
@@ -117,7 +123,7 @@ export default function PostDetail(props) {
             
             <div className='post-categories-container'>
 
-              <p className="post-categories-tags-container-title">CATEGORIES</p>
+              <p className="post-categories-tags-container-title" id="post-categories-container-title">CATEGORIES</p>
 
               <Categories postCategories={postData["_embedded"]["wp:term"][0]} />
               
@@ -125,7 +131,7 @@ export default function PostDetail(props) {
 
             <div className='post-tags-container'>
 
-              <p className="post-categories-tags-container-title">TAGS</p>
+              <p className="post-categories-tags-container-title" id="post-tags-container-title">TAGS</p>
  
               <Tags postTags={postData["_embedded"]["wp:term"][1]} />
               

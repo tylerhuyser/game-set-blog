@@ -115,7 +115,7 @@ const validateForm = (e) => {
               onChange={handleChange}
             />
         
-            <button className="comment-button">Submit</button>
+            <button className="comment-button">SUBMIT</button>
 
           </div>
 

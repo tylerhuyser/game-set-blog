@@ -11,10 +11,10 @@
 
 .post-hero-container {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
 }
 
-.post-hero-content-container, .post-content-container, .post-categories-container, .post-tags-container, .comments-container {
+.post-hero-content-container, .post-categories-container, .post-tags-container, .comments-container {
   display: flex;
   flex-direction: column;
   
@@ -23,25 +23,20 @@
   padding: 50px;
 
   background-color: rgba(256, 256, 256, 1);
-  /* outline: 2px solid #367bd6;
-  outline-offset: -25px; */
 }
 
 .post-content-container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-start;
-
-  padding: 50px;
-
-  outline: 2px solid white;
-  outline-offset: -25px;
-
-  z-index: 1;
 }
 
-.post-title, .post-categories-tags-container-title, .comment-form-title, .comment-author-name {
+.post-content-container div {
+  width: 100%;
+}
+
+.post-title, .post-content-container h2:not(:has(img)), .post-categories-tags-container-title, .comment-form-title, .comment-author-name {
     color: #367bd6;
     font-size: clamp(28px, 5vw, 36px);
     letter-spacing: 1.2px;
@@ -50,7 +45,7 @@
     margin-bottom: 25px;
 }
 
-.post-date, .post-category-copy, .post-tag-copy, .comment-form-input, .comment-date {
+.post-date, .post-category-copy, .post-tag-copy, .comment-form-input, .comment-button, .comment-date {
   color: #f39c12;
   font-family: Arial, Helvetica, sans-serif;
   font-size: clamp(18px, 3vw, 24px);
@@ -60,6 +55,15 @@
   margin-bottom: 0px;
 }
 
+.post-content-container h2:not(:has(img)), .post-content-container p, .post-content-container div p {
+  width: 100%;
+  text-align: left;
+}
+
+.post-content-container div p a {
+  color: #f39c12;
+}
+
 .post-hero-content-container, .comment-card-hero-container {
   display: flex;
   flex-direction: column;
@@ -67,17 +71,7 @@
   flex-grow: 1;
 }
 
-/* .post-hero-content-container, .post-categories-container, .post-tags-container {
-  padding: 50px;
-
-  background-color: rgba(256, 256, 256, 0.75);
-  box-shadow: none;
-
-  outline: 2px solid #367bd6;
-  outline-offset: -25px;
-} */
-
-.post-hero-excerpt, .comment-content {
+.post-content-container p, .post-content-container div p, .comment-content {
 
   color: #367bd6;
   font-family: Arial, Helvetica, sans-serif;
@@ -85,12 +79,12 @@
   font-weight: 400;
   letter-spacing: 2.0px;;
 
-  margin-top: 25px;
+  margin-top: 0px;
   margin-bottom: 25px;
 }
 
-.post-hero-excerpt p {
-  margin: 0px;
+.post-content-container p:first-of-type, .post-content-container div p:first-of-type, .comment-content:first-of-type {
+  margin-top: 25px;
 }
 
 .post-image-container {
@@ -105,7 +99,14 @@
   z-index: 2;
 }
 
-.post-image {
+.post-content-container h2:has(img) {
+  width: 100%;
+  height: 250px;
+  background: transparent;
+  margin: 0px 0px 25px 0px;
+}
+
+.post-image, .post-content-container h2 img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -118,6 +119,15 @@
   filter: grayscale(0%) contrast(1) brightness(90%);
 
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.post-content-container h2 img {
+  object-fit: cover;
+  outline: none;
+}
+
+.wp-video {
+  margin: 25px 0px 50px 0px;
 }
 
 .categories-container, .tags-container, .comments-container {
@@ -151,30 +161,59 @@
   box-shadow: 0 5px 5px -6px lightgray;
 }
 
+.comment-button {
+  height: calc(100px / 2);
+  width: 100px;
+  padding: 0px 10px;
+
+  background-color: #f39c12;
+  color:white;
+  margin-left: auto;
+
+  border: none;
+  text-shadow: none;
+}
+
 .invalid {
   border: 2px solid red;
   margin: 1px 5px;
 }
 
 .fa-user {
+  width: 50px;
+  height: 50px;
   font-size: 30px;
 
   color: #367bd6;
   margin-left: 0px;
-  margin-right: 25px;
 
   display: flex;
   align-items: center;
   vertical-align: middle;
 
   border: solid #367bd6 2px;
-  border-radius: 9999px;
+  border-radius: 50%;
   padding: 20px;
+}
+
+.fa-user::before {
+  margin: 0px auto;
 }
 
 .comment-card-container {
   border-top: 2px solid #f39c12;
-  padding: 25px 0px;
+  padding: 50px 0px;
+}
+
+@media only screen and (min-width: 481px) {
+
+  .post-content-container h2:has(img) {
+    width: 100%;
+    height: 500px;
+    background: transparent;
+    margin: 0px 0px 25px 0px;
+  }
+  
 }
 
 @media only screen and (min-width: 1024px) {
@@ -213,7 +252,7 @@
     z-index: 2;
   }
 
-  .post-title, .post-categories-tags-container-title, .comment-form-title, .comment-author-name {
+  .post-title, .post-content-container h2, .post-categories-tags-container-title, .comment-form-title, .comment-author-name {
     color: #367bd6;
     font-size: clamp(28px, 5vw, 36px);
     letter-spacing: 1.2px;
@@ -223,7 +262,7 @@
   }
 
   .post-date, .post-category-copy, .post-tag-copy, .comment-form-input, .comment-date {
-    color: #367bd6;
+    color: #f39c12;
     font-family: Arial, Helvetica, sans-serif;
     font-size: clamp(18px, 3vw, 24px);
     font-weight: 400;
@@ -232,17 +271,21 @@
     margin-bottom: 0px;
   }
 
-  .post-hero-excerpt, .comment-content {
+  .post-content-container p, .comment-content {
     color: #367bd6;
     font-family: Arial, Helvetica, sans-serif;
     font-size: clamp(18px, 3vw, 24px);
     font-weight: 400;
     letter-spacing: 2.0px;;
   
-    margin-top: 25px;
+    margin-top: 0px;
     margin-bottom: 25px;
   
     height: inherit;
+  }
+
+  .post-content-container p:first-of-type, .post-content-container div p:first-of-type, .comment-content:first-of-type {
+    margin-top: 25px;
   }
 
   .post-image-container {
@@ -256,8 +299,14 @@
   
     z-index: 2;
   }
+
+  .post-content-container h2:has(img) {
+    width: 100%;
+    height: 60vh;
+    background: transparent;
+  }
   
-  .post-image {
+  .post-image, .post-content-container h2 img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -270,6 +319,11 @@
     filter: grayscale(0%) contrast(1) brightness(90%);
   
     transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+
+  .post-content-container h2 img {
+    object-fit: cover;
+    outline: none;
   }
   
   .post-image-container:hover .post-image {
@@ -310,6 +364,7 @@
   }
 
   .comment-form, .comment-card {
+    width: 100%;
     margin-bottom: 50px;
   }
 
@@ -325,6 +380,12 @@
     --webkit-box-shadow: 0 5px 5px -6px lightgray;
     --Moz-Box-Shadow: 0 5px 5px -6px lightgray;
     box-shadow: 0 5px 5px -6px lightgray;
+  }
+
+  .comment-button {
+    height: calc(125px / 2);
+    width: 125px;
+    padding: 0px 10px;
   }
 
   .comment-author-name {

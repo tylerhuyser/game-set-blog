@@ -64,6 +64,8 @@ export default function PostDetail(props) {
   useEffect(() => {
     if (postData && postData.id) {
 
+      console.log(postData.content.rendered.toString().slice(postData.content.rendered.toString().indexOf("</div>") + 7))
+
       const gatherComments = async (postID) => {
         const commentsData = await getCommentsPerPost(postID)
         console.log('PostDetail.js - UseEffect #3 - COMMENTS below')
@@ -109,17 +111,11 @@ export default function PostDetail(props) {
 
                 <p className="post-date">{`${postInfo.postMonth}.${postInfo.postDate}.${postInfo.postYear}`}</p>
 
-                <p className='post-hero-excerpt'>{parse(postData.excerpt.rendered.trim("Continue reading"))}</p>
+                <div className="post-content-container">{parse(postData.content.rendered.toString().slice(postData.content.rendered.toString().indexOf("<p>")))}</div>
   
               </div>
 
             </div>
-
-
-            <div className="post-content-container">{parse(postData.content.rendered.toString().trim("Continue reading"))}</div>
-
-
-
             
             <div className='post-categories-container'>
 

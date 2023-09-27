@@ -5,7 +5,7 @@ import { getPostsByCategory } from '../services/posts'
 import Posts from '../components/Posts'
 import LoaderLogo from '../components/shared/LoaderLogo'
 
-import "./PostsByCategory.css"
+import "./PostsByCategory2.css"
 
 export default function PostsByCategory(props) {
 
@@ -44,13 +44,13 @@ export default function PostsByCategory(props) {
       
       {loaded && (posts.length > 0 || posts === "No Posts.") ?
         
-        <div className="postsByCategory-container">
+        <div className="posts-by-category-container">
 
           {posts === "No Posts." ?
             
             <>
               
-              <p className="postsByCategory-title">{`There are 0 posts categorized as ${params.slug.split("-").join(" ")}.`}</p>
+              <p className="posts-by-category-title">{`There are 0 posts categorized as ${params.slug.split("-").join(" ")}.`}</p>
 
             </>
             
@@ -59,7 +59,7 @@ export default function PostsByCategory(props) {
           
             <>
               
-              <p className="postsByCategory-title">{`Posts categorized as: ${params.slug.split("-").map((word) => {return word[0].toUpperCase() + word.substring(1)}).join(" ")}.`}</p>
+              <p className="posts-by-category-title">{`Posts categorized as: ${params.slug.split("-").map((word) => {return word[0].toUpperCase() + word.substring(1)}).join(" ")}.`}</p>
 
               <Posts tags={tags} users={users} categories={categories} getPostsMethod={getPostsByCategory} sourceID={params.id} />
 
@@ -71,7 +71,7 @@ export default function PostsByCategory(props) {
 
         :
       
-        <div className="postsByCategory-container">
+        <div className="posts-by-category-container">
 
         <div className="postsByCategory-loader-container">
 

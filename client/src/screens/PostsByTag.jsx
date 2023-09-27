@@ -5,7 +5,7 @@ import { getPostsByTag } from '../services/posts'
 import Posts from '../components/Posts'
 import LoaderLogo from '../components/shared/LoaderLogo'
 
-import "./PostsByTag.css"
+import "./PostsByTag2.css"
 
 export default function PostsByTag(props) {
 
@@ -45,13 +45,13 @@ export default function PostsByTag(props) {
       
       {loaded && (posts.length > 0 || posts === "No Posts.") ?
         
-        <div className="postsByTag-container">
+        <div className="posts-by-tag-container">
 
           {posts === "No Posts." ?
             
             <>
               
-              <p className="postsByTag-title">{`There are 0 posts tagged with ${params.slug.split("-").join(" ")}.`}</p>
+              <p className="posts-by-tag-title">{`There are 0 posts tagged with ${params.slug.split("-").join(" ")}.`}</p>
 
             </>
             
@@ -60,7 +60,7 @@ export default function PostsByTag(props) {
           
             <>
               
-              <p className="postsByTag-title">{`Posts tagged with: ${params.slug.split("-").map((word) => {return word[0].toUpperCase() + word.substring(1)}).join(" ")}.`}</p>
+              <p className="posts-by-tag-title">{`Posts tagged with: ${params.slug.split("-").map((word) => {return word[0].toUpperCase() + word.substring(1)}).join(" ")}`}</p>
 
               <Posts tags={tags} users={users} categories={categories} getPostsMethod={getPostsByTag} sourceID={params.id} />
 
@@ -72,7 +72,7 @@ export default function PostsByTag(props) {
 
         :
       
-        <div className="postsByTag-container">
+        <div className="posts-by-tag-container">
 
           <div className="postsByTag-loader-container">
 

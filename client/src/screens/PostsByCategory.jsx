@@ -73,15 +73,15 @@ export default function PostsByCategory(props) {
       
         <div className="posts-by-category-container">
 
-        <div className="postsByCategory-loader-container">
+          <div className="posts-by-category-loader-container">
 
-          <div id="postsByCategory-loader-wrapper">
+            <div id="posts-by-category-loader-wrapper">
 
-            <LoaderLogo fill="white" stroke="white" />
+              <LoaderLogo fill="white" stroke="white" />
 
+            </div>
+          
           </div>
-        
-        </div>
       
       </div>
 

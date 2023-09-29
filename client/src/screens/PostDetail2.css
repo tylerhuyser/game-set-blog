@@ -9,9 +9,15 @@
   padding: 0px;
 } 
 
-.post-hero-container {
+.post-hero-container, .post-content-container, .post-content-container div, .post-hero-content-container, .comment-card-hero-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.post-hero-content-container, .comment-card-hero-container {
+  flex-grow: 1;
 }
 
 .post-hero-content-container, .post-categories-container, .post-tags-container, .comments-container {
@@ -20,29 +26,42 @@
   
   width: calc(100vw - 100px);
   margin: 0px;
-  padding: 50px;
+  padding: 0px 50px;
 
   background-color: rgba(256, 256, 256, 1);
+  background-image: linear-gradient(to right, rgba(256, 256, 256, 0), rgba(256, 256, 256, 0), rgba(256, 256, 256, 0), rgba(256, 256, 256, 0.20), rgba(256, 256, 256, 1), rgba(256, 256, 256, 1), rgba(256, 256, 256, 0.2), rgba(256, 256, 256, 0), rgba(256, 256, 256, 0), rgba(256, 256, 256, 0)), url('../background-image-assets/Icons-Background-Blue-Transparent-1000X875.png');
+  background-image: url('../background-image-assets/Icons-Background-Blue-Transparent-1000X875.png');
+  background-size: 240%;
+  background-repeat: repeat;
+  background-position: center center;
+
+  box-shadow: 5px 0px 5px -5px white, -5px 0px 5px -5px white;
+  -moz-box-shadow: 5px 0px 5px -5px white, -5px 0px 5px -5px white; 
+  -webkit-box-shadow: 5px 0px 5px -5px white, -5px 0px 5px -5px white;
 }
 
-.post-content-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
+.post-container, .post-content-container div, .post-content-container p, .post-content-container div p, .post-title, .post-date, .post-content-container h2, .wp-video, .categories-container, .tags-container, .comment-form, .post-categories-tags-container-title, .comment-form-title, .comment-author-name, .comment-form-input, .comment-button {
+  background: white;
 }
 
-.post-content-container div {
+.post-title, .post-date, .post-content-container h2, .post-content-container div, .post-content-container p, .post-content-container div p, .post-categories-tags-container-title, .comment-form-title, .comment-author-name, .comment-content {
   width: 100%;
+  margin: 0px;
+  padding-bottom: 25px;
+
+  text-align: left;
+}
+
+.post-title {
+  padding-top: 50px;
 }
 
 .post-title, .post-content-container h2:not(:has(img)), .post-categories-tags-container-title, .comment-form-title, .comment-author-name {
-    color: #367bd6;
-    font-size: clamp(28px, 5vw, 36px);
-    letter-spacing: 1.2px;
-  
-    margin-top: 25px;
-    margin-bottom: 25px;
+  color: #367bd6;
+  font-size: clamp(24px, 5vw, 28px);
+  letter-spacing: 1.2px;
+
+  padding: 25px 0px;
 }
 
 .post-date, .post-category-copy, .post-tag-copy, .comment-form-input, .comment-button, .comment-date {
@@ -51,59 +70,42 @@
   font-size: clamp(18px, 3vw, 24px);
   font-weight: 400;
 
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
-
-.post-content-container h2:not(:has(img)), .post-content-container p, .post-content-container div p {
-  width: 100%;
-  text-align: left;
+  margin: 0px;
 }
 
 .post-content-container div p a {
   color: #f39c12;
 }
 
-.post-hero-content-container, .comment-card-hero-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  flex-grow: 1;
-}
-
 .post-content-container p, .post-content-container div p, .comment-content {
-
   color: #367bd6;
   font-family: Arial, Helvetica, sans-serif;
   font-size: clamp(18px, 3vw, 24px);
   font-weight: 400;
   letter-spacing: 2.0px;;
-
-  margin-top: 0px;
-  margin-bottom: 25px;
 }
 
-.post-content-container p:first-of-type, .post-content-container div p:first-of-type, .comment-content:first-of-type {
-  margin-top: 25px;
+/* .post-content-container p:first-of-type, .post-content-container div p:first-of-type, .comment-content:first-of-type {
+  padding-top: 25px;
+} */
+
+.comment-content:first-of-type {
+  padding-top: 25px;
 }
 
-.post-image-container {
-  width: calc(100%);
-  height: 500px;
-  transform: translateY(0px);
-  margin-bottom: 0px;
-  opacity: 1;
-
-  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
-
+.post-image-container, .post-content-container h2:has(img) {
+  width: 100%;
   z-index: 2;
 }
 
+.post-image-container {
+  height: 500px;
+  margin-bottom: 0px;
+}
+
 .post-content-container h2:has(img) {
-  width: 100%;
   height: 250px;
-  background: transparent;
-  margin: 0px 0px 25px 0px;
+  /* margin: 0px 0px 25px 0px; */
 }
 
 .post-image, .post-content-container h2 img {
@@ -122,12 +124,12 @@
 }
 
 .post-content-container h2 img {
-  object-fit: cover;
   outline: none;
 }
 
 .wp-video {
-  margin: 25px 0px 50px 0px;
+  /* margin: 25px 0px 50px 0px; */
+  padding: 25px 0px 50px 0px;
 }
 
 .categories-container, .tags-container, .comments-container {
@@ -136,25 +138,26 @@
 }
 
 .post-category-copy, .post-tag-copy {
-  margin-bottom: 5px;
+  /* margin-bottom: 5px; */
+  padding-bottom: 5px;
 }
 
 .comment-form, .comment-card {
-  margin-bottom: 25px;
+  /* margin-bottom: 25px; */
+  padding-bottom: 25px;
 }
 
-.comments-container:last-child {
-  margin-bottom: 75px;
+.comments-container > *:last-child {
+  padding-bottom: calc(75px + 75px);
 }
 
 .comment-form-input {
   width: 100%;
   border: none;
-  margin: 10px 0px 15px 0px;
-  padding: 10px 2px;
+  /* margin: 10px 0px 15px 0px; */
+  padding: 20px 2px 25px 2px;
 
   color: darkgray;
-  background: transparent;
 
   --webkit-box-shadow: 0 5px 5px -6px lightgray;
   --Moz-Box-Shadow: 0 5px 5px -6px lightgray;
@@ -164,6 +167,7 @@
 .comment-button {
   height: calc(100px / 2);
   width: 100px;
+  margin-top: 25px;
   padding: 0px 10px;
 
   background-color: #f39c12;
@@ -207,13 +211,26 @@
 
 @media only screen and (min-width: 481px) {
 
+  .post-hero-content-container, .post-categories-container, .post-tags-container, .comments-container {
+    width: calc(100vw - 150px);
+    padding: 0px 75px;
+  }
+
   .post-content-container h2:has(img) {
     width: 100%;
     height: 500px;
     background: transparent;
-    margin: 0px 0px 25px 0px;
+    background: white;
+    /* margin: 0px 0px 25px 0px; */
+    margin: 0px;
   }
-  
+
+  .comment-button {
+    height: calc(150px / 2);
+    width: 150px;
+    padding: 0px 10px;
+  }
+
 }
 
 @media only screen and (min-width: 1024px) {
@@ -224,25 +241,22 @@
     padding: 50px;
   } 
 
-  .post-hero-container {
-    display: flex;
-    flex-direction: column;
-  
-    width: 100%;
+  .post-container, .post-hero-content-container, .post-content-container div, .post-content-container p, .post-content-container div p, .post-title, .post-date, .post-content-container h2, .wp-video, .post-categories-container, .post-tags-container, .categories-container, .tags-container, .comments-container, .comment-form, .post-categories-tags-container-title, .comment-form-title, .comment-author-name, .comment-form-input {
+    background: none;
+    background-image: none;
+  }
+
+  .post-hero-container, .post-categories-container, .post-tags-container {
     margin-bottom: 5vh;
   }
 
   .post-hero-content-container, .post-categories-container, .post-tags-container, .comments-container {
-    display: flex;
-    flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
   
-    width: calc(100% - 100px);
-    height: calc(100%);
     padding: 50px;
   
-    background-color: rgba(256, 256, 256, 0.9);
+    background-color: rgba(256, 256, 256, 1);
     box-shadow: 0 10px 30px -15px #0a192f;
     margin: 25px 0 0 0;
   
@@ -252,58 +266,33 @@
     z-index: 2;
   }
 
+  .post-title, .post-date, .post-content-container h2, .post-content-container div, .post-content-container p, .post-content-container div p, .post-categories-tags-container-title, .comment-form-title, .comment-author-name, .comment-content {
+    padding-bottom: 25px;
+  }
+
+  .post-title {
+    padding-top: 25px;
+  }
+
   .post-title, .post-content-container h2, .post-categories-tags-container-title, .comment-form-title, .comment-author-name {
-    color: #367bd6;
     font-size: clamp(28px, 5vw, 36px);
-    letter-spacing: 1.2px;
-  
-    margin-top: 25px;
-    margin-bottom: 25px;
   }
 
   .post-date, .post-category-copy, .post-tag-copy, .comment-form-input, .comment-date {
-    color: #f39c12;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: clamp(18px, 3vw, 24px);
-    font-weight: 400;
-  
-    margin-top: 0px;
-    margin-bottom: 0px;
+    
   }
 
-  .post-content-container p, .comment-content {
-    color: #367bd6;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: clamp(18px, 3vw, 24px);
-    font-weight: 400;
-    letter-spacing: 2.0px;;
-  
-    margin-top: 0px;
-    margin-bottom: 25px;
-  
+  .post-content-container p, .post-content-container div p, .comment-content {
     height: inherit;
   }
 
-  .post-content-container p:first-of-type, .post-content-container div p:first-of-type, .comment-content:first-of-type {
-    margin-top: 25px;
-  }
-
   .post-image-container {
-    width: calc(100%);
-    height: 500px;
-    transform: translateY(0px);
-    margin-bottom: 0px;
-    opacity: 1;
-  
+    margin-bottom: 2.5vh;
     transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
-  
-    z-index: 2;
   }
 
   .post-content-container h2:has(img) {
-    width: 100%;
     height: 60vh;
-    background: transparent;
   }
   
   .post-image, .post-content-container h2 img {
@@ -333,7 +322,6 @@
   }
 
   .categories-container, .tags-container, .comment-card-hero-container {
-    display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
@@ -342,6 +330,7 @@
 
   .post-category-copy, .post-tag-copy {
     display: inline-block;
+    padding-bottom: 0px;
     margin-bottom: 5px;
     margin-right: 10px;
   }
@@ -354,13 +343,12 @@
     content: ""
   }
 
-  .comments-container, .comment-form, .comment-form-inputs-container {
-    display: flex;
-    flex-direction: column;
+  .comments-container {
+    margin-bottom: calc(5vh + 100px) ;
   }
 
-  .comments-container:last-child {
-    margin-bottom: 100px;
+  .comments-container > *:last-child {
+    padding-bottom: 0px;
   }
 
   .comment-form, .comment-card {
@@ -369,17 +357,8 @@
   }
 
   .comment-form-input {
-    width: 100%;
-    border: none;
     margin: 10px 0px 15px 0px;
     padding: 10px 2px;
-  
-    color: darkgray;
-    background: transparent;
-  
-    --webkit-box-shadow: 0 5px 5px -6px lightgray;
-    --Moz-Box-Shadow: 0 5px 5px -6px lightgray;
-    box-shadow: 0 5px 5px -6px lightgray;
   }
 
   .comment-button {

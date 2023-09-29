@@ -7,14 +7,14 @@
   right: 0;
   width: 100%;
   height: 100%;
-  background-color: #2da18b;
+  background-color: #f39c12;
   z-index: 99;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  background-image: url('https://i.imgur.com/ROQb9lA.png');
+  background-image: url('../../background-image-assets//Icons-Background-White-Transparent-1000X875.png'), linear-gradient(rgba(243, 156, 18, 1), rgba(243, 156, 18, 1));
 
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box; /* Firefox, other Gecko */
@@ -33,7 +33,7 @@
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   scale: 1;
 
-  background-color: #2da18b;
+  background-color: #f39c12;
   text-align: center;
   /* padding: 50px; */
 
@@ -50,12 +50,13 @@
   margin: 0 auto;
   user-select: none;
 
-  background-color: #2da18b;
+  background-color: #f39c12;
 
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 @media (max-width: 768px) {
 
   .logo-wrapper {

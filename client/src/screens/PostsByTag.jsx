@@ -74,17 +74,17 @@ export default function PostsByTag(props) {
       
         <div className="posts-by-tag-container">
 
-          <div className="postsByTag-loader-container">
+            <div className="posts-by-tag-loader-container">
 
-            <div id="postsByTag-loader-wrapper">
+              <div id="posts-by-tag-loader-wrapper">
 
-              <LoaderLogo fill="white" stroke="white" />
+                <LoaderLogo fill="white" stroke="white" />
+
+              </div>
 
             </div>
-          
-          </div>
       
-      </div>
+        </div>
 
       }
       

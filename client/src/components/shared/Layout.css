@@ -7,6 +7,7 @@
   align-items: center;
 
   background-image: linear-gradient(rgba(54, 123, 214, 0.1), rgba(54, 123, 214, 0.1)), url('https://i.imgur.com/AxblwEN.png');
+  background-image: url('../../background-image-assets/Icons-Background-White-Transparent-1000X875.png'), linear-gradient(rgba(54, 123, 214, 1), rgba(54, 123, 214, 1));
   background-size: contain;
   background-repeat: repeat;
   background-position: center center;

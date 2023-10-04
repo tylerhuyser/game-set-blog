@@ -2,8 +2,6 @@ import React, { useState } from 'react'
 
 import { postComment } from '../services/comments'
 
-// import "./CommentForm.css"
-
 export default function CommentForm(props) {
   
   const { postData } = props

@@ -3,8 +3,6 @@ import React from 'react'
 import CommentForm from './CommentForm'
 import CommentCard from './CommentCard'
 
-// import './Comments.css'
-
 
 export default function Comments(props) {
 

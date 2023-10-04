@@ -9,7 +9,7 @@ import Categories from '../components/Categories'
 import Tags from '../components/Tags'
 import Comments from '../components/Comments'
 
-import './PostDetail2.css'
+import './PostDetail.css'
 
 
 export default function PostDetail(props) {

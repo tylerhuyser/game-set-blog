@@ -5,7 +5,7 @@ import { getPostsByTag } from '../services/posts'
 import Posts from '../components/Posts'
 import LoaderLogo from '../components/shared/LoaderLogo'
 
-import "./PostsByTag2.css"
+import "./PostsByTag.css"
 
 export default function PostsByTag(props) {
 

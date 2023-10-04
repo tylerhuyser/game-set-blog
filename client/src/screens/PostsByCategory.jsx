@@ -5,7 +5,7 @@ import { getPostsByCategory } from '../services/posts'
 import Posts from '../components/Posts'
 import LoaderLogo from '../components/shared/LoaderLogo'
 
-import "./PostsByCategory2.css"
+import "./PostsByCategory.css"
 
 export default function PostsByCategory(props) {
 

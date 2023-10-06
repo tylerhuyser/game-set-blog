@@ -4,7 +4,6 @@ import { useParams } from 'react-router-dom'
 import { getPostBySlug } from '../services/posts'
 import { getCommentsPerPost } from '../services/comments'
 
-import LoaderLogo from '../components/shared/LoaderLogo'
 import Categories from '../components/Categories'
 import Tags from '../components/Tags'
 import Comments from '../components/Comments'
@@ -15,6 +14,7 @@ import './PostDetail.css'
 export default function PostDetail(props) {
 
   const [loaded, setLoaded] = useState(false)
+
   const [postData, setPostData] = useState(null)
   const [postInfo, setPostInfo] = useState({
     postDate: "",
@@ -138,19 +138,7 @@ export default function PostDetail(props) {
 
         :
 
-        <div className="post-container">
-
-          <div className="post-loader-container">
-
-            <div id="post-loader-wrapper">
-
-              <LoaderLogo fill="white" stroke="white" />
-
-            </div>
-          
-          </div>
-        
-        </div>
+        <div className="post-loader-container"></div>
 
       }
       

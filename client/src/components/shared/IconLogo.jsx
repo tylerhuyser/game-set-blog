@@ -2,7 +2,7 @@ import React from 'react';
 import '../../index.css';
 
 const IconLogo = () => (
-  <svg id="logo" xmlns="http://www.w3.org/2000/svg" role="img" width="96" height="51" viewBox="0 0 96 51">
+  <svg id="icon-logo" xmlns="http://www.w3.org/2000/svg" role="img" width="96" height="51" viewBox="0 0 96 51">
   {/* <svg id="logo" xmlns="http://www.w3.org/2000/svg" role="img" height="100%" width="100%"> */}
 
     <title>Logo</title>

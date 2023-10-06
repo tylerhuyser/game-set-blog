@@ -86,7 +86,7 @@ export default function Header(props) {
             
           {isMounted && (
 
-              <Link to="/" className="logo-container">
+              <Link to="/" className="header-logo-container">
 
                 <IconLogo />
 

@@ -16,7 +16,7 @@
   transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
-.logo-container {
+.header-logo-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -26,7 +26,7 @@
   text-decoration-line: none;
 }
 
-.logo-container svg {
+.header-logo-container svg {
   transform: scale(0.5);
   transform-origin: left;
 }
@@ -106,13 +106,13 @@
     height: calc(100px - 20px);
   }
 
-  .logo-container {
+  .header-logo-container {
     font-family: bogart-semibold;
     font-size: 24px;
     color: white;
   }
 
-  .logo-container svg {
+  .header-logo-container svg {
     transform: scale(1);
   }
 

@@ -90,7 +90,7 @@
   
   
     filter: grayscale(0%) contrast(1) brightness(90%);
-    filter: grayscale(100%) contrast(1) brightness(90%);
+    /* filter: grayscale(100%) contrast(1) brightness(90%); */
   
     transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   }
@@ -106,13 +106,14 @@
   }
   
   .post-card-date {
+    color: #367bd6;
     font-size: clamp(18px, 3vw, 24px);
     font-weight: 400;
   }
 
   .post-card-container:hover .post-card-image {
     transform: scale(1.05);
-    filter: grayscale(0%) contrast(1) brightness(90%);
+    /* filter: grayscale(0%) contrast(1) brightness(90%); */
   }
 }
 

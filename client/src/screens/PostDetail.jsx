@@ -33,7 +33,6 @@ export default function PostDetail(props) {
     if (!loaded && currentPostDataFromStorage && (currentPostDataFromStorage.slug === params.slug)) {
       setPostData(currentPostDataFromStorage)
       console.log('PostDetail.jsx - UseeEffect #1a - postDATA set from LocalStorage')
-      console.log(currentPostDataFromStorage.content.rendered)
 
     } else if (!loaded && (!currentPostDataFromStorage || (currentPostDataFromStorage.slug) !== params.slug)) {
 
@@ -64,12 +63,9 @@ export default function PostDetail(props) {
   useEffect(() => {
     if (postData && postData.id) {
 
-      console.log(postData.content.rendered.toString().slice(postData.content.rendered.toString().indexOf("</div>") + 7))
-
       const gatherComments = async (postID) => {
         const commentsData = await getCommentsPerPost(postID)
         console.log('PostDetail.js - UseEffect #3 - COMMENTS below')
-        console.log(commentsData)
         if (commentsData.length > 0) {
           setComments(commentsData)
         } else if (commentsData.length === 0) {
@@ -101,7 +97,8 @@ export default function PostDetail(props) {
               
               <div className="post-image-container" id='post-hero-image-container'>
 
-                <img className="post-image" id="post-hero-image" src={postData["_embedded"]["wp:featuredmedia"][0].source_url} atl="post-hero-image" />
+                {/* <img className="post-image" id="post-hero-image" src={postData["_embedded"]["wp:featuredmedia"][0].source_url} atl="post-hero-image" /> */}
+                {parse(postData.content.rendered.toString().slice(postData.content.rendered.toString().indexOf("<img"), postData.content.rendered.toString().indexOf('<div class="wp-block-cover__inner-container')))}
 
               </div>
 

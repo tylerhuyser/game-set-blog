@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { Link } from 'react-router-dom';
 
 import './About.css'
 
@@ -24,11 +25,17 @@ export default function About(props) {
 
         <div className="social-icons-container">
 
+          <a className="about-link" href="https://twitter.com/GameSet_Blog">
             <i className="fab fa-twitter"></i>
+          </a>
 
+          <a className="about-link" href="https://instagram.com/the.brown.tyler">
             <i className="fab fa-instagram"></i>
-
+          </a>
+          
+          <a className="about-link" href="mailto:tyler@gameset.blog">
             <i className="far fa-envelope"></i>
+          </a>
 
           </div>
 
@@ -58,7 +65,7 @@ export default function About(props) {
 
               </ul>
 
-            <span className="about-me-cta">Follow me on Instagram: <a href=''>@tylerhuijser</a>. Or shoot me an email at <a href=''>tyler@gameset.blog</a>.</span>
+            <span className="about-me-cta">Follow me on Instagram: <a href='https://instagram.com/the.brown.tyler'>@tylerhuijser</a>. Or shoot me an email at <a href='mailto:tyler@gameset.blog'>tyler@gameset.blog</a>.</span>
 
           </div>
 

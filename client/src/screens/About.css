@@ -184,6 +184,11 @@
     padding-top: 75px;
   }
 
+  .fab, .far {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
   .about-bio-container {
     padding-bottom: 50px;
   }

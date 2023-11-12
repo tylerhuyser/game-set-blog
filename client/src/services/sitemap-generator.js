@@ -32,12 +32,12 @@ const getPosts = async () => {
 }
 
 const getCategories = async () => {
-  const resp = await api.get(`/categories`)
+  const resp = await api.get(`/categories?_embed&per_page=100`)
   return resp.data
 }
 
 const getTags = async () => {
-  const resp = await api.get(`/tags`)
+  const resp = await api.get(`/tags?_embed&per_page=100`)
   return resp.data
 }
 

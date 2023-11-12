@@ -1,5 +1,5 @@
 import React from 'react'
-import { useHistory } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 import './FeaturedPostCard.css'
 
@@ -7,7 +7,7 @@ export default function FeaturedPostCard(props) {
 
   const { postData, users } = props
 
-  const history = useHistory()
+  const navigate = useNavigate()
   const parse = require('html-react-parser').default
 
   const postDate = new Date(postData.date).getDate()
@@ -16,7 +16,7 @@ export default function FeaturedPostCard(props) {
 
   const handlePost = () => {
     localStorage.setItem('currentPost', JSON.stringify(postData))
-    history.push(`/posts/${postData.id}/${postData.slug}`)
+    navigate(`/posts/${postData.id}/${postData.slug}`)
   }
   
   return (

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Route, Switch, Redirect } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import Home from "../screens/Home";
 import About from '../screens/About'
 import PostDetail from '../screens/PostDetail'
@@ -24,39 +24,46 @@ export default function MainContainer(props) {
       {posts && tags && categories && users ?
       
         <>
-          <Switch>
+          <Routes>
 
-            <Route exact path="/">
+            <Route exact path="/" element={
               <Home posts={posts} tags={tags} categories={categories} users={users} />
-            </Route>
+            } />
 
-            <Route path="/about">
+            <Route path="/about" element={
               <About setPageTitle={setPageTitle} />
-            </Route>
+            }  />
 
-            {/* <Redirect from="/:id/:slug" to="/posts/:slug" /> */}
+            {/* <Navigate from="/:id/:slug" to="/posts/:slug" /> */}
 
-            <Redirect from="/posts/:id/:slug" to="/posts/:slug" />
-            <Redirect from="/posts/:id/:slug/" to="/posts/:slug" />
+            <Route path="/posts/:id/:slug" element={<Navigate to="/posts/:slug" />} />
+            {/* <Navigate from="/posts/:id/:slug" to="/posts/:slug" /> */}
 
-            <Redirect from="/:year/:month/:date/:slug" to="/posts/:slug" />
-            <Redirect from="/:year/:month/:date/:slug/" to="/posts/:slug" />
+            <Route path="/posts/:id/:slug/" element={<Navigate to="/posts/:slug" />} />
+            {/* <Navigate from="/posts/:id/:slug/" to="/posts/:slug" /> */}
 
-            <Route path="/posts/:slug">
+            <Route path="/:year/:month/:date/:slug" element={<Navigate to="/posts/:slug" />} />
+            {/* <Navigate from="/:year/:month/:date/:slug" to="/posts/:slug" /> */}
+
+            <Route path="/:year/:month/:date/:slug/" element={<Navigate to="/posts/:slug" />} />
+            {/* <Navigate from="/:year/:month/:date/:slug/" to="/posts/:slug" /> */}
+
+            <Route path="/posts/:slug" element={
               <PostDetail posts={posts} tags={tags} categories={categories} users={users} setPageTitle={setPageTitle} setPageDescription={setPageDescription} />
-            </Route>
+            } />
 
-            <Route path="/categories/:id/:slug">
+            <Route path="/categories/:id/:slug" element={
               <PostsByCategory posts={posts} tags={tags} categories={categories} users={users} getPostsMethod={getPostsByCategory} setPageTitle={setPageTitle} setPageDescription={setPageDescription} />
-            </Route>
+            } />
 
-            <Route path="/tags/:id/:slug">
+            <Route path="/tags/:id/:slug" element={
               <PostsByTag posts={posts} tags={tags} categories={categories} users={users} getPostsMethod={getPostsByTag} setPageTitle={setPageTitle} setPageDescription={setPageDescription} />
-            </Route>
+            } />
 
-            <Redirect to="/" />
+            <Route element={<Navigate to="/" />} />
+            {/* <Navigate to="/" /> */}
 
-          </Switch>
+          </Routes>
         </>
       
         :

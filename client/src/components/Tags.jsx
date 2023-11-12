@@ -1,15 +1,15 @@
 import React from 'react'
-import { useHistory } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 export default function Tags(props) {
   
   const { postTags } = props
 
-  const history = useHistory()
+  const navigate = useNavigate()
 
   const handleTag = (tag) => {
     localStorage.setItem('currentTag', JSON.stringify(tag))
-    history.push(`/tags/${tag.id}/${tag.slug}`)
+    navigate(`/tags/${tag.id}/${tag.slug}`)
   }
   
   const TAGSJSX = postTags && postTags?.map((tag, index) => (

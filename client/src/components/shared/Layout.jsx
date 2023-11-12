@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
+import Head from "../shared/Head"
 import Header from '../shared/Header'
 import Footer from '../shared/Footer'
 
@@ -17,6 +18,7 @@ export default function Layout(props) {
   let windowSize = useWindowSize()
 
   const { isMounted, isHome } = props
+  const {title, description} = props
 
     // Sets target="_blank" rel="noopener noreferrer" on external links
     const handleExternalLinks = () => {
@@ -45,34 +47,41 @@ export default function Layout(props) {
     <>
       
       {isMounted ?
+        
+        <>
+          
+          <Head title={title} description={description} />
       
-        <div className="layout-container" style={
-          (menuVisibility && windowSize.width <= 758) ? 
-            {
-              position: 'fixed',
-              // overflow: 'hidden'
-            }
-            :
-            {}
-        }>
+          <div className="layout-container" style={
+            (menuVisibility && windowSize.width <= 758) ? 
+              {
+                position: 'fixed',
+                // overflow: 'hidden'
+              }
+              :
+              {}
+          }>
 
-          <Header isHome={isHome} menuVisibility={menuVisibility} setMenuVisibility={setMenuVisibility} />
+            <Header isHome={isHome} menuVisibility={menuVisibility} setMenuVisibility={setMenuVisibility} />
 
-          <div className="body-container"
-            
-          >
+            <div className="body-container"
+              
+            >
 
-            {props.children}
+              {props.children}
 
-            {/* <Sidebar categories={categories} tags={tags} /> */}
+              {/* <Sidebar categories={categories} tags={tags} /> */}
+
+            </div>
+
+            <Footer />
 
           </div>
 
-          <Footer />
-
-        </div>
-
+        </>
+          
         :
+          
 
         <div className="logo-wrapper" id="layout-loader">
 

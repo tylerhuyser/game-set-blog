@@ -73,7 +73,7 @@ function App() {
 
       {loaded && isMounted ?
       
-        <Layout tags={tags} categories={categories} location={location} loaded={loaded} isMounted={isMounted} isHome={isHome} >
+        <Layout isMounted={isMounted} isHome={isHome} >
 
           <MainContainer posts={posts} tags={tags} categories={categories} users={users} />
 

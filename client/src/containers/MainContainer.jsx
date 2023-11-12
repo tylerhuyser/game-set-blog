@@ -31,7 +31,7 @@ export default function MainContainer(props) {
             </Route>
 
             <Route path="/about">
-              <About />
+              <About setPageTitle={setPageTitle} />
             </Route>
 
             {/* <Redirect from="/:id/:slug" to="/posts/:slug" /> */}

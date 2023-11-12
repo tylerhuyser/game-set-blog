@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import './About.css'
 
 
 export default function About() {
+
+  const {setPageTitle} = props
+
+  useEffect(() => {
+    setPageTitle('Game, Set, Blog | About')
+  })
   
   return(
     <div className="about-container">

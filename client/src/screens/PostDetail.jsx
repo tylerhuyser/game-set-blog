@@ -21,7 +21,9 @@ export default function PostDetail(props) {
     postMonth: "",
     postYear: "",
   })
-  const [comments, setComments ] = useState([])
+  const [comments, setComments] = useState([])
+  
+  const { setPageTitle, setPageDescription } = props
 
   const parse = require('html-react-parser').default
   const params = useParams()
@@ -83,6 +85,20 @@ export default function PostDetail(props) {
       console.log('PostDetail.jsx - UseEffect #4 - PostDetail Loaded')
     }
   }, [postInfo, comments])
+
+  console.log(postData)
+  
+  useEffect(() => {
+    if (postData && postData.title) {
+      setPageTitle(`Game, Set, Blog | ${postData.title.rendered.replace(/<[^>]*>?/gm, '').replace('&#038;', "&").replace('&#8217;', "'").replace('&#8220;', "'").replace('&#8221;', "'")}`)
+    }
+  }, [postData])
+
+  useEffect(() => {
+    if (postData && postData.excerpt) {
+      setPageDescription(`Game, Set, Blog | ${postData.excerpt.rendered.replace(/<[^>]*>?/gm, '').replace('&#038;', "&").replace('&#8217;', "'").replace('&#8220;', "'").replace('&#8221;', "'")}`)
+    }
+  }, [postData])
   
   return(
     <>

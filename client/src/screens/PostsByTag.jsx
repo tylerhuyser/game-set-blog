@@ -10,6 +10,7 @@ import "./PostsByTag.css"
 export default function PostsByTag(props) {
 
   const { tags, categories, users } = props
+  const { setPageTitle, setPageDescription } = props
   
   const [posts, setPosts] = useState([])
   const [loaded, setLoaded] = useState(false)
@@ -37,6 +38,13 @@ export default function PostsByTag(props) {
       setLoaded(true)
     }
   }, [posts])
+
+  useEffect(() => {
+    if (params && params.slug) {
+      setPageTitle(`Game, Set, Blog | ${params.slug.split("-").map((word) => { return word[0].toUpperCase() + word.substring(1) }).join(" ")}`)
+      setPageDescription(`Game, Set, Blog | ${params.slug.split("-").map((word) => { return word[0].toUpperCase() + word.substring(1) }).join(" ")} | Analysis and opinion on the world of tennis. Grand Slams, ATP, WTA, and ITF. After Google Search informed me that I visited Simona Halep's Wikipedia page 57 times in the past month, I finally decided to admit I have a problem. This blog is the solution.`)
+    }
+  }, [params])
 
 
   return (

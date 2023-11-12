@@ -18,7 +18,7 @@ export default function Layout(props) {
   let windowSize = useWindowSize()
 
   const { isMounted, isHome } = props
-  const {title, description} = props
+  const { title, description } = props
 
     // Sets target="_blank" rel="noopener noreferrer" on external links
     const handleExternalLinks = () => {
@@ -64,9 +64,7 @@ export default function Layout(props) {
 
             <Header isHome={isHome} menuVisibility={menuVisibility} setMenuVisibility={setMenuVisibility} />
 
-            <div className="body-container"
-              
-            >
+            <div className="body-container">
 
               {props.children}
 

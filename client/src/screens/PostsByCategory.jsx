@@ -10,6 +10,7 @@ import "./PostsByCategory.css"
 export default function PostsByCategory(props) {
 
   const { tags, categories, users } = props
+  const { setPageTitle, setPageDescription } = props
   
   const [posts, setPosts] = useState([])
   const [loaded, setLoaded] = useState(false)

@@ -15,6 +15,7 @@ import {
 export default function MainContainer(props) {
   
   const { posts, tags, categories, users } = props
+  const { setPageTitle, setPageDescription } = props
   
   return (
 
@@ -42,15 +43,15 @@ export default function MainContainer(props) {
             <Redirect from="/:year/:month/:date/:slug/" to="/posts/:slug" />
 
             <Route path="/posts/:slug">
-              <PostDetail posts={posts} tags={tags} categories={categories} users={users} />
+              <PostDetail posts={posts} tags={tags} categories={categories} users={users} setPageTitle={setPageTitle} setPageDescription={setPageDescription} />
             </Route>
 
             <Route path="/categories/:id/:slug">
-              <PostsByCategory posts={posts} tags={tags} categories={categories} users={users} getPostsMethod={getPostsByCategory} />
+              <PostsByCategory posts={posts} tags={tags} categories={categories} users={users} getPostsMethod={getPostsByCategory} setPageTitle={setPageTitle} setPageDescription={setPageDescription} />
             </Route>
 
             <Route path="/tags/:id/:slug">
-              <PostsByTag posts={posts} tags={tags} categories={categories} users={users} getPostsMethod={getPostsByTag} />
+              <PostsByTag posts={posts} tags={tags} categories={categories} users={users} getPostsMethod={getPostsByTag} setPageTitle={setPageTitle} setPageDescription={setPageDescription} />
             </Route>
 
             <Redirect to="/" />

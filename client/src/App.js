@@ -13,13 +13,19 @@ import './App.css';
 
 function App() {
 
+  // Loading Triggers
   const [loaded, setLoaded] = useState(true)
   const [isMounted, setIsMounted] = useState(false)
 
+  // Data
   const [posts, setPosts] = useState([])
   const [tags, setTags] = useState([])
   const [categories, setCategories] = useState([])
   const [users, setUsers] = useState([])
+
+  // MetaData
+  const [pageTitle, setPageTitle] = useState("")
+  const [pageDescription, setPageDescription] = useState("")
 
   const location = window.location
 
@@ -75,9 +81,9 @@ function App() {
 
       {loaded && isMounted ?
       
-        <Layout isMounted={isMounted} isHome={isHome} >
+        <Layout isMounted={isMounted} isHome={isHome} title={pageTitle} description={pageDescription} >
 
-          <MainContainer posts={posts} tags={tags} categories={categories} users={users} />
+          <MainContainer posts={posts} tags={tags} categories={categories} users={users} setPageTitle={setPageTitle} setPageDescription={setPageDescription} />
 
         </Layout>
     

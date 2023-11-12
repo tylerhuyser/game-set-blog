@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 import './About.css'
 
 
-export default function About() {
+export default function About(props) {
 
   const {setPageTitle} = props
 

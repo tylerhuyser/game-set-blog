@@ -1,10 +1,11 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import { useLocation } from '@reach/router';
-import { useStaticQuery, graphql } from 'gatsby';
+import { useLocation } from "react-router-dom";
 
 const Head = ({ title, description, image }) => {
-  const { pathname } = useLocation();
+
+  const location = useLocation()
+  const pathname = location.pathname
 
   const metadata = {
     defaultTitle: "Game, Set, Blog",
@@ -22,7 +23,7 @@ const Head = ({ title, description, image }) => {
   };
 
   return (
-    <Helmet title={title} defaultTitle={seo.title} titleTemplate={`%s | ${defaultTitle}`}>
+    <Helmet title={title} defaultTitle={seo.title} titleTemplate={`%s | ${metadata.defaultTitle}`}>
       <html lang="en" />
 
       <meta name="description" content={seo.description} />

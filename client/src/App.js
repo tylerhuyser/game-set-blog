@@ -29,6 +29,7 @@ function App() {
     const getPostsData = async (sourceID, page) => {
       const postsData = await getPosts(sourceID, page)
       console.log('App.jsx - UseEffect # 1 - POSTS below')
+      console.log(postsData)
       setPosts(postsData.data)
     }
     getPostsData(null, 1)

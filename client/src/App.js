@@ -48,6 +48,7 @@ function App() {
     const getCategoriesData = async () => {
       const categoriesData = await getCategories()
       console.log('App.jsx - UseEffect #3 - CATEGORIES below')
+      console.log(categoriesData)
       setCategories(categoriesData)
     }
     getCategoriesData()

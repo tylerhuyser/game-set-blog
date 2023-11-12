@@ -1,4 +1,4 @@
-import api from './api-config'
+import api from './api-config.js'
 
 export const getPosts = async (sourceID, page) => {
   const resp = await api.get(`/posts?_embed&page=${page}&per_page=5`)

@@ -1,4 +1,4 @@
-import api from './api-config'
+import api from './api-config.js'
 
 export const getTags = async () => {
   const resp = await api.get(`/tags`)

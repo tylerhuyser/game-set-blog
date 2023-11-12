@@ -27,7 +27,7 @@ const api = axios.create({
 
 
 const getPosts = async () => {
-  const resp = await api.get(`/posts`)
+  const resp = await api.get(`/posts?_embed&per_page=100`)
   return resp.data
 }
 

@@ -5,6 +5,14 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from 'react-router-dom';
 
+import TagManager from 'react-gtm-module'
+
+const tagManagerArgs = {
+  gtmId: 'GTM-TLX3ZGT2'
+}
+
+TagManager.initialize(tagManagerArgs)
+
 ReactDOM.render(
   <React.StrictMode>
     <Router>

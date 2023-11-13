@@ -1,6 +1,8 @@
 import React from "react";
 
 import { Route, Routes, Navigate } from "react-router-dom";
+import Redirect from "../components/shared/Redirect";
+
 import Home from "../screens/Home";
 import About from '../screens/About'
 import PostDetail from '../screens/PostDetail'
@@ -34,19 +36,15 @@ export default function MainContainer(props) {
               <About setPageTitle={setPageTitle} />
             }  />
 
-            {/* <Navigate from="/:id/:slug" to="/posts/:slug" /> */}
+            <Route path="/:id/:slug" element={<Redirect />} />
 
-            <Route path="/posts/:id/:slug" element={<Navigate to="/posts/:slug" />} />
-            {/* <Navigate from="/posts/:id/:slug" to="/posts/:slug" /> */}
+            <Route path="/posts/:id/:slug" element={<Redirect />} />
 
-            <Route path="/posts/:id/:slug/" element={<Navigate to="/posts/:slug" />} />
-            {/* <Navigate from="/posts/:id/:slug/" to="/posts/:slug" /> */}
+            <Route path="/posts/:id/:slug/" element={<Redirect />} />
 
-            <Route path="/:year/:month/:date/:slug" element={<Navigate to="/posts/:slug" />} />
-            {/* <Navigate from="/:year/:month/:date/:slug" to="/posts/:slug" /> */}
+            <Route path="/:year/:month/:date/:slug" element={<Redirect />} />
 
-            <Route path="/:year/:month/:date/:slug/" element={<Navigate to="/posts/:slug" />} />
-            {/* <Navigate from="/:year/:month/:date/:slug/" to="/posts/:slug" /> */}
+            <Route path="/:year/:month/:date/:slug/" element={<Redirect />} />
 
             <Route path="/posts/:slug" element={
               <PostDetail posts={posts} tags={tags} categories={categories} users={users} setPageTitle={setPageTitle} setPageDescription={setPageDescription} />
@@ -60,8 +58,7 @@ export default function MainContainer(props) {
               <PostsByTag posts={posts} tags={tags} categories={categories} users={users} getPostsMethod={getPostsByTag} setPageTitle={setPageTitle} setPageDescription={setPageDescription} />
             } />
 
-            <Route element={<Navigate to="/" />} />
-            {/* <Navigate to="/" /> */}
+            <Route path="*" element={<Navigate replace to="/" />} />
 
           </Routes>
         </>

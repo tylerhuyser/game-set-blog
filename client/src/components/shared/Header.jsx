@@ -54,26 +54,26 @@ export default function Header(props) {
       
     <div className="header-container slide-in-top-header" style={
 
-        (windowSize.width <= 758 && scrollDirection === 'up' && !scrolledToTop) ?
+        (windowSize.width <= 758 && scrollDirection === 'up' && !scrolledToTop && !menuVisibility) ?
           { transform: 'translateY(0px)',
             boxShadow: 'none',
             height: "calc(75px - 20px)"
           }
           :
-          (windowSize.width <= 758 && scrollDirection === 'down' && !scrolledToTop) ?
+          (windowSize.width <= 758 && scrollDirection === 'down' && !scrolledToTop && !menuVisibility) ?
             {
               transform: 'translateY(-75px)',
               boxShadow: 'none',
               height: "calc(75px - 20px)"
             }
             :
-            (windowSize.width > 758 && scrollDirection === 'up' && !scrolledToTop) ?
+            (windowSize.width > 758 && scrollDirection === 'up' && !scrolledToTop && !menuVisibility) ?
             { transform: 'translateY(0px)',
               boxShadow: 'none',
               height: "calc(100px - 20px)"
             }
             :   
-            (windowSize.width > 758 && scrollDirection === 'down' && !scrolledToTop) ?
+            (windowSize.width > 758 && scrollDirection === 'down' && !scrolledToTop && !menuVisibility) ?
             {
               transform: 'translateY(-100px)',
               boxShadow: 'none',

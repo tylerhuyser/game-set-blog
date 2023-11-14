@@ -58,7 +58,7 @@ export default function MainContainer(props) {
               <PostsByTag posts={posts} tags={tags} categories={categories} users={users} getPostsMethod={getPostsByTag} setPageTitle={setPageTitle} setPageDescription={setPageDescription} />
             } />
 
-            {/* <Route path="*" element={<Navigate replace to="/" />} /> */}
+            <Route path="*" element={<Navigate replace to="/" />} />
 
           </Routes>
         </>

@@ -6,7 +6,7 @@ import './About.css'
 
 export default function About(props) {
 
-  const {setPageTitle} = props
+  const { setPageTitle } = props
 
   useEffect(() => {
     setPageTitle('Game, Set, Blog | About')

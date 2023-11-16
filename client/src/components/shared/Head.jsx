@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet'
 import { useLocation } from "react-router-dom";
 
 const Head = ({ title, description, image }) => {
-
+ 
   const location = useLocation()
   const pathname = location.pathname
 

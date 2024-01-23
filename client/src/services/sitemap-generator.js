@@ -74,7 +74,7 @@ async function generateSitemap() {
     return (
       new Sitemap(router)
           .applyParams(paramsConfig)
-          .build("https://www.gamesetblog.com")
+          .build("https://gamesetblog.com")
           .save("./public/sitemap-index.xml")
     );
 

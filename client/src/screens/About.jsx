@@ -11,7 +11,7 @@ export default function About(props) {
   useEffect(() => {
     setPageTitle('Game, Set, Blog | About')
   }, [])
-  
+   
   return(
     <div className="about-container">
 

@@ -28,7 +28,7 @@ export default function PostCard (props) {
 
   const handlePost = () => {
     localStorage.setItem('currentPost', JSON.stringify(postData))
-    navigate(`/posts/${postData.id}/${postData.slug}`)
+    navigate(`/posts/${postData.slug}`)
   }
   
   return (

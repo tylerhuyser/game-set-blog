@@ -42,6 +42,7 @@ const Head = ({ title, description, image }) => {
       <meta name="twitter:image" content={seo.image} />
 
       <meta name="google-site-verification" content="UWdDiArrGivUbpWkJwWyFiGgMSkGbPiUXXYmB-DqkWE" />
+      <link rel="canonical" href={`${metadata.siteURL}${pathname}`} />
     </Helmet>
   );
 };

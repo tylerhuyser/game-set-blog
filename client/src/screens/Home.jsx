@@ -13,6 +13,7 @@ import './Home.css'
 export default function Home (props) {
   
   const { posts, tags, categories, users } = props
+  console.log(posts)
   const scrollDirection = useScrollDirection('down');
 
   const FEATUREDPOSTCARDSJSX = posts && posts?.slice(0, 5).map((post) => {

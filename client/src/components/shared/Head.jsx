@@ -10,7 +10,7 @@ const Head = ({ title, description, image }) => {
   const metadata = {
     defaultTitle: "Game, Set, Blog",
     defaultDescription: "Analysis and opinion on the world of tennis. Grand Slams, ATP, WTA, and ITF. After Google Search informed me that I visited Simona Halep’s Wikipedia page 57 times in the past month, I finally decided to admit I have a problem. This blog is the solution.",
-    siteURL: "https://www.gamesetblog.com",
+    siteURL: "https://gamesetblog.com",
     defaultImage: "../../background-images/metadataImage.png",
     twitterUsername: "@GameSet_Blog"
   }

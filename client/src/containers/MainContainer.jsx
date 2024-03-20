@@ -9,6 +9,8 @@ import PostDetail from '../screens/PostDetail'
 import PostsByCategory from '../screens/PostsByCategory'
 import PostsByTag from '../screens/PostsByTag'
 
+import PageNotFound from "../screens/PageNotFound"
+
 import {
   getPostsByCategory,
   getPostsByTag
@@ -58,7 +60,10 @@ export default function MainContainer(props) {
               <PostsByTag posts={posts} tags={tags} categories={categories} users={users} getPostsMethod={getPostsByTag} setPageTitle={setPageTitle} setPageDescription={setPageDescription} />
             } />
 
-            <Route path="*" element={<Navigate replace to="/" />} />
+            {/* <Route path="*" element={<Navigate replace to="/" />} /> */}
+            <Route path="/page-not-found" element={
+              <PageNotFound posts={posts} tags={tags} categories={categories} users={users} getPostsMethod={getPostsByTag} setPageTitle={setPageTitle} setPageDescription={setPageDescription} />
+            } />
 
           </Routes>
         </>

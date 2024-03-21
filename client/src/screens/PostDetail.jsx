@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 import { getPostBySlug } from '../services/posts'
 import { getCommentsPerPost } from '../services/comments'
@@ -26,6 +26,8 @@ export default function PostDetail(props) {
   const { setPageTitle, setPageDescription } = props
 
   const parse = require('html-react-parser').default
+
+  const navigate = useNavigate()
   const params = useParams()
 
   useEffect(() => {
@@ -38,11 +40,15 @@ export default function PostDetail(props) {
 
     } else if (!loaded && (!currentPostDataFromStorage || (currentPostDataFromStorage.slug) !== params.slug)) {
 
-      const gatherPostData = async (slug) => {
+      const gatherPostData = async(slug) => {
         const postDataFromWP = await getPostBySlug(slug)
-        localStorage.setItem("currentPost", JSON.stringify(postDataFromWP))
-        setPostData(postDataFromWP)
-        console.log('PostDetail.jsx - UseEffect #1b - postDATA set from WP API')
+        if (!postDataFromWP) {
+          navigate('/page-not-found')
+        } else {
+          localStorage.setItem("currentPost", JSON.stringify(postDataFromWP))
+          setPostData(postDataFromWP)
+          console.log('PostDetail.jsx - UseEffect #1b - postDATA set from WP API')
+        }
       }
 
       gatherPostData(params.slug)

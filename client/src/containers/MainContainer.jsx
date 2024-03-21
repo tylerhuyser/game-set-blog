@@ -38,7 +38,7 @@ export default function MainContainer(props) {
               <About setPageTitle={setPageTitle} />
             }  />
 
-            {/* <Route path="/:id/:slug" element={<Redirect />} />
+            <Route path="/:id/:slug" element={<Redirect />} />
 
             <Route path="/posts/:id/:slug" element={<Redirect />} />
 
@@ -46,7 +46,7 @@ export default function MainContainer(props) {
 
             <Route path="/:year/:month/:date/:slug" element={<Redirect />} />
 
-            <Route path="/:year/:month/:date/:slug/" element={<Redirect />} /> */}
+            <Route path="/:year/:month/:date/:slug/" element={<Redirect />} />
 
             <Route path="/posts/:slug" element={
               <PostDetail posts={posts} tags={tags} categories={categories} users={users} setPageTitle={setPageTitle} setPageDescription={setPageDescription} />
@@ -65,7 +65,7 @@ export default function MainContainer(props) {
             } />
 
             <Route path="*" element={
-              <PageNotFound posts={posts} tags={tags} categories={categories} users={users} getPostsMethod={getPostsByTag} setPageTitle={setPageTitle} setPageDescription={setPageDescription} />
+              <Navigate to="/page-not-found" replace/>
             } />
 
             {/* <Route path="*" element={<Navigate replace to="/" />} /> */}

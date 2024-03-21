@@ -64,9 +64,9 @@ export default function MainContainer(props) {
               <PageNotFound posts={posts} tags={tags} categories={categories} users={users} getPostsMethod={getPostsByTag} setPageTitle={setPageTitle} setPageDescription={setPageDescription} />
             } />
 
-            <Route path="*" element={
+            {/* <Route path="*" element={
               <PageNotFound posts={posts} tags={tags} categories={categories} users={users} getPostsMethod={getPostsByTag} setPageTitle={setPageTitle} setPageDescription={setPageDescription} />
-            } />
+            } /> */}
 
             {/* <Route path="*" element={<Navigate replace to="/" />} /> */}
 

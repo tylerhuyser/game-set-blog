@@ -111,7 +111,7 @@ export default function Header(props) {
                             
           {isMounted && (
                 
-              <a className="desktop-nav-link" target="_blank" rel="noopener noreferrer" href="https://www.ace-tennis-scores.com" id="live-scores-link" style={{ transitionDelay: `${isHome ? 3 * 100 : 0}ms` }}>LIVE SCORES</a>
+              <a className="desktop-nav-link" target="_blank" rel="noopener noreferrer" href="https://www.rankings.gamesetblog.com/" id="live-scores-link" style={{ transitionDelay: `${isHome ? 3 * 100 : 0}ms` }}>RANKINGS</a>
 
           )}
 

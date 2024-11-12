@@ -9,7 +9,7 @@ const Head = ({ title, description, image }) => {
 
   const metadata = {
     defaultTitle: "Game, Set, Blog",
-    defaultDescription: "Analysis and opinion on the world of tennis. Grand Slams, ATP, WTA, and ITF. After Google Search informed me that I visited Simona Halep’s Wikipedia page 57 times in the past month, I finally decided to admit I have a problem. This blog is the solution.",
+    defaultDescription: "GameSetBlog.com - Tennis news, analysis, and opinion delivered with deadpan humor and a touch of sass. Grand Slams, ATP, and WTA forehands, backhands, overheads, tweeners, and dropshots.",
     siteURL: "https://gamesetblog.com",
     defaultImage: "../../background-images/metadataImage.png",
     twitterUsername: "@GameSet_Blog"

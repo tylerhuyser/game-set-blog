@@ -102,7 +102,7 @@ export default function PostDetail(props) {
 
   useEffect(() => {
     if (postData && postData.excerpt) {
-      setPageDescription(`Game, Set, Blog | ${postData.excerpt.rendered.replace(/<[^>]*>?/gm, '').replace('&#038;', "&").replace('&#8217;', "'").replace('&#8220;', "'").replace('&#8221;', "'")}`)
+      setPageDescription(`Game, Set, Blog | ${postData.excerpt.rendered[0, 1].replace(/<[^>]*>?/gm, '').replace('&#038;', "&").replace('&#8217;', "'").replace('&#8220;', "'").replace('&#8221;', "'")}`)
     }
   }, [postData])
   

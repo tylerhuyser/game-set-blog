@@ -30,6 +30,8 @@ export default function PostDetail(props) {
   const navigate = useNavigate()
   const params = useParams()
 
+  console.log(postData)
+
   useEffect(() => {
 
     const currentPostDataFromStorage = JSON.parse(localStorage.getItem('currentPost'))
@@ -96,13 +98,13 @@ export default function PostDetail(props) {
   
   useEffect(() => {
     if (postData && postData.title) {
-      setPageTitle(`Game, Set, Blog | ${postData.title.rendered.replace(/<[^>]*>?/gm, '').replace('&#038;', "&").replace('&#8217;', "'").replace('&#8220;', "'").replace('&#8221;', "'")}`)
+      setPageTitle(`Game, Set, Blog | ${postData.title.rendered.replace(/<[^>]*>?/gm, '').replace('&#038;', "&").replace('&#8216;', "'").replace('&#8217;', "'").replace('&#8220;', "'").replace('&#8221;', "'").replace("\n", "")}`)
     }
   }, [postData])
 
   useEffect(() => {
     if (postData && postData.excerpt) {
-      setPageDescription(`Game, Set, Blog | ${postData.excerpt.rendered[0, 1].replace(/<[^>]*>?/gm, '').replace('&#038;', "&").replace('&#8217;', "'").replace('&#8220;', "'").replace('&#8221;', "'")}`)
+      setPageDescription(`Game, Set, Blog | ${postData.excerpt.rendered.replace(/<[^>]*>?/gm, '').replace('&#038;', "&").replace('&#8216;', "'").replace('&#8217;', "'").replace('&#8220;', "'").replace('&#8221;', "'").replace("\n", "")}`)
     }
   }, [postData])
   
